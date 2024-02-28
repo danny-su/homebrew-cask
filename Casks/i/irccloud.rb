@@ -7,6 +7,8 @@ cask "irccloud" do
   desc "IRC client"
   homepage "https://github.com/irccloud/irccloud-desktop"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   app "IRCCloud.app"
 
   zap trash: [

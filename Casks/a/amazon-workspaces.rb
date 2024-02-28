@@ -1,5 +1,5 @@
 cask "amazon-workspaces" do
-  version "5.17.0.4506"
+  version "5.18.0.4614"
   sha256 :no_check
 
   url "https://d2td7dqidlhjx7.cloudfront.net/prod/global/osx/WorkSpaces.pkg",
@@ -25,4 +25,8 @@ cask "amazon-workspaces" do
     "~/Library/Preferences/com.amazon.workspaces.plist",
     "~/Library/Saved Application State/com.amazon.workspaces.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

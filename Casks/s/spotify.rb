@@ -4,10 +4,10 @@ cask "spotify" do
   sha256 :no_check
 
   on_arm do
-    version "1.2.25.1011,0348b2ea,716"
+    version "1.2.31.1205,4d59ad7c,349"
   end
   on_intel do
-    version "1.2.25.1011,0348b2ea,716"
+    version "1.2.31.1205,4d59ad7c,345"
   end
 
   url "https://download.scdn.co/Spotify#{arch}.dmg",
@@ -31,13 +31,13 @@ cask "spotify" do
 
   app "Spotify.app"
 
-  uninstall quit:      "com.spotify.client",
-            launchctl: "com.spotify.webhelper"
+  uninstall launchctl: "com.spotify.webhelper",
+            quit:      "com.spotify.client"
 
   zap trash: [
     "~/Library/Application Support/Spotify",
-    "~/Library/Caches/com.spotify.client.helper",
     "~/Library/Caches/com.spotify.client",
+    "~/Library/Caches/com.spotify.client.helper",
     "~/Library/Cookies/com.spotify.client.binarycookies",
     "~/Library/HTTPStorages/com.spotify.client",
     "~/Library/Logs/Spotify",

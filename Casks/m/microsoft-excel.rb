@@ -48,8 +48,8 @@ cask "microsoft-excel" do
     end
   end
   on_monterey :or_newer do
-    version "16.79.23111614"
-    sha256 "5ba6095b0ecdcb65512b8e4aacb12acd715040ddd9dd2c9d217f108e323d5d0f"
+    version "16.82.24021116"
+    sha256 "d8500041d9f36542e90aefd71dbaa3351d6550f4b0c5447564f7d95da2a130e6"
 
     livecheck do
       url "https://go.microsoft.com/fwlink/p/?linkid=525135"
@@ -78,12 +78,12 @@ cask "microsoft-excel" do
         },
       ]
 
-  uninstall pkgutil:   [
+  uninstall launchctl: "com.microsoft.office.licensingV2.helper",
+            quit:      "com.microsoft.autoupdate2",
+            pkgutil:   [
               "com.microsoft.package.Microsoft_Excel.app",
               "com.microsoft.pkg.licensing",
-            ],
-            launchctl: "com.microsoft.office.licensingV2.helper",
-            quit:      "com.microsoft.autoupdate2"
+            ]
 
   zap trash: [
     "~/Library/Application Scripts/com.microsoft.Excel",

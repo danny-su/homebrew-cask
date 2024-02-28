@@ -1,6 +1,6 @@
 cask "blueharvest" do
-  version "8.2"
-  sha256 "4be867ff643518784cf29e89c0715a2f36d1d84a7a4f55201042afe0fb027514"
+  version "8.3"
+  sha256 "170bd1af5f9e8fe89e81fdf86e22c17854a355296d3bee018967ae896112fd92"
 
   url "https://zeroonetwenty.com/blueharvest/downloads/BlueHarvest#{version.no_dots}0.dmg"
   name "BlueHarvest"
@@ -17,9 +17,9 @@ cask "blueharvest" do
 
   app "BlueHarvest.app"
 
-  uninstall delete:    "/Library/PrivilegedHelperTools/com.zeroonetwenty.BlueHarvestHelper#{version.major}",
-            launchctl: "com.zeroonetwenty.BlueHarvestHelper#{version.major}",
-            quit:      "com.zeroonetwenty.BlueHarvest5"
+  uninstall launchctl: "com.zeroonetwenty.BlueHarvestHelper#{version.major}",
+            quit:      "com.zeroonetwenty.BlueHarvest5",
+            delete:    "/Library/PrivilegedHelperTools/com.zeroonetwenty.BlueHarvestHelper#{version.major}"
 
   zap trash: [
     "~/Library/Caches/com.zeroonetwenty.BlueHarvest5",

@@ -1,10 +1,10 @@
 cask "dcp-o-matic-batch-converter" do
-  version "2.16.69"
-  sha256 "7100e191240324c26f9a47ef48aa8d870396d182d193020b8c81674c898f78df"
+  version "2.16.78"
+  sha256 "a6eba09a83361ab4ddacc247e2969798ef2a89d35c731018ffe6fae675e1aa9b"
 
   url "https://dcpomatic.com/dl.php?id=osx-10.10-batch&version=#{version}"
   name "DCP-o-matic Batch converter"
-  desc "Convert video, audio and subtitles into DCP (Digital Cinema Democratized)"
+  desc "Convert video, audio and subtitles into DCP (Digital Cinema Package)"
   homepage "https://dcpomatic.com/"
 
   livecheck do

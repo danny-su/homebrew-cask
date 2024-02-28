@@ -8,9 +8,9 @@ cask "smartgit" do
     url "https://www.syntevo.com/downloads/smartgit/smartgit-macosx-#{version.dots_to_underscores}.dmg"
   end
   on_high_sierra :or_newer do
-    version "23.1.0"
-    sha256 arm:   "29bff333c3fc13d292c65b364306f22c76cb2b78a789e40a41997c4b75aa3fec",
-           intel: "13f215cee00a3d6d42e0a52719345426afa24ab68c0c127ba12e5bdf24fecfeb"
+    version "23.1.2"
+    sha256 arm:   "17f8fbd5ced4679db712a6ac49abecff15a945204428ff253e152fafa4f97f3a",
+           intel: "0f810d2f540b932a0de7ef4b80ac0679864c245a01a73582b9b55a874e29c6e5"
 
     url "https://www.syntevo.com/downloads/smartgit/smartgit-#{arch}-#{version.dots_to_underscores}.dmg"
   end
@@ -32,8 +32,8 @@ cask "smartgit" do
   binary "#{appdir}/SmartGit.app/Contents/MacOS/SmartGit"
 
   zap trash: [
-    "~/Library/Preferences/SmartGit",
     "~/Library/Preferences/com.syntevo.smartgit.plist",
+    "~/Library/Preferences/SmartGit",
     "~/Library/Saved Application State/com.syntevo.smartgit.savedState",
   ]
 end

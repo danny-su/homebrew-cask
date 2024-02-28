@@ -1,6 +1,6 @@
 cask "vmware-horizon-client" do
-  version "2309.1-8.11.1-22783279,CART24FQ4_MAC_2309.1"
-  sha256 "f05ab6515b9e366ffe521134d58aca1206391c0483b43e47b99ba337f6518600"
+  version "2312-8.12.0-23149316,CART24FQ4_MAC_2312"
+  sha256 "f2d2b5fb6e70d1d8b67d13209fb9591bc326c8796e098bde6db514d0c6b18db4"
 
   url "https://download3.vmware.com/software/#{version.csv.second}/VMware-Horizon-Client-#{version.csv.first}.dmg"
   name "VMware Horizon Client"
@@ -31,22 +31,23 @@ cask "vmware-horizon-client" do
     end
   end
 
+  auto_updates true
   depends_on macos: ">= :big_sur"
 
   pkg "VMware Horizon Client.pkg"
 
-  uninstall quit:      "com.vmware.horizon",
+  uninstall launchctl: [
+              "com.vmware.deem.MacUIEvents",
+              "com.vmware.deemd",
+              "com.vmware.horizon.CDSHelper",
+              "com.vmware.vmwetlm",
+            ],
+            quit:      "com.vmware.horizon",
             pkgutil:   [
               "com.vmware.horizon",
               "com.vmware.VMware.Deem",
               "com.vmware.VMware.Deem.InstallerHelper",
               "com.vmware.VMware.EndpointTelemetryService",
-            ],
-            launchctl: [
-              "com.vmware.deem.MacUIEvents",
-              "com.vmware.deemd",
-              "com.vmware.horizon.CDSHelper",
-              "com.vmware.vmwetlm",
             ],
             delete:    [
               "/Applications/VMware Horizon Client.app",

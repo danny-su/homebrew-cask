@@ -2,12 +2,12 @@ cask "feishu" do
   arch arm: "arm64", intel: "x64"
 
   on_arm do
-    version "7.4.9,8f0aa412"
-    sha256 "78f41c401f5e79e80a0330f73c42dcc56a5ed7ca65c65d8d66553f8bab630b7b"
+    version "7.11.4,fa94911d"
+    sha256 "184180b026fd5d35413bdbb174720ae06472f0a06b67e3b0cada389edd14e0ac"
   end
   on_intel do
-    version "7.4.9,9323162e"
-    sha256 "dfa643c79454e0a17e766f647496789cc247a7b85343363de18e454fd6e3da21"
+    version "7.11.4,0308731f"
+    sha256 "2eb05c4677c5291bc967085bb15a3aef8b4800eb7112dfab41465f35fce26dc4"
   end
 
   url "https://sf3-cn.feishucdn.com/obj/ee-appcenter/#{version.csv.second}/Feishu-darwin_#{arch}-#{version.csv.first}-signed.dmg",
@@ -31,14 +31,9 @@ cask "feishu" do
   app "Lark.app", target: "Feishu.app"
 
   zap trash: [
-    # feishu
     "~/Library/Caches/com.bytedance.lark.helper",
-    "~/Library/Preferences/com.bytedance.lark.helper.plist",
-    # lark
-    "~/Library/Caches/com.electron.lark.helper",
-    "~/Library/Preferences/com.electron.lark.helper.plist",
-    # both
     "~/Library/Caches/com.electron.lark",
+    "~/Library/Preferences/com.bytedance.lark.helper.plist",
     "~/Library/Saved Application State/com.electron.lark.savedState",
   ]
 end

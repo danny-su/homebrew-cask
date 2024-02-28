@@ -1,6 +1,6 @@
 cask "aws-vpn-client" do
-  version "3.8.0"
-  sha256 "d5a229b12efa2e88627127a6dc27f5c6a1bc9c426a8c466131ecbdbd6bbb4461"
+  version "3.9.1"
+  sha256 "9bba4b27a635e75038703e2cf4cd814aa75306179fac8e500e2c7af4e899e971"
 
   url "https://d20adtppz83p9s.cloudfront.net/OSX/#{version}/AWS_VPN_Client.pkg",
       verified: "d20adtppz83p9s.cloudfront.net/"
@@ -13,13 +13,14 @@ cask "aws-vpn-client" do
     regex(%r{href=.*?v?(\d+(?:\.\d+)+)/AWS_VPN_Client\.pkg}i)
   end
 
+  auto_updates true
   depends_on macos: ">= :big_sur"
 
   pkg "AWS_VPN_Client.pkg"
 
-  uninstall pkgutil:   "com.amazon.awsvpnclient",
+  uninstall launchctl: "com.amazonaws.acvc.helper",
             quit:      "com.amazonaws.acvc.osx",
-            launchctl: "com.amazonaws.acvc.helper",
+            pkgutil:   "com.amazon.awsvpnclient",
             delete:    [
               "/Library/Application Support/AWSVPNClient",
               "/Library/LaunchDaemons/com.amazonaws.acvc.helper.plist",

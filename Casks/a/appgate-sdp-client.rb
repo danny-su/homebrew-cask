@@ -18,8 +18,8 @@ cask "appgate-sdp-client" do
     end
   end
   on_big_sur :or_newer do
-    version "6.2.4"
-    sha256 "f2c638755345047932c9db114b36ba48ffed04f4a8e31761c8e4d339e8deae62"
+    version "6.2.7"
+    sha256 "f38637ac3ca99946f6bbb54fd32f4fc7bac9ba00bf7e90f71613f5ed44085a1a"
 
     livecheck do
       url :homepage
@@ -55,8 +55,7 @@ cask "appgate-sdp-client" do
 
   pkg "AppGate SDP Installer.pkg"
 
-  uninstall pkgutil:   "com.appgate.pkg.appgatetun.component",
-            launchctl: [
+  uninstall launchctl: [
               "com.appgate.sdp.client.agent",
               "com.appgate.sdp.tun",
               "com.appgate.sdp.updater",
@@ -70,7 +69,8 @@ cask "appgate-sdp-client" do
               "com.cyxtera.appgate.helper",
               "com.cyxtera.appgate.sdp",
             ],
-            signal:    ["QUIT", "com.cyxtera.appgate"]
+            signal:    ["QUIT", "com.cyxtera.appgate"],
+            pkgutil:   "com.appgate.pkg.appgatetun.component"
 
   zap trash: [
     "~/Library/Application Support/appgate-ui",

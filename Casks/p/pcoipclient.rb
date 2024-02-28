@@ -1,6 +1,6 @@
 cask "pcoipclient" do
-  version "23.08.1"
-  sha256 "00542cc07c6a7917394f3ec9b6f865ae6aee637e25fcf2cd21e8c560f2020a9d"
+  version "23.12.6"
+  sha256 "f4e183bdca4682c974655ad66c709af80215625a574d0dc38e190a3e11cd7d61"
 
   url "https://dl.teradici.com/DeAdBCiUYInHcSTy/pcoip-client/raw/names/pcoip-client-dmg/versions/#{version}/pcoip-client_#{version}.dmg"
   name "Teradici PCoIP Software Client for macOS"

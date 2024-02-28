@@ -1,13 +1,13 @@
 cask "hackolade" do
   arch arm: "ARM64"
 
-  version "7.0.2"
+  version "7.3.1"
   sha256 :no_check
 
   url "https://s3-eu-west-1.amazonaws.com/hackolade/current/Hackolade-mac#{arch}-setup-signed.pkg",
       verified: "s3-eu-west-1.amazonaws.com/hackolade/"
   name "Hackolade"
-  desc "Data Modeling for NoSQL databases, storage formats, REST APIs, and JSON in RDBMS"
+  desc "Polyglot data modelling software"
   homepage "https://hackolade.com/"
 
   livecheck do

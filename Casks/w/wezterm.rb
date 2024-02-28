@@ -1,6 +1,6 @@
 cask "wezterm" do
-  version "20230712-072601,f4abf8fd"
-  sha256 "27c5b4eedd04e41138f0afc184d9b03dc5eb03a773ab144daa96bcc12ffb9851"
+  version "20240203-110809,5046fc22"
+  sha256 "e77388cad55f2e9da95a220a89206a6c58f865874a629b7c3ea3c162f5692224"
 
   url "https://github.com/wez/wezterm/releases/download/#{version.csv.first}-#{version.csv.second}/WezTerm-macos-#{version.csv.first}-#{version.csv.second}.zip",
       verified: "github.com/wez/wezterm/"
@@ -19,7 +19,6 @@ cask "wezterm" do
   conflicts_with cask: "homebrew/cask-versions/wezterm-nightly"
 
   app "WezTerm.app"
-
   %w[
     wezterm
     wezterm-gui
@@ -28,6 +27,13 @@ cask "wezterm" do
   ].each do |tool|
     binary "#{appdir}/WezTerm.app/Contents/MacOS/#{tool}"
   end
+
+  binary "WezTerm.app/Contents/Resources/shell-completion/zsh",
+         target: "#{HOMEBREW_PREFIX}/share/zsh/site-functions/_wezterm"
+  binary "WezTerm.app/Contents/Resources/shell-completion/bash",
+         target: "#{HOMEBREW_PREFIX}/etc/bash_completion.d/wezterm"
+  binary "WezTerm.app/Contents/Resources/shell-completion/fish",
+         target: "#{HOMEBREW_PREFIX}/share/fish/vendor_completions.d/wezterm.fish"
 
   preflight do
     # Move "WezTerm-macos-#{version}/WezTerm.app" out of the subfolder

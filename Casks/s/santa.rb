@@ -1,6 +1,6 @@
 cask "santa" do
-  version "2023.9"
-  sha256 "c70603e7ddab1144a0d75ceaf7aca00ddcd2badf6562e0c0fadd6e3a772be9fb"
+  version "2024.2"
+  sha256 "0aba3281b6914f30dc3fd95ee489c6d9070a802020f15c9c304ab87fc62ae77a"
 
   url "https://github.com/google/santa/releases/download/#{version}/santa-#{version}.dmg"
   name "Santa"
@@ -14,19 +14,19 @@ cask "santa" do
 
   pkg "santa-#{version}.pkg"
 
-  uninstall delete:    [
-              "/Applications/Santa.app",
-              "/usr/local/bin/santactl",
-            ],
-            kext:      "com.google.santa-driver",
-            launchctl: [
+  uninstall launchctl: [
               "com.google.santa",
               "com.google.santa.bundleservice",
               "com.google.santa.metricservice",
               "com.google.santa.syncservice",
               "com.google.santad",
             ],
-            pkgutil:   "com.google.santa"
+            kext:      "com.google.santa-driver",
+            pkgutil:   "com.google.santa",
+            delete:    [
+              "/Applications/Santa.app",
+              "/usr/local/bin/santactl",
+            ]
 
   # No zap stanza required
 

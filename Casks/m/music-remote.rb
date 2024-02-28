@@ -1,8 +1,8 @@
 cask "music-remote" do
-  version "1.2"
+  version "1.4"
   sha256 :no_check
 
-  url "https://marioaguzman.github.io/musicremote/updater/Music%20Remote.zip"
+  url "https://marioaguzman.github.io/musicremote/updater/Music%20Remote.dmg"
   name "Music Remote"
   desc "Remote application for Music.app"
   homepage "https://marioaguzman.github.io/musicremote/"

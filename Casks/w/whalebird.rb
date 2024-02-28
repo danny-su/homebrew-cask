@@ -1,11 +1,8 @@
 cask "whalebird" do
-  arch arm: "arm64", intel: "x64"
+  version "6.0.2"
+  sha256 "8f34f1fb4de2740f530c8696606d2d2baa771e1f5ca27415e02bc2e8837344e4"
 
-  version "5.1.1"
-  sha256 arm:   "86c89c691e98ef1aa7ed1c1f5d114e33d830d79a55ba515681755b5d16981839",
-         intel: "e4ebea91505a3ef8f81eba94cd302952674d5055563c7fd4fdacb030bce37c1c"
-
-  url "https://github.com/h3poteto/whalebird-desktop/releases/download/v#{version}/Whalebird-#{version}-mac-#{arch}.dmg",
+  url "https://github.com/h3poteto/whalebird-desktop/releases/download/v#{version}/Whalebird-#{version}-mac-universal.dmg",
       verified: "github.com/h3poteto/whalebird-desktop/"
   name "Whalebird"
   desc "Mastodon, Pleroma, and Misskey client"

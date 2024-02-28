@@ -10,120 +10,6 @@ on:
     # Every 3 hours 23 minutes past the hour
     - cron: "23 */3 * * *"
 
-env:
-  CASKS: >
-    1password
-    1password-cli
-    alfred
-    alt-tab
-    apifox
-    appcleaner
-    arc
-    beeper
-    bettertouchtool
-    bike
-    brave-browser
-    bruno
-    burp-suite
-    burp-suite-professional
-    busycal
-    calibre
-    canva
-    carbon-copy-cloner
-    chirp
-    clickup
-    cloudnet
-    codeql
-    cog
-    confluent-cli
-    copilot-for-xcode
-    dbeaver-community
-    descript
-    downie
-    dropbox
-    duckduckgo
-    electron
-    eloston-chromium
-    figma
-    firefox
-    flipper
-    fmail2
-    fossa
-    foxglove-studio
-    gather
-    glyphs
-    google-chrome
-    grammarly-desktop
-    grandtotal
-    hackolade
-    heptabase
-    jdownloader
-    jupyterlab
-    libreoffice
-    librewolf
-    logseq
-    loom
-    macupdater
-    metasploit
-    microsoft-edge
-    microsoft-openjdk
-    multiapp
-    netron
-    openlens
-    openshift-client
-    opera
-    opera-gx
-    osu
-    pitch
-    plex
-    plex-htpc
-    plex-media-server
-    postman
-    purei-play
-    puzzles
-    qownnotes
-    quarto
-    readdle-spark
-    reaper
-    rewind
-    rive
-    setapp
-    sf
-    shapr3d
-    sigmaos
-    signal
-    siyuan
-    skype
-    sol
-    spotify
-    standard-notes
-    stats
-    telegram
-    telegram-desktop
-    teleport-connect
-    thunderbird
-    todoist
-    tor-browser
-    trader-workstation
-    trainerroad
-    tsh
-    unity
-    uvtools
-    viber
-    visual-studio-code
-    vivaldi
-    vrew
-    vscodium
-    vuescan
-    warp
-    webcatalog
-    webull
-    whatsapp
-    workflowy
-    zed
-    zoom
-    zoom-for-it-admins
-
 permissions:
   contents: read
 
@@ -145,9 +31,13 @@ jobs:
         with:
           username: ${{ (github.event_name == 'workflow_dispatch' && github.actor) || 'BrewTestBot' }}
 
+      - name: Get list of autobump casks
+        id: autobump
+        run: echo "autobump_list=$(xargs < "$(brew --repo homebrew/cask)"/.github/autobump.txt)" >> "$GITHUB_OUTPUT"
+
       - name: Bump casks
         uses: Homebrew/actions/bump-packages@master
         continue-on-error: true
         with:
           token: ${{ secrets.HOMEBREW_CASK_REPO_WORKFLOW_TOKEN }}
-          casks: ${{ github.event.inputs.casks || env.CASKS }}
+          casks: ${{ github.event.inputs.casks || steps.autobump.outputs.autobump_list }}

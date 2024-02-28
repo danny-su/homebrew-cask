@@ -1,6 +1,6 @@
 cask "berrycast" do
-  version "0.38.1"
-  sha256 "969a633adf4ffb3b219b03e578183462c6ee97caababfa9cc7d5753440318b1b"
+  version "0.38.2"
+  sha256 "debaf6bb81665dd9d47bf09a5026df3a3b415fdee634cba919da500cc71bca80"
 
   url "https://media.berrycast.app/desktop-installer/Berrycast-#{version}-latest.dmg",
       verified: "media.berrycast.app/"
@@ -17,14 +17,14 @@ cask "berrycast" do
 
   app "Berrycast.app"
 
-  uninstall login_item: "Berrycast",
-            quit:       [
+  uninstall quit:       [
               "com.openmindt.berrycast",
               "com.openmindt.berrycast.helper",
               "com.openmindt.berrycast.helper.GPU",
               "com.openmindt.berrycast.helper.Plugin",
               "com.openmindt.berrycast.helper.Renderer",
-            ]
+            ],
+            login_item: "Berrycast"
 
   zap trash: [
     "~/Library/Application Support/berrycast-desktop",

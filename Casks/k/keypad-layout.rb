@@ -1,6 +1,6 @@
 cask "keypad-layout" do
-  version "1.10"
-  sha256 "366a828fa327f18d0657ae8406147289ff03a07b70d79b3bdbfc5a61faa137c7"
+  version "1.12"
+  sha256 "3c4ec7dbe0d50918b4bfb126347d33e29bd7af0a5ae31aa48d68eb91c03e4ad0"
 
   url "https://github.com/janten/keypad-layout/releases/download/#{version}/Keypad-Layout.zip"
   name "Keypad Layout"
@@ -8,4 +8,6 @@ cask "keypad-layout" do
   homepage "https://github.com/janten/keypad-layout"
 
   app "Keypad Layout.app"
+
+  zap trash: "~/Library/Preferences/com.jan-gerd.keypad-layout.plist"
 end

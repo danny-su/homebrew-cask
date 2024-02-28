@@ -1,11 +1,11 @@
 cask "syncthing" do
-  version "1.26.1-1"
-  sha256 "52dae39b09f95501af40639f5aff518a2d68bf60fc71f004e4b3e5eaf103b160"
+  version "1.27.3-1"
+  sha256 "48daa378625043fd995463f0a2ecf619b92c047c9e1d2f7d1202ee1289c7448b"
 
   url "https://github.com/syncthing/syncthing-macos/releases/download/v#{version}/Syncthing-#{version}.dmg",
       verified: "github.com/syncthing/syncthing-macos/"
   name "Syncthing"
-  desc "Real time file synchronization software"
+  desc "Real time file synchronisation software"
   homepage "https://syncthing.net/"
 
   auto_updates true

@@ -1,6 +1,6 @@
 cask "typeface" do
-  version "3.11.1,3976"
-  sha256 "c5d973c189ae1424a43b5f049b7909035d738daad3b952196386d41810982f33"
+  version "3.11.3,4034"
+  sha256 "b751d9074ffb7c36bbb5dd6335492b6753bf54369802783da3a2c86bbfdc775d"
 
   url "https://dcdn.typefaceapp.com/Typeface-#{version.csv.first}-#{version.csv.second}/Typeface-#{version.csv.first}-#{version.csv.second}.dmg"
   name "Typeface"

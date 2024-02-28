@@ -4,7 +4,7 @@ cask "ninja-download-manager-ndm" do
 
   url "https://ninjadownloadmanager.com/downloads/ndm_#{version}.pkg"
   name "Ninja Download Manager"
-  desc "File download organizer and accelerator"
+  desc "File download organiser and accelerator"
   homepage "https://ninjadownloadmanager.com/"
 
   livecheck do
@@ -17,8 +17,8 @@ cask "ninja-download-manager-ndm" do
   uninstall pkgutil: "com.knockoutsoft.pkg.ndm"
 
   zap trash: [
-    "~/Library/ndm",
     "~/Library/Caches/com.knockoutsoft.ndm",
+    "~/Library/ndm",
     "~/Library/Saved Application State/com.knockoutsoft.ndm.savedState",
   ]
 end

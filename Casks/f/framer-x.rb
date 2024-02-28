@@ -7,14 +7,14 @@ cask "framer-x" do
   desc "Tool that helps teams design every part of the product experience"
   homepage "https://framer.com/"
 
+  disable! date: "2024-01-01", because: "download artifact not available"
+
   auto_updates true
   depends_on macos: ">= :high_sierra"
 
   app "Framer X.app"
 
   caveats do
-    discontinued
-
     <<~EOS
       This software has been deprecated in favor of Framer Desktop (framer cask).
       Your Framer X license will be honoured on the new software:

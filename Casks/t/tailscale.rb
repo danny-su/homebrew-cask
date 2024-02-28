@@ -1,6 +1,6 @@
 cask "tailscale" do
-  version "1.54.1"
-  sha256 "de6d2c7dea946a9cf3dbfa4f25c0b79a6fcdc9c1c3fb8f015e3dee3ce9afc6b9"
+  version "1.60.0"
+  sha256 "7a144bf5ef178dc679cdf09d69d57902ca1b35d5e0e5f9c5b3cddd7df0752b21"
 
   url "https://pkgs.tailscale.com/stable/Tailscale-#{version}-macos.zip"
   name "Tailscale"
@@ -28,18 +28,18 @@ cask "tailscale" do
     EOS
   end
 
-  uninstall login_item: "Tailscale",
-            quit:       "io.tailscale.ipn.macsys"
+  uninstall quit:       "io.tailscale.ipn.macsys",
+            login_item: "Tailscale"
 
   zap trash: [
-    "~/Library/Tailscale",
     "~/Library/Application Scripts/*.io.tailscale.ipn.macsys",
-    "~/Library/Application Scripts/io.tailscale.ipn.macsys.share-extension",
     "~/Library/Application Scripts/io.tailscale.ipn.macsys",
+    "~/Library/Application Scripts/io.tailscale.ipn.macsys.share-extension",
     "~/Library/Containers/io.tailscale.ipn.macos.network-extension",
-    "~/Library/Containers/io.tailscale.ipn.macsys.share-extension",
     "~/Library/Containers/io.tailscale.ipn.macsys",
+    "~/Library/Containers/io.tailscale.ipn.macsys.share-extension",
     "~/Library/Containers/Tailscale",
     "~/Library/Group Containers/*.io.tailscale.ipn.macsys",
+    "~/Library/Tailscale",
   ]
 end

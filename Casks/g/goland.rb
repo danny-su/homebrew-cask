@@ -1,9 +1,9 @@
 cask "goland" do
   arch arm: "-aarch64"
 
-  version "2023.2.5,232.10227.11"
-  sha256 arm:   "d2890f587271cff140aab2ea1b8d09b4a02b82f2bacde7716435ec92d18cf37c",
-         intel: "c65401f721fa59284d14501b669bab52ad8ceca574820bef61602993901e675f"
+  version "2023.3.4,233.14475.38"
+  sha256 arm:   "4fbb496487ba1a60816ed1801484413c3e326c85b90fdfe0263f85a12d623b39",
+         intel: "f360de635ae066748f21f3633ce659acacc325f79a657a2c6466701783aa1b3f"
 
   url "https://download.jetbrains.com/go/goland-#{version.csv.first}#{arch}.dmg"
   name "Goland"
@@ -23,15 +23,7 @@ cask "goland" do
   depends_on macos: ">= :high_sierra"
 
   app "GoLand.app"
-
-  uninstall_postflight do
-    ENV["PATH"].split(File::PATH_SEPARATOR).map { |path| File.join(path, "goland") }.each do |path|
-      if File.readable?(path) &&
-         File.readlines(path).grep(/# see com.intellij.idea.SocketLock for the server side of this interface/).any?
-        File.delete(path)
-      end
-    end
-  end
+  binary "#{appdir}/GoLand.app/Contents/MacOS/goland"
 
   zap trash: [
     "~/Library/Application Support/JetBrains/GoLand",

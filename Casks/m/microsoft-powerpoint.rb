@@ -48,8 +48,8 @@ cask "microsoft-powerpoint" do
     end
   end
   on_monterey :or_newer do
-    version "16.79.23111614"
-    sha256 "fc89eeffa3f081253416cdf787cf4dc5ef894afa2c9d241ffcbe5f6a36aef872"
+    version "16.82.24021116"
+    sha256 "a6980cc10066402412aa39a513e78feccb335db1c1bbf3fc376cf8b045c45070"
 
     livecheck do
       url "https://go.microsoft.com/fwlink/p/?linkid=525136"
@@ -78,13 +78,13 @@ cask "microsoft-powerpoint" do
         },
       ]
 
-  uninstall pkgutil:   [
+  uninstall launchctl: "com.microsoft.office.licensingV2.helper",
+            quit:      "com.microsoft.autoupdate2",
+            pkgutil:   [
               "com.microsoft.package.Microsoft_PowerPoint.app",
               "com.microsoft.pkg.licensing",
             ],
-            delete:    "/Applications/Microsoft PowerPoint.app",
-            launchctl: "com.microsoft.office.licensingV2.helper",
-            quit:      "com.microsoft.autoupdate2"
+            delete:    "/Applications/Microsoft PowerPoint.app"
 
   zap trash: [
     "~/Library/Application Scripts/com.microsoft.Powerpoint",

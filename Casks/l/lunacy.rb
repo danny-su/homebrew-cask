@@ -1,6 +1,6 @@
 cask "lunacy" do
-  version "9.2.1"
-  sha256 "7b198ad9ea6b808e102310fa99110a1ec9764ffa7e9763c1be3a0f0826b809f8"
+  version "9.4.2.5022"
+  sha256 "1a91041381b9b5fb87dc1b43796794f2208b14cc43958099ebe928f97cd3427e"
 
   url "https://lcdn.icons8.com/setup/Lunacy_#{version}.dmg"
   name "Lunacy"

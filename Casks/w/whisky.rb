@@ -1,11 +1,12 @@
 cask "whisky" do
-  version "2.2.1"
-  sha256 "ba819ff9424648162345b9410ab01b19b2ef58cedb5abfd8d28d2c83c169a65a"
+  version "2.2.3"
+  sha256 "edb23639eff3ef992d74690be5f22b1e812c4bafef0fac7b1ad99a077e1ba954"
 
-  url "https://github.com/IsaacMarovitz/Whisky/releases/download/v#{version}/Whisky.zip"
+  url "https://github.com/IsaacMarovitz/Whisky/releases/download/v#{version}/Whisky.zip",
+      verified: "github.com/IsaacMarovitz/Whisky/"
   name "Whisky"
   desc "Wine wrapper built with SwiftUI"
-  homepage "https://github.com/IsaacMarovitz/Whisky"
+  homepage "https://getwhisky.app/"
 
   livecheck do
     url :url

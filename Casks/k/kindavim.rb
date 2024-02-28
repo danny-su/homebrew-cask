@@ -1,5 +1,5 @@
 cask "kindavim" do
-  version "2828.59.0"
+  version "2828.61.0"
   sha256 :no_check
 
   url "https://kindavim.app/releases/kindaVim.zip"
@@ -25,6 +25,8 @@ cask "kindavim" do
     "~/Library/Caches/mo.com.sleeplessmind.kindaVim",
     "~/Library/Containers/mo.com.sleeplessmind.kindaVim",
     "~/Library/Containers/mo.com.sleeplessmind.kindaVim-LaunchAtLoginHelper",
+    "~/Library/HTTPStorages/mo.com.sleeplessmind.kindaVim",
+    "~/Library/HTTPStorages/mo.com.sleeplessmind.kindaVim.binarycookies",
     "~/Library/Preferences/mo.com.sleeplessmind.kindaVim.plist",
     "~/Library/Saved Application State/mo.com.sleeplessmind.kindaVim.savedState",
   ]

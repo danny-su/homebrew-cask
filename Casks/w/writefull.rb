@@ -8,18 +8,16 @@ cask "writefull" do
   desc "Provides feedback on your writing"
   homepage "https://writefullapp.com/"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   app "Writefull.app"
 
   zap trash: [
-    "~/Library/Application Support/Writefull_3beta",
     "~/Library/Application Support/com.paraphrase.Writefull.ShipIt",
-    "~/Library/Caches/Writefull_3beta",
+    "~/Library/Application Support/Writefull_3beta",
     "~/Library/Caches/com.paraphrase.Writefull",
+    "~/Library/Caches/Writefull_3beta",
     "~/Library/Preferences/com.paraphrase.Writefull.plist",
     "~/Library/Saved Application State/com.paraphrase.Writefull.savedState",
   ]
-
-  caveats do
-    discontinued
-  end
 end

@@ -17,27 +17,27 @@ cask "maxon" do
     sudo:       true,
   }
 
-  uninstall delete:    [
+  uninstall launchctl: [
+              "com.maxon.mxnotify.agent",
+              "com.maxon.mxredirect.agent",
+              "com.redgiant.service",
+            ],
+            delete:    [
               "/Applications/Maxon.app",
               "/Library/Application Support/Maxon",
               "/Library/Application Support/Red Giant",
               "/Library/Logs/Maxon",
               "/Library/Logs/Red Giant",
-            ],
-            launchctl: [
-              "com.maxon.mxnotify.agent",
-              "com.maxon.mxredirect.agent",
-              "com.redgiant.service",
             ]
 
   zap trash: [
+    "/Users/Shared/Maxon",
+    "/Users/Shared/Red Giant",
     "~/Library/Application Support/Maxon",
     "~/Library/Application Support/Red Giant",
     "~/Library/Caches/net.maxon.app-manager",
     "~/Library/Preferences/Maxon",
     "~/Library/Preferences/net.maxon.app-manager.plist",
     "~/Library/Saved Application State/net.maxon.app-manager.savedState",
-    "/Users/Shared/Maxon",
-    "/Users/Shared/Red Giant",
   ]
 end

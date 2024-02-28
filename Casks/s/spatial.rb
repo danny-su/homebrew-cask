@@ -1,17 +1,21 @@
 cask "spatial" do
-  version "20210118"
-  sha256 :no_check
+  version "0.4.3"
+  sha256 "554166c9f4f3fd7606ab418f78c949e05092d4764c0d706f39bbd051a5c20e24"
 
-  url "https://console.improbable.io/toolbelt/download/latest/mac"
+  url "https://www.mikeswanson.com/spatial/releases/spatial_#{version}.zip"
   name "Spatial"
-  desc "Binary for interaction with the Improbable SpatialOS platform"
-  homepage "https://documentation.improbable.io/spatialos-overview/docs"
+  desc "Tool for working with MV-HEVC/spatial videos"
+  homepage "https://blog.mikeswanson.com/spatial"
 
   livecheck do
-    skip "version available by running `spatial version` when installed"
+    url "https://www.mikeswanson.com/spatial/releases/"
+    regex(/href=.*?spatial[._-]v?(\d+(?:\.\d+)+)\.zip/i)
   end
 
-  container type: :naked
+  depends_on arch: :arm64
+  depends_on macos: ">= :sonoma"
 
-  binary "spatial"
+  binary "spatial_#{version}/spatial"
+
+  # No zap stanza required
 end

@@ -1,10 +1,10 @@
 cask "colorwell" do
-  version "7.3.9"
+  version "7.4.2"
   sha256 :no_check
 
   url "https://sweetpproductions.com/products/colorwell/ColorWell.dmg"
   name "ColorWell"
-  desc "Color picker and color palette generator"
+  desc "Colour picker and colour palette generator"
   homepage "https://colorwell.sweetpproductions.com/"
 
   livecheck do

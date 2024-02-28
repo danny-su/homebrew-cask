@@ -1,6 +1,6 @@
 cask "adguard-vpn" do
-  version "2.1.7.511"
-  sha256 "09e2595f03be6d64cba0e65b6f55a6f36dcced980b5da2ddd2c9d048417ec60d"
+  version "2.2.1.545"
+  sha256 "c121fa51b1e2f7ab1f90af20541ea74e5492a77daa7760581e39d8425034edb4"
 
   url "https://static.adguard-vpn.com/mac/release/AdGuardVPN-#{version}.dmg"
   name "AdGuard VPN"
@@ -20,8 +20,8 @@ cask "adguard-vpn" do
 
   pkg "AdGuard VPN.pkg"
 
-  uninstall quit:      "com.adguard.mac.vpn",
-            launchctl: "com.adguard.mac.vpn.tun-helper",
+  uninstall launchctl: "com.adguard.mac.vpn.tun-helper",
+            quit:      "com.adguard.mac.vpn",
             pkgutil:   "com.adguard.mac.vpn-pkg",
             delete:    [
               "/Library/Application Support/AdGuard Software/com.adguard.mac.vpn",

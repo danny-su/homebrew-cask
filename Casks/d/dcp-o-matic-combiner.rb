@@ -1,10 +1,10 @@
 cask "dcp-o-matic-combiner" do
-  version "2.16.69"
-  sha256 "60a3f16ed48be4b40f5b2c338a9ef01e05547c4f9e8f70ad0c383e751e96d438"
+  version "2.16.78"
+  sha256 "d2733e00b4a6a5855008ce23357e49b874af74a64579bbb6ee45794a614499fa"
 
   url "https://dcpomatic.com/dl.php?id=osx-10.10-combiner&version=#{version}"
-  name "dcp-o-matic-combiner"
-  desc "Convert video, audio and subtitles into DCP (Digital Cinema Democratized)"
+  name "DCP-o-matic-combiner"
+  desc "Convert video, audio and subtitles into DCP (Digital Cinema Package)"
   homepage "https://dcpomatic.com/"
 
   livecheck do

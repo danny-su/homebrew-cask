@@ -5,11 +5,10 @@ cask "expo-xde" do
   url "https://github.com/expo/xde/releases/download/v#{version}/xde-#{version}.dmg",
       verified: "github.com/expo/xde/"
   name "Expo Development Environment (XDE)"
+  desc "Tool for developing and testing React Native apps"
   homepage "https://expo.io/"
 
-  app "Expo XDE.app"
+  deprecate! date: "2023-12-17", because: :discontinued
 
-  caveats do
-    discontinued
-  end
+  app "Expo XDE.app"
 end

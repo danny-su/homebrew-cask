@@ -1,9 +1,9 @@
 cask "douyin-chat" do
-  version "1.1.5,11213796"
-  sha256 "70e8d195579fd878f369e955d1ef92a3d59ce5183cbb326ffbdbe64cfd9a3dea"
+  version "1.1.10,11561451"
+  sha256 "431163f3a970f97ae688590908766ddfb7e08835942340a6a702faf739057081"
 
   url "https://lf-impc.douyinstatic.com/obj/tos-aweme-im-pc/7094550955558967563/releases/#{version.csv.second}/#{version.csv.first}/darwin-x64/DouyinChat.dmg",
-      verified: "lf-impc.douyinstatic.com/"
+      verified: "lf-impc.douyinstatic.com/obj/tos-aweme-im-pc/"
   name "Douyin Chat"
   name "抖音聊天"
   desc "Chat client for Douyin"
@@ -26,7 +26,7 @@ cask "douyin-chat" do
   app "抖音聊天.app"
 
   zap trash: [
-    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.bytedance.awemeim.desktop.sfl3",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.bytedance.awemeim.desktop.sfl*",
     "~/Library/Caches/com.bytedance.awemeim.desktop",
     "~/Library/HTTPStorages/com.bytedance.awemeim.desktop",
     "~/Library/Preferences/com.bytedance.awemeim.desktop.plist",

@@ -1,13 +1,13 @@
 cask "macupdater" do
   on_monterey :or_older do
-    version "2.3.11"
-    sha256 "5ff08ecca049af08074c10935080ec935803ea9620a8de939370ebcd82aff7cd"
+    version "2.3.12"
+    sha256 "8518ec1d49fbeae5441bf3921c0f2eb6b78e6e86466d330325db7c00ed1bcc3c"
 
     depends_on macos: ">= :mojave"
   end
   on_ventura :or_newer do
-    version "3.2.4"
-    sha256 "12f1a6403bf16dc99264ddfd5dc2d683b0da8ad203d5b9c0730321cd0d1c8ce2"
+    version "3.2.6"
+    sha256 "6dbd6f5bda8a0eb56b0b47a3037233fa9fc2197cb0dfbacd62c886171b1c0cea"
 
     depends_on macos: ">= :ventura"
   end
@@ -27,8 +27,8 @@ cask "macupdater" do
   app "MacUpdater.app"
   binary "#{appdir}/MacUpdater.app/Contents/Resources/macupdater_client"
 
-  uninstall quit:      "com.corecode.MacUpdater",
-            launchctl: "com.corecode.MacUpdaterLaunchHelper"
+  uninstall launchctl: "com.corecode.MacUpdaterLaunchHelper",
+            quit:      "com.corecode.MacUpdater"
 
   zap trash: [
     "~/Library/Application Scripts/com.corecode.MacUpdaterLaunchHelper",

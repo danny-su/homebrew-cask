@@ -1,6 +1,6 @@
 cask "quit-all" do
-  version "1.2.3"
-  sha256 "a2e2748ee7145fed3d427f3128ec0e3b5695f252a4510150a912c80b16ae7e10"
+  version "1.3.2"
+  sha256 "ba4d982554832f963c238772d7387ced4e70332f8a42195fabec5d5fdadbed7b"
 
   url "https://amicoapps.com/wp-content/updates/quitall-#{version}.zip"
   name "QuitAll"
@@ -20,8 +20,8 @@ cask "quit-all" do
     "~/Library/Application Support/com.quitallapp.quitall-paddle",
     "~/Library/Application Support/Quit All",
     "~/Library/Caches/com.quitallapp.quitall-paddle",
-    "~/Library/HTTPStorages/com.quitallapp.quitall-paddle.binarycookies",
     "~/Library/HTTPStorages/com.quitallapp.quitall-paddle",
+    "~/Library/HTTPStorages/com.quitallapp.quitall-paddle.binarycookies",
     "~/Library/Preferences/com.quitallapp.quitall-paddle.plist",
   ]
 end

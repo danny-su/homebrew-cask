@@ -1,5 +1,5 @@
 cask "intune-company-portal" do
-  version "5.2310.5"
+  version "5.2401.0"
   sha256 :no_check
 
   url "https://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/CompanyPortal-Installer.pkg"
@@ -29,8 +29,8 @@ cask "intune-company-portal" do
 
   uninstall quit:    "com.microsoft.autoupdate2",
             pkgutil: [
-              "com.microsoft.CompanyPortalMac",
               "com.microsoft.CompanyPortal",
+              "com.microsoft.CompanyPortalMac",
             ],
             delete:  "/Applications/Company Portal.app"
 

@@ -1,6 +1,6 @@
 cask "lm-studio" do
-  version "0.2.8"
-  sha256 "abf669844df14c85b69c52af4fa7cff2050b4eea68ea09f1c16c5be9daa2a334"
+  version "0.2.16"
+  sha256 :no_check
 
   url "https://s3.amazonaws.com/releases.lmstudio.ai/#{version}/LM+Studio-darwin-arm64-#{version}.zip",
       verified: "s3.amazonaws.com/releases.lmstudio.ai/"
@@ -13,6 +13,7 @@ cask "lm-studio" do
     regex(/LM\+Studio[._-]darwin[._-]arm64[._-]v?(\d+(?:\.\d+)+)\.zip/i)
   end
 
+  auto_updates true
   depends_on arch: :arm64
 
   app "LM Studio.app"

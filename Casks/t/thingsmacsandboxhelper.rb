@@ -1,6 +1,6 @@
 cask "thingsmacsandboxhelper" do
-  version "3.33"
-  sha256 "2ddc5091b216a89f9df7a28ba4b029e2a69f1882e3461ae99e31b2b62ef19ddc"
+  version "3.38"
+  sha256 "d640333cdb7b647499385726972ae2552c179d2187fe9fb47e02008e73edc1a0"
 
   url "https://static.culturedcode.com/things/thingssandboxhelper/#{version}/ThingsHelper.zip"
   name "Things Helper"

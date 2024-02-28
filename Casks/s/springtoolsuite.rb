@@ -1,9 +1,9 @@
 cask "springtoolsuite" do
   arch arm: "aarch64", intel: "x86_64"
 
-  version "4.20.1,4.29.0"
-  sha256 arm:   "116391255fba5910e2736c253ea9620bc70462e40d5f264f891d406fdcc01cff",
-         intel: "5e5ab7a09a48356d1a5b4f586e50c5df4b4f80b74ad0a7dbc7fcac574dc2003b"
+  version "4.21.1,4.30.0"
+  sha256 arm:   "d82a351a786572b288fb21e264e1a9abc5001a33d6d23996b7253034f83d44da",
+         intel: "73fb4b217e63fe3846e4c979fc35e45d96e97f283dbc457e863a11f2d7826736"
 
   url "https://download.springsource.com/release/STS#{version.major}/#{version.csv.first}.RELEASE/dist/e#{version.csv.second.major_minor}/spring-tool-suite-#{version.major}-#{version.csv.first}.RELEASE-e#{version.csv.second}-macosx.cocoa.#{arch}.dmg",
       verified: "download.springsource.com/release/"

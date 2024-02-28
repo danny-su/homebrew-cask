@@ -9,7 +9,7 @@ cask "tunnelbear" do
     depends_on macos: ">= :sierra"
   end
   on_big_sur :or_newer do
-    version "5.1.1"
+    version "5.2.2"
     sha256 :no_check
 
     url "https://s3.amazonaws.com/tunnelbear/downloads/mac/TunnelBear.zip",
@@ -35,8 +35,8 @@ cask "tunnelbear" do
 
   app "TunnelBear.app"
 
-  uninstall quit:      "com.tunnelbear.mac.TunnelBear",
-            launchctl: "com.tunnelbear.mac.tbeard",
+  uninstall launchctl: "com.tunnelbear.mac.tbeard",
+            quit:      "com.tunnelbear.mac.TunnelBear",
             delete:    "/Library/PrivilegedHelperTools/com.tunnelbear.mac.tbeard"
 
   zap trash: [
@@ -46,8 +46,10 @@ cask "tunnelbear" do
     "~/Library/Caches/com.crashlytics.data/com.tunnelbear.mac.TunnelBear",
     "~/Library/Caches/com.plausiblelabs.crashreporter.data/com.tunnelbear.mac.TunnelBear",
     "~/Library/Caches/com.tunnelbear.mac.TunnelBear",
+    "~/Library/Caches/com.tunnelbear.sdk",
     "~/Library/Caches/io.fabric.sdk.mac.data/com.tunnelbear.mac.TunnelBear",
     "~/Library/Cookies/com.tunnelbear.mac.TunnelBear.binarycookies",
+    "~/Library/HTTPStorages/com.tunnelbear.mac.TunnelBear",
     "~/Library/LaunchAgents/com.tunnelbear.mac.tbeara.plist",
     "~/Library/Logs/TunnelBear",
     "~/Library/Preferences/com.tunnelbear.mac.TunnelBear.plist",

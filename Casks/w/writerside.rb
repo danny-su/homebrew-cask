@@ -1,9 +1,9 @@
 cask "writerside" do
   arch arm: "-aarch64"
 
-  version "2023.2,232.10275"
-  sha256 arm:   "9e6eb279430b7f3b72353380ccbc0e8bb4a4fb5700d11a8cb47111596b734244",
-         intel: "73887fcac92018263ffe044a1f9c6307ae0b87193a2d65fec300fa22be636ba5"
+  version "2023.3,233.14389"
+  sha256 arm:   "c32976ad97d3ee2f9a3914b93ddeb6a3a8481d28620edea4081005150ffddc97",
+         intel: "33b677f0c4214b69b77288e6c8e4a951b3d9b1240d057d22634fbba0b8259a07"
 
   url "https://download.jetbrains.com/writerside/writerside-#{version.csv.second}#{arch}.dmg"
   name "Writerside"
@@ -23,15 +23,7 @@ cask "writerside" do
   depends_on macos: ">= :catalina"
 
   app "Writerside #{version.before_comma} EAP.app", target: "Writerside.app"
-
-  uninstall_postflight do
-    ENV["PATH"].split(File::PATH_SEPARATOR).map { |path| File.join(path, "writerside") }.each do |path|
-      if File.readable?(path) &&
-         File.readlines(path).grep(/# see com.intellij.idea.SocketLock for the server side of this interface/).any?
-        File.delete(path)
-      end
-    end
-  end
+  binary "#{appdir}/Writerside.app/Contents/MacOS/writerside"
 
   zap trash: [
     "~/Library/Application Support/JetBrains/Writerside#{version.major_minor}",

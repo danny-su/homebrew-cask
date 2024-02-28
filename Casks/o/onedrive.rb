@@ -1,6 +1,6 @@
 cask "onedrive" do
-  version "23.226.1031.0003"
-  sha256 "a6fe2903424c80fbbc81e8cb7b2a9814e715d8e63983f2d9fdecc5e4d1963000"
+  version "24.020.0128.0003"
+  sha256 "f8586b1d828298820d350208b827d23a189b7fb7984e649850e2fe49da66a5c8"
 
   url "https://oneclient.sfx.ms/Mac/Installers/#{version}/universal/OneDrive.pkg",
       verified: "oneclient.sfx.ms/Mac/Installers/"
@@ -22,8 +22,7 @@ cask "onedrive" do
 
   pkg "OneDrive.pkg"
 
-  uninstall pkgutil:   "com.microsoft.OneDrive",
-            launchctl: [
+  uninstall launchctl: [
               "com.microsoft.OneDriveStandaloneUpdater",
               "com.microsoft.OneDriveStandaloneUpdaterDaemon",
               "com.microsoft.OneDriveUpdaterDaemon",
@@ -34,12 +33,13 @@ cask "onedrive" do
               "com.microsoft.OneDrive.FinderSync",
               "com.microsoft.OneDriveUpdater",
             ],
+            pkgutil:   "com.microsoft.OneDrive",
             delete:    [
               "/Applications/OneDrive.app",
-              "/Library/Logs/Microsoft/OneDrive",
               "/Library/LaunchAgents/com.microsoft.OneDriveStandaloneUpdater.plist",
               "/Library/LaunchDaemons/com.microsoft.OneDriveStandaloneUpdaterDaemon.plist",
               "/Library/LaunchDaemons/com.microsoft.OneDriveUpdaterDaemon.plist",
+              "/Library/Logs/Microsoft/OneDrive",
             ]
 
   zap trash: [

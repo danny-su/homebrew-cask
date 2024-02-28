@@ -1,9 +1,9 @@
 cask "rubymine" do
   arch arm: "-aarch64"
 
-  version "2023.2.5,232.10227.6"
-  sha256 arm:   "6ea322efc386ddfc5c55f0edb13a4ddf9c7b6179f1d61050e5d29005437d6c2b",
-         intel: "fffb76d5eb545ccf95146d2435deaaab978dec4e564e099058116df5decc232b"
+  version "2023.3.4,233.14475.27"
+  sha256 arm:   "bbb442f4099567bbd632e9997385fde7ea844927458c9731a0e21aeb403092e8",
+         intel: "4527e537bf953d3c33de9d0cb8d2d566ef65fbe4234c7737bb82c1955c90e923"
 
   url "https://download.jetbrains.com/ruby/RubyMine-#{version.csv.first}#{arch}.dmg"
   name "RubyMine"
@@ -23,15 +23,7 @@ cask "rubymine" do
   depends_on macos: ">= :high_sierra"
 
   app "RubyMine.app"
-
-  uninstall_postflight do
-    ENV["PATH"].split(File::PATH_SEPARATOR).map { |path| File.join(path, "mine") }.each do |path|
-      if File.readable?(path) &&
-         File.readlines(path).grep(/# see com.intellij.idea.SocketLock for the server side of this interface/).any?
-        File.delete(path)
-      end
-    end
-  end
+  binary "#{appdir}/RubyMine.app/Contents/MacOS/rubymine"
 
   zap trash: [
     "~/Library/Application Support/RubyMine#{version.major_minor}",

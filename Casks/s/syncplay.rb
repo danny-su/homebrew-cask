@@ -9,7 +9,7 @@ cask "syncplay" do
   homepage "https://syncplay.pl/"
 
   livecheck do
-    url :stable
+    url :url
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
@@ -19,11 +19,11 @@ cask "syncplay" do
 
   zap trash: [
     "~/.syncplay",
-    "~/Library/Saved Application State/pl.syncplay.Syncplay.savedState",
-    "~/Library/Preferences/com.syncplay.MoreSettings.plist",
     "~/Library/Preferences/com.syncplay.Interface.plist",
     "~/Library/Preferences/com.syncplay.MainWindow.plist",
-    "~/Library/Preferences/pl.syncplay.Syncplay.plist",
+    "~/Library/Preferences/com.syncplay.MoreSettings.plist",
     "~/Library/Preferences/com.syncplay.PlayerList.plist",
+    "~/Library/Preferences/pl.syncplay.Syncplay.plist",
+    "~/Library/Saved Application State/pl.syncplay.Syncplay.savedState",
   ]
 end

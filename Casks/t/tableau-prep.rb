@@ -1,6 +1,6 @@
 cask "tableau-prep" do
-  version "2023.3.0"
-  sha256 "2eefa0dcc79cf91594505e10af9c3aa8f12cbbd12623c4a2da56578d43a0be95"
+  version "2024.1.0"
+  sha256 "b58010f6fc338b69bed7621f8c01790391eb6a986fc9c32d9f02173b1fe59ff4"
 
   url "https://downloads.tableau.com/esdalt/tableau_prep/#{version}/TableauPrep-#{version.dots_to_hyphens}.dmg"
   name "Tableau Prep"
@@ -32,7 +32,11 @@ cask "tableau-prep" do
     "simba.sparkodbc",
   ]
 
-  zap trash:  [
+  zap delete: [
+        "/Library/Application Support/Tableau Prep Builder",
+        "/Library/Preferences/FLEXnet Publisher",
+      ],
+      trash:  [
         "~/Documents/My Tableau Prep Repository",
         "~/Library/Application Support/Tableau Prep Builder #{version}",
         "~/Library/Caches/com.tableau.caching",
@@ -41,9 +45,5 @@ cask "tableau-prep" do
         "~/Library/Preferences/com.tableausoftware.tabminerva.plist",
         "~/Library/Saved Application State/com.tableausoftware.tableauprep.savedState",
         "~/Library/Tableau",
-      ],
-      delete: [
-        "/Library/Application Support/Tableau Prep Builder",
-        "/Library/Preferences/FLEXnet Publisher",
       ]
 end

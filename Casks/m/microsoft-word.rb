@@ -48,8 +48,8 @@ cask "microsoft-word" do
     end
   end
   on_monterey :or_newer do
-    version "16.79.23111614"
-    sha256 "895e77b5679314bc32fc6e0add7d9caafd425a26e0b278a8ff45ece51cf065e2"
+    version "16.82.24021116"
+    sha256 "c88d779c17f6a505d30b878c09ead12fdc675ac62c9bd25ed4481acc48c65e1e"
 
     livecheck do
       url "https://go.microsoft.com/fwlink/p/?linkid=525134"
@@ -78,12 +78,12 @@ cask "microsoft-word" do
         },
       ]
 
-  uninstall pkgutil:   [
+  uninstall launchctl: "com.microsoft.office.licensingV2.helper",
+            quit:      "com.microsoft.autoupdate2",
+            pkgutil:   [
               "com.microsoft.package.Microsoft_Word.app",
               "com.microsoft.pkg.licensing",
-            ],
-            launchctl: "com.microsoft.office.licensingV2.helper",
-            quit:      "com.microsoft.autoupdate2"
+            ]
 
   zap trash: [
     "~/Library/Application Scripts/com.microsoft.Word",

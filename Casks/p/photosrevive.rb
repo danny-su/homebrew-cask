@@ -1,10 +1,10 @@
 cask "photosrevive" do
-  version "2.1.2"
-  sha256 "b392343c63f5e399743145c9d6550c2fd5c18a5c792003bb0beb2e99d8284cac"
+  version "2.1.3"
+  sha256 "4f6e939449e9ffc5437c63b0d5410b5d4558843ab6e0f25968668ef6df4928b9"
 
   url "https://neededapps.com/appcasts/photosrevive/versions/#{version}"
   name "PhotosRevive"
-  desc "Colorise old black and white photos automatically"
+  desc "Colourise old black and white photos automatically"
   homepage "https://neededapps.com/photosrevive/"
 
   livecheck do

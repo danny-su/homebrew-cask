@@ -1,8 +1,8 @@
 cask "openinterminal-lite" do
-  version "1.2.5"
-  sha256 "2d2f7ab19bcd443fa533a294875a0e95333cca0a60707ac7226bcafaaae2972b"
+  version "1.2.6"
+  sha256 "8eaaf3052f704a4a6c7795227611f4a406ac80c60a37e936ff8ce19ca6f53e86"
 
-  url "https://github.com/Ji4n1ng/OpenInTerminal/releases/download/v#{version}/OpenInTerminal-Lite.app.zip"
+  url "https://github.com/Ji4n1ng/OpenInTerminal/releases/download/v#{version}/OpenInTerminal-Lite.zip"
   name "OpenInTerminal-Lite"
   desc "Finder Toolbar app to open the current directory in Terminal"
   homepage "https://github.com/Ji4n1ng/OpenInTerminal"

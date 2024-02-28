@@ -1,6 +1,6 @@
 cask "runjs" do
-  version "2.9.0"
-  sha256 "cc5821b98a9d846ce58ce7233836ed7d093a264ccaa9eedceffd528647bf0f7b"
+  version "2.11.0"
+  sha256 "a787f9a42a451584ffb7df39f993128d159debd3d48f163e9d3ffc42f98b3829"
 
   url "https://github.com/lukehaas/RunJS/releases/download/v#{version}/RunJS-#{version}-universal.dmg",
       verified: "github.com/lukehaas/RunJS/"

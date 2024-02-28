@@ -1,5 +1,5 @@
 cask "frhelper" do
-  version "4.5.4"
+  version "4.6.1"
   sha256 :no_check
 
   url "https://static.frdic.com/pkg/fhmac.dmg",
@@ -15,6 +15,7 @@ cask "frhelper" do
     strategy :sparkle, &:short_version
   end
 
+  auto_updates true
   depends_on macos: ">= :high_sierra"
 
   app "Frhelper.app"

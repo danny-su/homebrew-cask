@@ -19,24 +19,24 @@ cask "synology-drive" do
 
   pkg "Install Synology Drive Client.pkg"
 
-  uninstall quit:      [
-              "io.com.synology.CloudStationUI",
-              "com.synology.CloudStation",
-              "com.synology.CloudStationUI",
-              "com.synology.SynologyDrive.FinderHelper",
-            ],
-            pkgutil:   "com.synology.CloudStation",
-            launchctl: [
+  uninstall launchctl: [
               "application.com.synology.CloudStationUI*",
               "com.synology.Synology Cloud Station",
             ],
+            quit:      [
+              "com.synology.CloudStation",
+              "com.synology.CloudStationUI",
+              "com.synology.SynologyDrive.FinderHelper",
+              "io.com.synology.CloudStationUI",
+            ],
+            pkgutil:   "com.synology.CloudStation",
             delete:    "/Applications/Synology Drive Client.app"
 
   zap trash: [
     "~/Library/Application Scripts/com.synology.CloudStationUI.FileProvider",
     "~/Library/Application Scripts/com.synology.SynologyDrive.FinderHelper*",
     "~/Library/Application Scripts/group.com.synology.CloudStationUI",
-    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.synology.synologydrive.finderhelper.sfl2",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.synology.synologydrive.finderhelper.sfl*",
     "~/Library/Application Support/FileProvider/com.synology.CloudStationUI.FileProvider",
     "~/Library/Application Support/SynologyDrive",
     "~/Library/Containers/com.synology.CloudStationUI.FileProvider",

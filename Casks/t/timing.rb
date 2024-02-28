@@ -1,6 +1,6 @@
 cask "timing" do
-  version "2023.5.5"
-  sha256 "51eadb6aeb9f8a52869d0e3ba203835d30ed065efbf0ae60b26173860bba0056"
+  version "2024.1.7"
+  sha256 "b59f70ba488f16ec439f94d825eac6f787538bf76428d19e09844344c37061c4"
 
   url "https://updates.timingapp.com/download/Timing-#{version}.dmg"
   name "Timing"
@@ -29,8 +29,8 @@ cask "timing" do
     "~/Library/Application Support/info.eurocomp.TimingHelper",
     "~/Library/Application Support/info.eurocomp.TimingHelper.InfoExtractorService",
     "~/Library/Caches/info.eurocomp.Timing2",
-    "~/Library/Caches/info.eurocomp.TimingHelper.InfoExtractorService",
     "~/Library/Caches/info.eurocomp.TimingHelper",
+    "~/Library/Caches/info.eurocomp.TimingHelper.InfoExtractorService",
     "~/Library/Preferences/info.eurocomp.Timing2.plist",
     "~/Library/Preferences/info.eurocomp.TimingHelper.InfoExtractorService.plist",
     "~/Library/Preferences/info.eurocomp.TimingHelper.plist",

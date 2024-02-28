@@ -8,6 +8,8 @@ cask "steelseries-engine" do
   desc "Settings for SteelSeries peripherals and accessories"
   homepage "https://steelseries.com/engine"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   auto_updates true
   conflicts_with cask: "steelseries-gg"
   depends_on macos: ">= :sierra"
@@ -16,9 +18,9 @@ cask "steelseries-engine" do
 
   uninstall launchctl: "com.steelseries.SSENext",
             quit:      [
-              "com.steelseries.SteelSeries-Engine-#{version.major}",
               "com.steelseries.ssenext.client.*",
               "com.steelseries.ssenext.uninstaller",
+              "com.steelseries.SteelSeries-Engine-#{version.major}",
             ],
             kext:      "com.steelseries.ssenext.driver",
             script:    [
@@ -32,13 +34,9 @@ cask "steelseries-engine" do
     "~/Library/Application Support/steelseries-engine-#{version.major}-client",
     "~/Library/Caches/com.steelseries.SteelSeries-Engine-#{version.major}",
     "~/Library/Logs/SteelSeries Engine #{version.major} Client",
-    "~/Library/Preferences/com.steelseries.SteelSeries-Engine-#{version.major}.plist",
     "~/Library/Preferences/com.steelseries.ssenext.client.helper.plist",
     "~/Library/Preferences/com.steelseries.ssenext.client.plist",
+    "~/Library/Preferences/com.steelseries.SteelSeries-Engine-#{version.major}.plist",
     "~/Library/Saved Application State/com.steelseries.ssenext.client.savedState",
   ]
-
-  caveats do
-    discontinued
-  end
 end

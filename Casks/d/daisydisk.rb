@@ -1,10 +1,10 @@
 cask "daisydisk" do
-  version "4.25"
+  version "4.26"
   sha256 :no_check
 
   url "https://daisydiskapp.com/download/DaisyDisk.zip"
   name "DaisyDisk"
-  desc "Disk space visualizer"
+  desc "Disk space visualiser"
   homepage "https://daisydiskapp.com/"
 
   livecheck do
@@ -17,8 +17,8 @@ cask "daisydisk" do
 
   app "DaisyDisk.app"
 
-  uninstall delete:    "/Library/PrivilegedHelperTools/com.daisydiskapp.DaisyDiskAdminHelper",
-            launchctl: "com.daisydiskapp.DaisyDiskAdminHelper"
+  uninstall launchctl: "com.daisydiskapp.DaisyDiskAdminHelper",
+            delete:    "/Library/PrivilegedHelperTools/com.daisydiskapp.DaisyDiskAdminHelper"
 
   zap trash: [
     "~/Library/Application Support/DaisyDisk",

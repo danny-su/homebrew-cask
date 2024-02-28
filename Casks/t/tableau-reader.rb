@@ -1,10 +1,10 @@
 cask "tableau-reader" do
-  version "2023.3.0"
-  sha256 "1eacaf5f0e4d14d2391c1826d4241775cc9f0fba0b522d100ee843e8d423837e"
+  version "2024.1.0"
+  sha256 "ff53a2272a6c2f7a1514e8997f56f376937760e15491b52a899980d969a50239"
 
   url "https://downloads.tableau.com/tssoftware/TableauReader-#{version.dots_to_hyphens}.dmg"
   name "Tableau Reader"
-  desc "Open and interact with data visualizations built in Tableau Desktop"
+  desc "Open and interact with data visualisations built in Tableau Desktop"
   homepage "https://www.tableau.com/products/reader"
 
   livecheck do
@@ -25,12 +25,12 @@ cask "tableau-reader" do
     "com.tableausoftware.ReaderShortcuttab",
   ]
 
-  zap delete:  "/Library/Preferences/com.tableau.Tableau-Reader-*.plist",
-      pkgutil: [
+  zap pkgutil: [
         "com.tableausoftware.extensions",
         "com.tableausoftware.networkExtensions",
         "com.tableausoftware.telemetry",
       ],
+      delete:  "/Library/Preferences/com.tableau.Tableau-Reader-*.plist",
       trash:   [
         "~/Library/Caches/com.tableau.caching",
         "~/Library/Caches/com.tableausoftware.MapTiles",

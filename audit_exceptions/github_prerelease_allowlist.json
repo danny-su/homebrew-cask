@@ -2,7 +2,6 @@
   "altdeploy": "all",
   "bitbar": "all",
   "cleartext": "all",
-  "codux": "all",
   "comma-chameleon": "all",
   "crypter": "all",
   "drop-to-gif": "all",
@@ -31,6 +30,5 @@
   "strawberry-wallpaper": "all",
   "themeengine": "all",
   "universal-android-debloater": "all",
-  "xit": "all",
-  "ytmdesktop-youtube-music": "all"
+  "xit": "all"
 }

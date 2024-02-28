@@ -1,6 +1,6 @@
 cask "alacritty" do
-  version "0.12.3"
-  sha256 "7fc3220a3ad93ab2e555d2a9724506fc314ca4beaa81ce16e43cb3e9c06f1a93"
+  version "0.13.1"
+  sha256 "f6b9bcee5ff0e87ae80379c01c59dd4479670c3c628f6759909cb447f6dd5e98"
 
   url "https://github.com/alacritty/alacritty/releases/download/v#{version}/Alacritty-v#{version}.dmg"
   name "Alacritty"
@@ -25,7 +25,9 @@ cask "alacritty" do
   binary "Alacritty.app/Contents/Resources/61/alacritty-direct",
          target: "#{ENV.fetch("TERMINFO", "~/.terminfo")}/61/alacritty-direct"
   manpage "Alacritty.app/Contents/Resources/alacritty.1.gz"
+  manpage "Alacritty.app/Contents/Resources/alacritty.5.gz"
   manpage "Alacritty.app/Contents/Resources/alacritty-msg.1.gz"
+  manpage "Alacritty.app/Contents/Resources/alacritty-bindings.5.gz"
 
   zap trash: [
     "~/Library/Preferences/io.alacritty.plist",

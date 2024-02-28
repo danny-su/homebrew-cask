@@ -1,8 +1,8 @@
 cask "openinterminal" do
-  version "2.3.6"
-  sha256 "11af1d2367e966dc4ea829cbf39cc7c869af50d687708600b188024539180ec8"
+  version "2.3.7"
+  sha256 "ef864967b3ba118ec4caf5a0e1e571ac88fb350678862653a3732ed6e5f2faec"
 
-  url "https://github.com/Ji4n1ng/OpenInTerminal/releases/download/v#{version}/OpenInTerminal.app.zip"
+  url "https://github.com/Ji4n1ng/OpenInTerminal/releases/download/v#{version}/OpenInTerminal.zip"
   name "OpenInTerminal"
   desc "Finder Toolbar app to open the current directory in Terminal or Editor"
   homepage "https://github.com/Ji4n1ng/OpenInTerminal"

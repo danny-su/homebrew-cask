@@ -1,5 +1,5 @@
 cask "jabra-direct" do
-  version "6.12.30302"
+  version "6.13.01801"
   sha256 :no_check
 
   url "https://jabraxpressonlineprdstor.blob.core.windows.net/jdo/JabraDirectSetup.dmg",
@@ -25,17 +25,17 @@ cask "jabra-direct" do
               "com.jabra.softphoneService",
               "nl.superalloy.oss.terminal-notifier",
             ],
-            delete:     "/Applications/Jabra Direct.app",
             login_item: "Jabra Direct",
             pkgutil:    [
               "com.jabra.directonline",
               "com.jabra.JabraFirmwareUpdate",
               "com.jabra.kext",
-            ]
+            ],
+            delete:     "/Applications/Jabra Direct.app"
 
   zap trash: [
-    "~/Library/Application Support/Jabra",
     "~/Library/Application Support/Jabra Direct",
+    "~/Library/Application Support/Jabra",
     "~/Library/Application Support/JabraSDK",
     "~/Library/Logs/Jabra Direct",
     "~/Library/Preferences/com.jabra.directonline.helper.plist",

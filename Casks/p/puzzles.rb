@@ -1,10 +1,10 @@
 cask "puzzles" do
-  version "20231120"
+  version "20240103"
   sha256 :no_check
 
   url "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/Puzzles.dmg"
   name "Simon Tatham's Portable Puzzle Collection"
-  desc "Collection of small computer programs which implement one-player puzzle games"
+  desc "Collection of small computer programmes which implement one-player puzzle games"
   homepage "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/"
 
   livecheck do

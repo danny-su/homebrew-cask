@@ -1,17 +1,19 @@
 cask "foxglove-studio" do
-  version "1.79.0"
-  sha256 "b492b74904997dc09a250f0b2d465b2450336b26564e67063aa3920ea00d7f8c"
+  version "1.87.0"
+  sha256 "331b202ced0aa987792b5652662209e7b341f4e18bb1c7a5ed47836259fad2c3"
 
   url "https://github.com/foxglove/studio/releases/download/v#{version}/foxglove-studio-#{version}-mac-universal.dmg",
       verified: "github.com/foxglove/studio/"
   name "Foxglove Studio"
-  desc "Visualization and debugging tool for robotics"
+  desc "Visualisation and debugging tool for robotics"
   homepage "https://foxglove.dev/"
 
   livecheck do
     url :url
     strategy :github_latest
   end
+
+  depends_on macos: ">= :catalina"
 
   app "Foxglove Studio.app"
 

@@ -1,6 +1,6 @@
 cask "picoscope" do
-  version "7.1.13.17054"
-  sha256 "f26ddf6056f43cfae6507dd1b761921b3636034ced5c5e3946f4e2bb8c882ccc"
+  version "7.1.21.18179"
+  sha256 "aaab107b5b02ecab423e636bf5045f32c0931f1beddb6ff71a5f8bd1d851a47f"
 
   url "https://www.picotech.com/download/software/sr/PicoScope_#{version}_TandM_Stable.pkg"
   name "PicoScope"
@@ -12,7 +12,8 @@ cask "picoscope" do
     regex(%r{href=.*?/PicoScope[._-]v?(\d+(?:.\d+)+)[._-]T(?:and|n)M[._-]Stable\.pkg}i)
   end
 
-  conflicts_with cask: "homebrew/cask-versions/picoscope-beta"
+  conflicts_with cask: "picoscope-beta"
+  depends_on macos: ">= :high_sierra"
 
   pkg "PicoScope_#{version}_TandM_Stable.pkg"
 
@@ -22,4 +23,8 @@ cask "picoscope" do
     "~/.local/share/Pico Technology",
     "~/Library/Saved Application State/com.picotech.picoscope#{version.major}.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

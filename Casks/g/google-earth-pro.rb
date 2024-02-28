@@ -1,5 +1,5 @@
 cask "google-earth-pro" do
-  version "7.3.6.9345"
+  version "7.3.6.9796"
   sha256 :no_check # required as upstream package is updated in-place
 
   url "https://dl.google.com/dl/earth/client/advanced/current/googleearthpromac-intel-#{version.major_minor_patch}.dmg"
@@ -20,19 +20,19 @@ cask "google-earth-pro" do
   # pkgutil: com.google.pkg.Keystone
   uninstall pkgutil:  "com.Google.GoogleEarthPro"
 
-  zap trash:     [
+  zap launchctl: [
+        "com.google.keystone.agent",
+        "com.google.keystone.daemon",
+        "com.google.keystone.system.agent",
+        "com.google.keystone.system.xpcservice",
+        "com.google.keystone.xpcservice",
+      ],
+      pkgutil:   "com.google.pkg.Keystone",
+      trash:     [
         "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.google.googleearthpro.sfl*",
         "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.google.googleearthupdatehelper.sfl*",
         "~/Library/Application Support/Google Earth",
-        "~/Library/Caches/Google Earth",
         "~/Library/Caches/com.Google.GoogleEarthPro",
-      ],
-      launchctl: [
-        "com.google.keystone.agent",
-        "com.google.keystone.system.agent",
-        "com.google.keystone.daemon",
-        "com.google.keystone.xpcservice",
-        "com.google.keystone.system.xpcservice",
-      ],
-      pkgutil:   "com.google.pkg.Keystone"
+        "~/Library/Caches/Google Earth",
+      ]
 end

@@ -1,6 +1,6 @@
 cask "virtual-desktop-streamer" do
-  version "1.29.0"
-  sha256 "dc40150544462e41ea9a17c538f86f297d0e4a4e10c6ed4e069380d59301aa35"
+  version "1.30.1"
+  sha256 "40262a980748d75b6ff616d55af96840f01c16c4393298086b0d8c9c25fc9dc3"
 
   url "https://github.com/guygodin/VirtualDesktop/releases/download/v#{version}/VirtualDesktop.Streamer.Setup.dmg",
       verified: "github.com/guygodin/VirtualDesktop/"
@@ -21,25 +21,24 @@ cask "virtual-desktop-streamer" do
     ohai "The Virtual Desktop package postinstall script launches the Streamer app" if retries >= 3
     ohai "Attempting to close the Streamer app to avoid unwanted user intervention" if retries >= 3
     return unless system_command "/usr/bin/pkill", args: ["-f", "/Applications/Virtual Desktop Streamer.app"]
-
   rescue RuntimeError
     sleep 1
     retry unless (retries -= 1).zero?
     opoo "Unable to forcibly close Virtual Desktop Streamer"
   end
 
-  uninstall quit:      "com.virtualDesktopInc.Mac.Streamer",
+  uninstall launchctl: [
+              "com.VirtualDesktop.autoinstall",
+              "com.VirtualDesktop.launch",
+              "com.VirtualDesktop.uninstall",
+            ],
+            quit:      "com.virtualDesktopInc.Mac.Streamer",
             pkgutil:   [
               "com.VirtualDesktop.AudioDriver",
               "com.VirtualDesktop.Libs",
               "com.VirtualDesktop.MicDriver",
               "com.VirtualDesktop.VirtualDesktop",
               "com.VirtualDesktop.VirtualDesktopUpdater",
-            ],
-            launchctl: [
-              "com.VirtualDesktop.autoinstall",
-              "com.VirtualDesktop.launch",
-              "com.VirtualDesktop.uninstall",
             ],
             delete:    "/usr/local/bin/virtualdesktop/"
 

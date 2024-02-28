@@ -1,11 +1,11 @@
 cask "krisp" do
   arch arm: "arm64", intel: "x64"
 
-  version "2.28.5"
-  sha256 arm:   "94cb614861eeb933923d8146e8f8673af860356ffc146508a068e72a2d855b0d",
-         intel: "b16a86c0c1280b2dd49f3cc7a261afb1a50ef6b82c469cf66911fb594d005deb"
+  version "2.33.4"
+  sha256 arm:   "da3224a99296ff78648809ed98db6c9c083764f5e2bd1d71e8e2c91c18a6c05f",
+         intel: "81d41d89ddcbbc65137eb3c88096293c6c78662a5db5df75704aa69c0579e5fd"
 
-  url "https://cdn.krisp.ai/mp/#{version}/mac/krisp_#{version}_#{arch}.pkg"
+  url "https://cdn.krisp.ai/mp/#{version}/mac/Krisp_#{version}_#{arch}.pkg"
   name "Krisp"
   desc "Noise cancelling application"
   homepage "https://krisp.ai/"
@@ -20,11 +20,11 @@ cask "krisp" do
 
   pkg "krisp_#{version}_#{arch}.pkg"
 
-  uninstall quit:      "ai.krisp.krispMac",
-            launchctl: [
+  uninstall launchctl: [
               "ai.krisp.krispMac*",
               "krisp",
             ],
+            quit:      "ai.krisp.krispMac",
             pkgutil:   "ai.krisp.krispMac*",
             delete:    "/Applications/krisp.app"
 

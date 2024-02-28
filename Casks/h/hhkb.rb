@@ -17,14 +17,14 @@ cask "hhkb" do
 
   pkg "HHKBkeymapTool_#{version.no_dots}ma.pkg"
 
-  uninstall pkgutil: "jp.co.pfu.hhkb-keymap-tool.pkg.V#{version}",
-            quit:    "jp.co.pfu.hhkb-keymap-tool",
+  uninstall quit:    "jp.co.pfu.hhkb-keymap-tool",
+            pkgutil: "jp.co.pfu.hhkb-keymap-tool.pkg.V#{version}",
             delete:  [
-              "#{appdir}/hhkb-keymap-tool*",
-              "#{appdir}/HHKB/EULA_*.rtf",
-              "#{appdir}/HHKB/OSS_License.txt",
+              "/Applications/hhkb-keymap-tool*",
+              "/Applications/HHKB/EULA_*.rtf",
+              "/Applications/HHKB/OSS_License.txt",
             ],
-            rmdir:   "#{appdir}/HHKB"
+            rmdir:   "/Applications/HHKB"
 
   zap trash: [
         "~/Library/Application Support/hhkb-keymap-tool/*.log",

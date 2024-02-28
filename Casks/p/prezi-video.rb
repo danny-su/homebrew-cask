@@ -1,6 +1,6 @@
 cask "prezi-video" do
-  version "2.23.0"
-  sha256 "9b4f651553875d2c7051ce77aed56cc45b501424336b07d7d8f1c480a34a3481"
+  version "2.24.1"
+  sha256 "9a484a2ad6c467a763bd890c3987935413c991bf987f24160090f74b3d9abe3b"
 
   url "https://desktopassets.prezi.com/mac/prezi-video/releases/Prezi_Video_#{version}.zip"
   name "Prezi Video"
@@ -17,8 +17,8 @@ cask "prezi-video" do
 
   pkg "Prezi_Video.pkg"
 
-  uninstall quit:      "com.prezi.PreziCast",
-            launchctl: "com.prezi.prezivideo.vcam.assistant",
+  uninstall launchctl: "com.prezi.prezivideo.vcam.assistant",
+            quit:      "com.prezi.PreziCast",
             pkgutil:   [
               "com.prezi.PreziCast",
               "com.prezi.prezivideo.vcam.plugin",

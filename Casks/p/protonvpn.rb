@@ -1,6 +1,6 @@
 cask "protonvpn" do
-  version "4.0.1"
-  sha256 "197b3c0bb5e0527c4a1fa0421f7ae1adac90682aaab23bff4282ee89aa9c1285"
+  version "4.1.6"
+  sha256 "f481e268bc3038861296417c185e8e840bb39b3cd3e292c9675e494f0f9ab1fa"
 
   url "https://protonvpn.com/download/ProtonVPN_mac_v#{version}.dmg"
   name "ProtonVPN"
@@ -21,13 +21,13 @@ cask "protonvpn" do
             quit:      "ch.protonvpn.mac"
 
   zap trash: [
-    "~/Library/Application Scripts/ch.protonvpn.ProtonVPNStarter",
     "~/Library/Application Scripts/ch.protonvpn.mac",
+    "~/Library/Application Scripts/ch.protonvpn.ProtonVPNStarter",
     "~/Library/Application Support/CrashReporter/ProtonVPN*",
     "~/Library/Application Support/ProtonVPN",
-    "~/Library/Caches/SentryCrash/ProtonVPN",
     "~/Library/Caches/ch.protonvpn.mac",
     "~/Library/Caches/com.apple.nsurlsessiond/Downloads/ch.protonvpn.mac",
+    "~/Library/Caches/SentryCrash/ProtonVPN",
     "~/Library/Containers/ch.protonvpn.*",
     "~/Library/Cookies/ch.protonvpn.mac.binarycookies",
     "~/Library/Logs/ProtonVPN.log",

@@ -18,20 +18,20 @@ cask "nordlocker" do
 
   pkg "NordLocker.pkg"
 
-  uninstall quit:       [
-              "com.nordlocker.macos",
-              "com.nordlocker.macos.launcher",
-            ],
-            launchctl:  [
+  uninstall launchctl:  [
               "com.nordlocker.macos.launcher",
               "com.nordlocker.nordfs.Mounter.Helper",
             ],
-            delete:     "/Library/PrivilegedHelperTools/com.nordlocker.nordfs.Mounter.Helper",
+            quit:       [
+              "com.nordlocker.macos",
+              "com.nordlocker.macos.launcher",
+            ],
             login_item: "NordLocker",
-            pkgutil:    "com.nordlocker.macos"
+            pkgutil:    "com.nordlocker.macos",
+            delete:     "/Library/PrivilegedHelperTools/com.nordlocker.nordfs.Mounter.Helper"
 
   zap trash: [
-    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.nordlocker.macos.sfl2",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.nordlocker.macos.sfl*",
     "~/Library/Caches/com.nordlocker.macos",
     "~/Library/Cookies/com.nordlocker.macos.binarycookies",
     "~/Library/Preferences/com.nordlocker.macos.plist",

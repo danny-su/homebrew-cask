@@ -1,6 +1,6 @@
 cask "busycal" do
-  version "2023.4.4,2023-11-12-21-33"
-  sha256 "a517fd7328c98dea58fafb618cf9c1bb028930bce116b267ca7d46cb1937c9c7"
+  version "2024.1.2,2024-02-25-00-01"
+  sha256 "bcc4201df8a9d505fd6b2c816bbf84f55cb14fa6b4551ec7b947ec51ac38f040"
 
   url "https://7e968b6ce8a839f034d9-23cfb9eddcb7b94cb43ba95f95a76900.ssl.cf1.rackcdn.com/bcl-#{version.csv.first}-#{version.csv.second}.zip",
       verified: "7e968b6ce8a839f034d9-23cfb9eddcb7b94cb43ba95f95a76900.ssl.cf1.rackcdn.com/"
@@ -24,9 +24,9 @@ cask "busycal" do
   pkg "BusyCal Installer.pkg"
 
   uninstall launchctl: "N4RA379GBW.com.busymac.busycal3.alarm",
-            pkgutil:   "com.busymac.busycal3.pkg",
             quit:      "N4RA379GBW.com.busymac.busycal3.alarm",
             signal:    ["TERM", "com.busymac.busycal3"],
+            pkgutil:   "com.busymac.busycal3.pkg",
             delete:    "/Applications/BusyCal.app"
 
   zap trash: [

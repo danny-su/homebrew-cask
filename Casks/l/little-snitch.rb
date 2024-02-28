@@ -1,6 +1,6 @@
 cask "little-snitch" do
-  version "5.7.1"
-  sha256 "319198912db30503461673542da32e5bfe6607834a735590ef9268842414bdb3"
+  version "5.7.3"
+  sha256 "45370c58b461ab5a631e3739d441fd542b4d47cdbb09cb4d63d221fc0ac74180"
 
   url "https://www.obdev.at/downloads/littlesnitch/LittleSnitch-#{version}.dmg"
   name "Little Snitch"
@@ -20,8 +20,10 @@ cask "little-snitch" do
   zap trash: [
         "/Library/Application Support/Objective Development/Little Snitch",
         "/Library/Caches/at.obdev.LittleSnitchConfiguration",
+        "/Library/Extensions/LittleSnitch.kext",
         "/Library/Little Snitch",
         "/Library/Logs/LittleSnitchDaemon.log",
+        "/Library/StagedExtensions/Library/Extensions/LittleSnitch.kext",
         "~/Library/Application Support/Little Snitch",
         "~/Library/Caches/at.obdev.LittleSnitchAgent",
         "~/Library/Caches/at.obdev.LittleSnitchConfiguration",
@@ -40,9 +42,6 @@ cask "little-snitch" do
         "~/Library/Preferences/at.obdev.LittleSnitchSoftwareUpdate.plist",
         "~/Library/Saved Application State/at.obdev.LittleSnitchInstaller.savedState",
         "~/Library/WebKit/at.obdev.LittleSnitchConfiguration",
-        # These kext's should not be uninstalled by Cask
-        "/Library/Extensions/LittleSnitch.kext",
-        "/Library/StagedExtensions/Library/Extensions/LittleSnitch.kext",
       ],
       rmdir: "/Library/Application Support/Objective Development"
 end

@@ -1,6 +1,6 @@
 cask "bluebubbles" do
-  version "1.9.1"
-  sha256 "11a3fd6c96a0fc8a9ba8264da16e4995915d995808d9279531e11c960afc397c"
+  version "1.9.5"
+  sha256 "df2c70c51a6845b7706ce465aa7e0910c023aba23cf8af891e040a254306f788"
 
   url "https://github.com/BlueBubblesApp/bluebubbles-server/releases/download/v#{version}/BlueBubbles-#{version}.dmg",
       verified: "github.com/BlueBubblesApp/bluebubbles-server/"
@@ -18,7 +18,6 @@ cask "bluebubbles" do
   app "BlueBubbles.app"
 
   uninstall launchctl:  "com.BlueBubbles.BlueBubbles-Server.ShipIt",
-            login_item: "BlueBubbles",
             quit:       [
               "com.BlueBubbles.BlueBubbles-Server",
               "com.BlueBubbles.BlueBubbles-Server.helper",
@@ -26,7 +25,8 @@ cask "bluebubbles" do
               "com.BlueBubbles.BlueBubbles-Server.helper.Plugin",
               "com.BlueBubbles.BlueBubbles-Server.helper.Renderer",
               "com.bluebubbles.messaging",
-            ]
+            ],
+            login_item: "BlueBubbles"
 
   zap trash: [
     "~/Library/Application Support/@bluebubbles",

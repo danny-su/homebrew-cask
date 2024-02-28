@@ -1,5 +1,5 @@
 cask "safeincloud-password-manager" do
-  version "22.3.7,2203007"
+  version "24.4.4,2404004"
   sha256 :no_check
 
   url "https://www.safe-in-cloud.com/download/SafeInCloud.dmg"
@@ -13,4 +13,11 @@ cask "safeincloud-password-manager" do
   end
 
   app "SafeInCloud Password Manager.app"
+
+  zap trash: [
+    "~/Library/Application Scripts/com.safeincloud.Safe-In-Cloud.OSX",
+    "~/Library/Application Scripts/com.safeincloud.Safe-In-Cloud.OSX.Safari-Extension",
+    "~/Library/Containers/com.safeincloud.Safe-In-Cloud.OSX",
+    "~/Library/Containers/com.safeincloud.Safe-In-Cloud.OSX.Safari-Extension",
+  ]
 end

@@ -1,6 +1,6 @@
 cask "busycontacts" do
-  version "2023.3.1,2023-10-09-20-25"
-  sha256 "04e074c1bcd4b1293d1fa7941d2c207cc0124bd692b6968434bea1f8158cf7d4"
+  version "2024.1.2,2024-02-15-01-15"
+  sha256 "54f1a92915549416da37e5ce6e7bad51dd78a54cf4f6439664f6873af8f36018"
 
   url "https://7e968b6ce8a839f034d9-23cfb9eddcb7b94cb43ba95f95a76900.ssl.cf1.rackcdn.com/bct-#{version.csv.first}-#{version.csv.second}.zip",
       verified: "7e968b6ce8a839f034d9-23cfb9eddcb7b94cb43ba95f95a76900.ssl.cf1.rackcdn.com/"
@@ -22,9 +22,9 @@ cask "busycontacts" do
 
   pkg "BusyContacts Installer.pkg"
 
-  uninstall pkgutil: "com.busymac.busycontacts.pkg",
-            quit:    "com.busymac.busycontacts",
-            signal:  ["KILL", "com.busymac.busycontacts"]
+  uninstall quit:    "com.busymac.busycontacts",
+            signal:  ["KILL", "com.busymac.busycontacts"],
+            pkgutil: "com.busymac.busycontacts.pkg"
 
   zap trash: [
     "~/Library/Application Scripts/com.busymac.busycontacts",

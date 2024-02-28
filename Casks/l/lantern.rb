@@ -1,5 +1,5 @@
 cask "lantern" do
-  version "7.6.15"
+  version "7.8.0"
   sha256 :no_check
 
   url "https://s3.amazonaws.com/lantern/lantern-installer.dmg",
@@ -20,8 +20,8 @@ cask "lantern" do
 
   app "Lantern.app"
 
-  uninstall quit:      "com.getlantern.lantern",
-            launchctl: "org.getlantern"
+  uninstall launchctl: "org.getlantern",
+            quit:      "com.getlantern.lantern"
 
   zap trash: [
     "~/Library/Application Support/Lantern",

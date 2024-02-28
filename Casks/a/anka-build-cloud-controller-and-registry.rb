@@ -16,6 +16,8 @@ cask "anka-build-cloud-controller-and-registry" do
     strategy :header_match
   end
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   pkg "AnkaControllerRegistry#{arch}-#{version}.pkg"
 
   uninstall script: {
@@ -29,5 +31,11 @@ cask "anka-build-cloud-controller-and-registry" do
 
   caveats do
     license "https://veertu.com/terms-and-conditions/"
+
+    <<~EOS
+      This package has been replaced with two separate packages and will eventually be removed. For more information, please see
+
+      https://docs.veertu.com/anka/anka-build-cloud/release-notes/#1400-1400-95a63938---december-6th-2023
+    EOS
   end
 end

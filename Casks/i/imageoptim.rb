@@ -4,7 +4,7 @@ cask "imageoptim" do
 
   url "https://imageoptim.com/ImageOptim#{version}.tar.xz"
   name "ImageOptim"
-  desc "Tool to optimize images to a smaller size"
+  desc "Tool to optimise images to a smaller size"
   homepage "https://imageoptim.com/mac"
 
   livecheck do
@@ -18,8 +18,8 @@ cask "imageoptim" do
   app "ImageOptim.app"
 
   zap trash: [
-    "~/Library/Caches/net.pornel.ImageOptim",
     "~/Library/Caches/ImageOptimResults.db",
+    "~/Library/Caches/net.pornel.ImageOptim",
     "~/Library/Preferences/net.pornel.ImageOptim.plist",
     "~/Library/Saved Application State/net.pornel.ImageOptim.savedState",
   ]

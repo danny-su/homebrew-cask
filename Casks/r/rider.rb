@@ -1,9 +1,9 @@
 cask "rider" do
   arch arm: "-aarch64"
 
-  version "2023.2.3,232.10203.29"
-  sha256 arm:   "dbc961f62ac93851478baf48c37337debb3d0174e62916ed108f105280089247",
-         intel: "362fe0a241d082848925e65d8728e9d3e104b950861b0835c5cc6286656f8ff8"
+  version "2023.3.3,233.14015.60"
+  sha256 arm:   "2d6d425610a8d14616cf9a18a0048d678164fcc45f4f5a8ee3fff695012a0c43",
+         intel: "a90346a30523eaa2e3abf57abd3949f46e0c6e6d2ea0c62c36d40b07061626cb"
 
   url "https://download.jetbrains.com/rider/JetBrains.Rider-#{version.csv.first}#{arch}.dmg"
   name "JetBrains Rider"
@@ -23,15 +23,7 @@ cask "rider" do
   depends_on macos: ">= :high_sierra"
 
   app "Rider.app"
-
-  uninstall_postflight do
-    ENV["PATH"].split(File::PATH_SEPARATOR).map { |path| File.join(path, "rider") }.each do |path|
-      if File.readable?(path) &&
-         File.readlines(path).grep(/# see com.intellij.idea.SocketLock for the server side of this interface/).any?
-        File.delete(path)
-      end
-    end
-  end
+  binary "#{appdir}/Rider.app/Contents/MacOS/rider"
 
   zap trash: [
     "~/Library/Application Support/Rider#{version.major_minor}",

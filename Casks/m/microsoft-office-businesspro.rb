@@ -1,6 +1,6 @@
 cask "microsoft-office-businesspro" do
-  version "16.79.23111019"
-  sha256 "162b27686d0e23d68395581aa11ece6f17a0a7889367cfb78d16c38a0cc980ef"
+  version "16.82.24021116"
+  sha256 "268ccc614a366676d6999cea09d66697762560865a7f2921ab549123ae437167"
 
   url "https://officecdnmac.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/Microsoft_365_and_Office_#{version}_BusinessPro_Installer.pkg"
   name "Microsoft Office BusinessPro"
@@ -21,9 +21,9 @@ cask "microsoft-office-businesspro" do
     microsoft-outlook
     microsoft-powerpoint
     microsoft-teams
+    microsoft-teams-classic
     microsoft-word
     onedrive
-    homebrew/cask-versions/microsoft-teams-classic
   ]
   depends_on cask: "microsoft-auto-update"
   depends_on macos: ">= :monterey"
@@ -37,7 +37,17 @@ cask "microsoft-office-businesspro" do
         },
       ]
 
-  uninstall pkgutil:   [
+  uninstall launchctl: [
+              "com.microsoft.office.licensing.helper",
+              "com.microsoft.office.licensingV2.helper",
+              "com.microsoft.OneDriveStandaloneUpdater",
+              "com.microsoft.OneDriveStandaloneUpdaterDaemon",
+              "com.microsoft.OneDriveUpdaterDaemon",
+              "com.microsoft.SyncReporter",
+              "com.microsoft.teams.TeamsUpdaterDaemon",
+            ],
+            quit:      "com.microsoft.autoupdate2",
+            pkgutil:   [
               "com.microsoft.MSTeamsAudioDevice",
               "com.microsoft.OneDrive",
               "com.microsoft.package.DFonts",
@@ -53,7 +63,6 @@ cask "microsoft-office-businesspro" do
               "com.microsoft.teams",
               "com.microsoft.wdav",
             ],
-            # Frameworks, DFonts and ProofingTools remain in each application after pkg uninstall, delete them
             delete:    [
               "/Applications/Microsoft Defender.app",
               "/Applications/Microsoft Excel.app",
@@ -63,17 +72,7 @@ cask "microsoft-office-businesspro" do
               "/Applications/Microsoft Teams.app",
               "/Applications/Microsoft Word.app",
               "/Applications/OneDrive.app",
-            ],
-            launchctl: [
-              "com.microsoft.office.licensing.helper",
-              "com.microsoft.office.licensingV2.helper",
-              "com.microsoft.OneDriveStandaloneUpdater",
-              "com.microsoft.OneDriveStandaloneUpdaterDaemon",
-              "com.microsoft.OneDriveUpdaterDaemon",
-              "com.microsoft.SyncReporter",
-              "com.microsoft.teams.TeamsUpdaterDaemon",
-            ],
-            quit:      "com.microsoft.autoupdate2"
+            ]
 
   zap trash: [
     "~/Library/Application Scripts/com.microsoft.errorreporting",

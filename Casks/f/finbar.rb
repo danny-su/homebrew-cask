@@ -1,6 +1,6 @@
 cask "finbar" do
-  version "1.11.1"
-  sha256 "afc985f1f968650548c5704bb5e12139f6a4add6165bbd94947ff5e9d0cd0367"
+  version "1.12.3"
+  sha256 "558139eb1a6685a01f1edbde0ef0af263f118b5a9f97a23a218359ab4c9cb0c7"
 
   url "https://f002.backblazeb2.com/file/roeybiran/finbar/Finbar%20#{version}.dmg",
       verified: "f002.backblazeb2.com/file/roeybiran/finbar/"

@@ -1,11 +1,11 @@
 cask "sameboy" do
-  version "0.15.8"
-  sha256 "8df3df469868f77777bc1776f15e95085f0256bec891cf65c5918c01cb16611f"
+  version "0.16.2"
+  sha256 "158243fc604409d719c1c88aeb0c4aaad09a4c17cdb4da0429ba0a4bdb212ac3"
 
   url "https://github.com/LIJI32/SameBoy/releases/download/v#{version}/sameboy_cocoa_v#{version}.zip",
       verified: "github.com/LIJI32/SameBoy/"
   name "SameBoy"
-  desc "Game Boy and Game Boy Color emulator written in C"
+  desc "Game Boy and Game Boy Color emulator"
   homepage "https://sameboy.github.io/"
 
   livecheck do
@@ -18,7 +18,7 @@ cask "sameboy" do
   app "SameBoy.app"
 
   zap trash: [
-    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.github.liji32.sameboy.sfl2",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.github.liji32.sameboy.sfl*",
     "~/Library/Caches/com.github.liji32.sameboy",
     "~/Library/Preferences/com.github.liji32.sameboy.plist",
     "~/Library/Saved Application State/com.github.liji32.sameboy.savedState",

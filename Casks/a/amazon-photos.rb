@@ -19,16 +19,16 @@ cask "amazon-photos" do
     args:       ["--quiet"],
   }
 
-  uninstall quit:      "com.amazon.clouddrive.mac",
-            delete:    "/Applications/Amazon Photos.app",
-            launchctl: "com.amazon.clouddrive"
+  uninstall launchctl: "com.amazon.clouddrive",
+            quit:      "com.amazon.clouddrive.mac",
+            delete:    "/Applications/Amazon Photos.app"
 
   zap trash: [
     "~/Library/Application Scripts/Amazon Cloud Drive",
     "~/Library/Application Support/Amazon Cloud Drive",
     "~/Library/Application Support/Amazon Drive",
-    "~/Library/Caches/com.amazon.clouddrive.mac.installer",
     "~/Library/Caches/com.amazon.clouddrive.mac",
+    "~/Library/Caches/com.amazon.clouddrive.mac.installer",
     "~/Library/Cookies/com.amazon.clouddrive.mac.binarycookies",
     "~/Library/Logs/Amazon Cloud Drive",
     "~/Library/Logs/Amazon Drive",

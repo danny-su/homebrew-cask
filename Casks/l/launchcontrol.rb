@@ -8,8 +8,8 @@ cask "launchcontrol" do
     end
   end
   on_big_sur :or_newer do
-    version "2.5.1"
-    sha256 "b8d4fd51544616ead0fc5103350a3a70a988047736eff6043be11d1fe841f7d8"
+    version "2.5.3"
+    sha256 "fbf8e3dad5ef7e13b39c5e0b1b2b8bddb0c45f93aa1a2882a094738a6862267e"
 
     livecheck do
       url "https://www.soma-zone.com/LaunchControl/a/appcast-update-#{version.major}.xml"
@@ -29,14 +29,14 @@ cask "launchcontrol" do
   app "LaunchControl.app"
   binary "#{appdir}/LaunchControl.app/Contents/MacOS/fdautil"
 
-  uninstall delete:    "/Library/PrivilegedHelperTools/com.soma-zone.LaunchControl.Helper",
-            launchctl: "com.soma-zone.LaunchControl.Helper",
+  uninstall launchctl: "com.soma-zone.LaunchControl.Helper",
             quit:      [
               "com.soma-zone.JobWatch",
               "com.soma-zone.LaunchControl",
               "com.soma-zone.LicenseWindow",
               "com.soma-zone.QuickLaunch",
-            ]
+            ],
+            delete:    "/Library/PrivilegedHelperTools/com.soma-zone.LaunchControl.Helper"
 
   zap trash: [
     "~/Library/Application Support/LaunchControl",

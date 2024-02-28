@@ -1,6 +1,6 @@
 cask "prizmo" do
-  version "4.5.1"
-  sha256 "9419e5cd1764d2be91f0c25b2d22b14db6965ed7caea99caafea86ae8077c415"
+  version "4.6.1"
+  sha256 "8e92a1861872c655fb3be22a3ffb96d755d54e18571d2e3553c451368b6261cc"
 
   url "https://creaceed.s3.amazonaws.com/downloads/prizmo#{version.major}_#{version}.zip",
       verified: "creaceed.s3.amazonaws.com/downloads/"
@@ -14,14 +14,14 @@ cask "prizmo" do
   end
 
   auto_updates true
-  depends_on macos: ">= :high_sierra"
+  depends_on macos: ">= :catalina"
 
   app "Prizmo.app"
 
   zap trash: [
     "~/Library/Application Scripts/62UF8HAVJA.com.creaceed.prizmo",
     "~/Library/Application Scripts/com.creaceed.*",
-    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.creaceed.prizmo2.sfl2",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.creaceed.prizmo2.sfl*",
     "~/Library/Containers/com.creaceed.prizmo*",
     "~/Library/Group Containers/62UF8HAVJA.com.creaceed.prizmo",
   ]

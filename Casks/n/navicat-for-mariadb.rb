@@ -1,8 +1,8 @@
 cask "navicat-for-mariadb" do
-  version "16.3.2"
+  version "16.3.6"
   sha256 :no_check
 
-  url "https://download.navicat.com/download/navicat#{version.major_minor.no_dots}_mariadb_en.dmg"
+  url "https://dn.navicat.com/download/navicat#{version.major_minor.no_dots}_mariadb_en.dmg"
   name "Navicat for MariaDB"
   desc "Database management and administration tool for MariaDB"
   homepage "https://www.navicat.com/products/navicat-for-mariadb"

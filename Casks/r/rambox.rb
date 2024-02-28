@@ -1,6 +1,6 @@
 cask "rambox" do
-  version "2.2.2"
-  sha256 "e916d6884e75e90dca33ff1f8d8ab4ab6e6dc183d3ef62c6fc57e1d05481231d"
+  version "2.3.0"
+  sha256 "b1eb775ca051e748003661f02d1de0663071624e077caf9f5ca94c266c60cb6b"
 
   url "https://github.com/ramboxapp/download/releases/download/v#{version}/Rambox-#{version}-mac.zip",
       verified: "github.com/ramboxapp/download/"
@@ -17,8 +17,8 @@ cask "rambox" do
     "~/Library/Application Support/CrashReporter/Rambox Helper_*.plist",
     "~/Library/Application Support/CrashReporter/Rambox_*.plist",
     "~/Library/Application Support/Rambox",
-    "~/Library/Caches/com.grupovrs.ramboxce.ShipIt",
     "~/Library/Caches/com.grupovrs.ramboxce",
+    "~/Library/Caches/com.grupovrs.ramboxce.ShipIt",
     "~/Library/Caches/com.saenzramiro.rambox",
     "~/Library/Logs/Rambox",
     "~/Library/Preferences/ByHost/com.grupovrs.ramboxce.ShipIt.*.plist",

@@ -1,6 +1,6 @@
 cask "hypercal" do
-  version "0.0.109"
-  sha256 "be956ccfae0ab2db5770b46a99cd712642c5020108b6f722ff399ae0d9860b72"
+  version "0.0.111"
+  sha256 "30c78a5b6769fe58eda904f81f559e1b57a3703382d03ed18776b63c1861df38"
 
   url "https://storage.googleapis.com/hypercal-downloads/Hypercal-#{version}-universal.dmg",
       verified: "storage.googleapis.com/hypercal-downloads/"
@@ -16,6 +16,7 @@ cask "hypercal" do
   app "Hypercal.app"
 
   zap trash: [
+    "/tmp/hypercal",
     "~/Library/Application Support/hypercal",
     "~/Library/Caches/app.hypercal.com",
     "~/Library/Caches/app.hypercal.com.ShipIt",
@@ -23,6 +24,5 @@ cask "hypercal" do
     "~/Library/Logs/hypercal",
     "~/Library/Preferences/app.hypercal.com.plist",
     "~/Library/Saved Application State/app.hypercal.com.savedState",
-    "/tmp/hypercal",
   ]
 end

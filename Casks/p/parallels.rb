@@ -1,6 +1,6 @@
 cask "parallels" do
-  version "19.1.1-54734"
-  sha256 "d3663106457da5919f5ee2ba1af5034e013d5391f630e324db887da8625d1533"
+  version "19.2.1-54832"
+  sha256 "3e64121a825b074f90eede7a14e17139543ce8224ba806ba3d39d62f1e42ce90"
 
   url "https://download.parallels.com/desktop/v#{version.major}/#{version}/ParallelsDesktop-#{version}.dmg"
   name "Parallels Desktop"
@@ -46,7 +46,9 @@ cask "parallels" do
     set_ownership "#{appdir}/Parallels Desktop.app"
   end
 
-  uninstall delete: [
+  uninstall signal: ["TERM", "com.parallels.desktop.console"],
+            delete: [
+              "/Library/Preferences/Parallels",
               "/usr/local/bin/prl_convert",
               "/usr/local/bin/prl_disk_tool",
               "/usr/local/bin/prl_perf_ctl",
@@ -54,9 +56,7 @@ cask "parallels" do
               "/usr/local/bin/prlctl",
               "/usr/local/bin/prlexec",
               "/usr/local/bin/prlsrvctl",
-              "/Library/Preferences/Parallels",
-            ],
-            signal: ["TERM", "com.parallels.desktop.console"]
+            ]
 
   zap trash: [
         "~/.parallels_settings",

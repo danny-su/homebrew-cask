@@ -1,9 +1,9 @@
 cask "jetbrains-gateway" do
   arch arm: "-aarch64"
 
-  version "2023.2.4"
-  sha256 arm:   "bb42bfca0c3d053ed8e60ddc7654404decb80e44163593d7f5b0ba71326c915e",
-         intel: "746d5f3ac9db1f453ea76265c5ff56eec65e0b798e3c323ee04341e012543547"
+  version "2023.3.4"
+  sha256 arm:   "2e769fd9c28b33d34845d1b92cb12a13578f2d4c2f255c88a42fcb79a7cf848f",
+         intel: "5cf8720e0259c2bfd2474a5fd1db329cb48c10a8823ba0c29b0f3bde3ddbdf8a"
 
   url "https://download.jetbrains.com/idea/gateway/JetBrainsGateway-#{version}#{arch}.dmg"
   name "jetbrains-gateway"
@@ -21,6 +21,7 @@ cask "jetbrains-gateway" do
   depends_on macos: ">= :high_sierra"
 
   app "JetBrains Gateway.app"
+  binary "#{appdir}/JetBrains Gateway.app/Contents/MacOS/gateway"
 
   zap trash: [
     "~/Library/Application Support/JetBrains/JetBrainsGateway2021.3",

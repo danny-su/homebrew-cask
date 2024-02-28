@@ -1,9 +1,9 @@
 cask "webstorm" do
   arch arm: "-aarch64"
 
-  version "2023.2.5,232.10227.9"
-  sha256 arm:   "00dc50805e6685ae63f4fe54dcc0289f94ccfa81daead374f8fec1b1303b746a",
-         intel: "d22523f30776b357098c62e296c8b6a5a3bdbcf86a62246f510792c4cd090189"
+  version "2023.3.4,233.14475.40"
+  sha256 arm:   "e8abaf52bc68a9da2873897de4f1aa89510323d4a12dc32fa98b192bc4eae5bc",
+         intel: "5c7f2b3194bf49712456466bfdc58f20bd434f00128c4964d82e9744ee114cf8"
 
   url "https://download.jetbrains.com/webstorm/WebStorm-#{version.csv.first}#{arch}.dmg"
   name "WebStorm"
@@ -23,15 +23,7 @@ cask "webstorm" do
   depends_on macos: ">= :high_sierra"
 
   app "WebStorm.app"
-
-  uninstall_postflight do
-    ENV["PATH"].split(File::PATH_SEPARATOR).map { |path| File.join(path, "wstorm") }.each do |path|
-      if File.readable?(path) &&
-         File.readlines(path).grep(/# see com.intellij.idea.SocketLock for the server side of this interface/).any?
-        File.delete(path)
-      end
-    end
-  end
+  binary "#{appdir}/WebStorm.app/Contents/MacOS/webstorm"
 
   zap trash: [
     "~/Library/Application Support/JetBrains/WebStorm#{version.major_minor}",

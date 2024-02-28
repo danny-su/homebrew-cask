@@ -1,6 +1,7 @@
 cask "foobar2000" do
-  version "2.5"
-  sha256 "3ec10b095efe1ae757937559e5b1699bc23bfc8d12eeff5caafd1e9f690dc4a5"
+  # NOTE: "2000" is not a version number, but an intrinsic part of the product name
+  version "2.6.2"
+  sha256 "67812db812096966ba93e452cbf8ac29e641a9c13c1bd19080d8323468597d20"
 
   url "https://www.foobar2000.org/files/foobar2000-v#{version}.dmg"
   name "foobar2000"

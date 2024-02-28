@@ -1,6 +1,6 @@
 cask "microsoft-office" do
-  version "16.79.23111019"
-  sha256 "be0bbc26b654c93457bc2c359d0738e913bab8d51f2cf97562c41007fceabb99"
+  version "16.82.24021116"
+  sha256 "5cc0271a8086506a02d65dc441a92af4ced9ed67bcf3f0c03ec11019df45bb0c"
 
   url "https://officecdnmac.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/Microsoft_365_and_Office_#{version}_Installer.pkg"
   name "Microsoft Office"
@@ -35,7 +35,16 @@ cask "microsoft-office" do
         },
       ]
 
-  uninstall pkgutil:   [
+  uninstall launchctl: [
+              "com.microsoft.office.licensing.helper",
+              "com.microsoft.office.licensingV2.helper",
+              "com.microsoft.OneDriveStandaloneUpdater",
+              "com.microsoft.OneDriveStandaloneUpdaterDaemon",
+              "com.microsoft.OneDriveUpdaterDaemon",
+              "com.microsoft.SyncReporter",
+            ],
+            quit:      "com.microsoft.autoupdate2",
+            pkgutil:   [
               "com.microsoft.OneDrive",
               "com.microsoft.package.DFonts",
               "com.microsoft.package.Frameworks",
@@ -48,7 +57,6 @@ cask "microsoft-office" do
               "com.microsoft.package.Proofing_Tools",
               "com.microsoft.pkg.licensing",
             ],
-            # Frameworks, DFonts and ProofingTools remain in each application after pkg uninstall, delete them
             delete:    [
               "/Applications/Microsoft Excel.app",
               "/Applications/Microsoft OneNote.app",
@@ -56,24 +64,15 @@ cask "microsoft-office" do
               "/Applications/Microsoft PowerPoint.app",
               "/Applications/Microsoft Word.app",
               "/Applications/OneDrive.app",
-            ],
-            launchctl: [
-              "com.microsoft.office.licensing.helper",
-              "com.microsoft.office.licensingV2.helper",
-              "com.microsoft.OneDriveStandaloneUpdater",
-              "com.microsoft.OneDriveStandaloneUpdaterDaemon",
-              "com.microsoft.OneDriveUpdaterDaemon",
-              "com.microsoft.SyncReporter",
-            ],
-            quit:      "com.microsoft.autoupdate2"
+            ]
 
   zap trash: [
     "~/Library/Application Scripts/com.microsoft.errorreporting",
     "~/Library/Application Scripts/com.microsoft.Excel",
+    "~/Library/Application Scripts/com.microsoft.Office365ServiceV2",
     "~/Library/Application Scripts/com.microsoft.OneDrive.FileProvider",
     "~/Library/Application Scripts/com.microsoft.OneDrive.FinderSync",
     "~/Library/Application Scripts/com.microsoft.OneDriveLauncher",
-    "~/Library/Application Scripts/com.microsoft.Office365ServiceV2",
     "~/Library/Application Scripts/com.microsoft.onenote.mac",
     "~/Library/Application Scripts/com.microsoft.onenote.mac.shareextension",
     "~/Library/Application Scripts/com.microsoft.openxml.excel.app",

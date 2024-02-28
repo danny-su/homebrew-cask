@@ -7,16 +7,14 @@ cask "yo" do
   desc "Utility to emit Notification Center messages from the command-line"
   homepage "https://github.com/sheagcraig/yo"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   pkg "yo-#{version}.pkg"
 
-  uninstall delete:    "/usr/local/bin/yo_scheduler",
-            launchctl: [
+  uninstall launchctl: [
               "com.sheagcraig.yo.login_once",
               "com.sheagcraig.yo.on_demand",
             ],
-            pkgutil:   "com.sheagcraig.yo"
-
-  caveats do
-    discontinued
-  end
+            pkgutil:   "com.sheagcraig.yo",
+            delete:    "/usr/local/bin/yo_scheduler"
 end

@@ -1,9 +1,9 @@
 cask "burp-suite" do
   arch arm: "MacOsArm64", intel: "MacOsx"
 
-  version "2023.10.3.6"
-  sha256 arm:   "ed439b6c4252d45b440326d0d1e04fd6a05114410c9d40ffd831ceea115b64a0",
-         intel: "9d631c5ccaf2c81896f754f8c4f727bc7a98018619f84ff7d93b6fc5c02965fd"
+  version "2023.12.1.5"
+  sha256 arm:   "852e9da99cac65347dc63081ac6040c9eed549753869306324df1d363c3c0c59",
+         intel: "fd919bc00981979516c78e8e5357f7ef4a27d52c3a2b98f6d04f2e6a86982ee4"
 
   url "https://portswigger.net/burp/releases/download?product=community&version=#{version}&type=#{arch}"
   name "Burp Suite Community Edition"
@@ -16,14 +16,14 @@ cask "burp-suite" do
       all_versions = json["ResultSet"]["Results"]
       next if all_versions.blank?
 
-      all_versions.map do |item|
+      all_versions.filter_map do |item|
         item["version"] if
               item["releaseChannels"].include?("Stable") &&
               item["categories"].include?("Community") &&
               item["builds"].any? do |build|
                 build["ProductPlatform"] == arch.to_s
               end
-      end.compact
+      end
     end
   end
 

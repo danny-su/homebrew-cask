@@ -1,6 +1,6 @@
 cask "proxyman" do
-  version "4.14.0,49500"
-  sha256 "8bff067918a9da0bb8f195c67bb4925be6927b4971e1cbcc6de85375065afd0f"
+  version "5.0.0,50000"
+  sha256 "a13d83e0e4333ed2eaac0fa848fca458e0ec6eeaf5f89e8dbd893eaf2dc7fbb0"
 
   url "https://download.proxyman.io/#{version.csv.second}/Proxyman_#{version.csv.first}.dmg"
   name "Proxyman"
@@ -29,8 +29,8 @@ cask "proxyman" do
     end
   end
 
-  uninstall quit:      "com.proxyman.NSProxy",
-            launchctl: "com.proxyman.NSProxy.HelperTool",
+  uninstall launchctl: "com.proxyman.NSProxy.HelperTool",
+            quit:      "com.proxyman.NSProxy",
             delete:    "/Library/PrivilegedHelperTools/com.proxyman.NSProxy.HelperTool"
 
   zap trash: [
@@ -43,8 +43,8 @@ cask "proxyman" do
     "~/Library/Cookies/com.proxyman.binarycookies",
     "~/Library/Cookies/com.proxyman.NSProxy.binarycookies",
     "~/Library/HTTPStorages/com.proxyman.NSProxy",
-    "~/Library/Preferences/com.proxyman.NSProxy.plist",
     "~/Library/Preferences/com.proxyman.iconappmanager.userdefaults.plist",
+    "~/Library/Preferences/com.proxyman.NSProxy.plist",
     "~/Library/Preferences/com.proxyman.plist",
     "~/Library/Saved Application State/com.proxyman.NSProxy.savedState",
     "~/Library/WebKit/com.proxyman.NSProxy",

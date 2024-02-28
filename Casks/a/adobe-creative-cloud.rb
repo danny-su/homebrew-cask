@@ -1,11 +1,12 @@
 cask "adobe-creative-cloud" do
   arch arm: "macarm64", intel: "osx10"
 
-  version "6.0.0.571"
-  sha256 arm:   "d1adc332344ab07ff85ecf85a94cd56977bcef937434636d63a8a805f2b7061c",
-         intel: "0f2eda378bdc30c18cff65e78d17797952695754f645fd3b72b3c43984402eed"
+  version "6.1.0.587"
+  sha256 arm:   "348e2452b2be16dddc3ab9dd6d9af2ed7d2048bc9a602ac19768da3539ba8ac4",
+         intel: "3a04b719fea3cb038133c805e637d9730bb84805b70d90b1379dc87bcb16b9e9"
 
-  url "https://ccmdl.adobe.com/AdobeProducts/KCCC/CCD/#{version.major_minor.dots_to_underscores}/#{arch}/ACCCx#{version.dots_to_underscores}.dmg"
+  # If url breaks you can find the latest static urls - https://helpx.adobe.com/download-install/kb/creative-cloud-desktop-app-download.html
+  url "https://ccmdl.adobe.com/AdobeProducts/KCCC/CCD/#{version.major_minor_patch.dots_to_underscores}/#{arch}/ACCCx#{version.dots_to_underscores}.dmg"
   name "Adobe Creative Cloud"
   desc "Collection of apps and services for photography, design, video, web, and UX"
   homepage "https://www.adobe.com/creativecloud.html"
@@ -44,9 +45,9 @@ cask "adobe-creative-cloud" do
             },
             launchctl:    [
               "Adobe_Genuine_Software_Integrity_Service",
-              "com.adobe.AdobeCreativeCloud",
               "com.adobe.acc.installer",
               "com.adobe.acc.installer.v2",
+              "com.adobe.AdobeCreativeCloud",
               "com.adobe.ccxprocess",
             ],
             quit:         "com.adobe.acc.AdobeCreativeCloud",
@@ -78,15 +79,14 @@ cask "adobe-creative-cloud" do
             ]
 
   zap trash: [
-        "/Users/Shared/Adobe/Installer",
-        "/Users/Shared/Adobe/OOBE",
         "/Library/*/com.adobe.acc*",
-        "/Library/Application Support/Adobe/*[Ii]nstall*",
         "/Library/Application Support/Adobe/ADCRefs",
         "/Library/Application Support/Adobe/Adobe Desktop Common",
+        "/Library/Application Support/Adobe/*[Ii]nstall*",
         "/Library/Application Support/Adobe/Adobe PCD",
         "/Library/Application Support/Adobe/AdobeApplicationManager",
         "/Library/Application Support/Adobe/AdobeGC*",
+        "/Library/Application Support/Adobe/caps",
         "/Library/Application Support/Adobe/CEP/extensions/CC_*",
         "/Library/Application Support/Adobe/CEP/extensions/com.adobe.ccx.*",
         "/Library/Application Support/Adobe/Creative Cloud Libraries",
@@ -95,10 +95,11 @@ cask "adobe-creative-cloud" do
         "/Library/Application Support/Adobe/PCF",
         "/Library/Application Support/Adobe/SL*",
         "/Library/Application Support/Adobe/Vulcan",
-        "/Library/Application Support/Adobe/caps",
         "/Library/Application Support/regid.*.com.adobe",
         "/Library/Logs/CreativeCloud",
         "/Library/Preferences/com.adobe.headlights*.plist",
+        "/Users/Shared/Adobe/Installer",
+        "/Users/Shared/Adobe/OOBE",
         "~/Creative Cloud Files",
         "~/Creative Cloud Files/Icon?",
         "~/Library/*/Adobe/CoreSync",
@@ -121,7 +122,6 @@ cask "adobe-creative-cloud" do
         "~/Library/Logs/PDApp*.log",
         "~/Library/Preferences/Adobe/.[A-Z0-9]???????????",
         "~/Library/Preferences/com.adobe.crashreporter.plist",
-
       ],
       rmdir: [
         "/Users/Shared/Adobe",

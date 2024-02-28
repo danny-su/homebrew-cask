@@ -1,6 +1,6 @@
 cask "playdate-simulator" do
-  version "2.1.1"
-  sha256 "8bf209cf514bcfbc77ff5e8b884fea6f16315fce5c284da22acd9cd528979453"
+  version "2.3.1"
+  sha256 "c621d78c93de17d743239b0864670ce5d58623a616839079a1e33623e780bdc6"
 
   url "https://download-keycdn.panic.com/playdate_sdk/PlaydateSDK-#{version}.zip",
       verified: "download-keycdn.panic.com/playdate_sdk/"
@@ -19,13 +19,13 @@ cask "playdate-simulator" do
 
   uninstall_preflight do
     Pathname("/usr/local/bin").glob("arm-*").each do |exec|
-      exec.unlink if exec.exist? && exec.readlink.to_s.include?("playdate")
+      Utils.gain_permissions_remove(exec) if exec.exist? && exec.readlink.to_s.include?("playdate")
     end
   end
 
   uninstall pkgutil: "date.play.sdk",
-            trash:   "~/Developer/PlaydateSDK",
             delete:  "/usr/local/playdate",
+            trash:   "~/Developer/PlaydateSDK",
             rmdir:   "~/Developer"
 
   zap trash: "~/.Playdate"

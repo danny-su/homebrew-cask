@@ -1,6 +1,6 @@
 cask "notebooks" do
-  version "3.3.2"
-  sha256 "ba4cac1faddedbfc3f385bc64f885a931d842e78e4e025acf7904730a24775be"
+  version "3.3.6"
+  sha256 "3be18fa42f991ce175b6f3a4a99247e6d6e6053d747b9cedcf21f56873d52d09"
 
   url "https://www.notebooksapp.com/Download/macOS/v#{version.major}/Notebooks.dmg"
   name "Notebooks"
@@ -17,10 +17,10 @@ cask "notebooks" do
   app "Notebooks.app"
 
   zap trash: [
-    "~/Library/Application Scripts/XZ68B7E678.com.aschmid.notebooks2",
     "~/Library/Application Scripts/com.aschmid.notebooks2.ShareExtension",
-    "~/Library/Application Support/Notebooks",
+    "~/Library/Application Scripts/XZ68B7E678.com.aschmid.notebooks2",
     "~/Library/Application Support/com.aschmid.notebooks2",
+    "~/Library/Application Support/Notebooks",
     "~/Library/Caches/com.aschmid.notebooks2",
     "~/Library/Containers/com.aschmid.notebooks2.ShareExtension",
     "~/Library/Group Containers/XZ68B7E678.com.aschmid.notebooks2",

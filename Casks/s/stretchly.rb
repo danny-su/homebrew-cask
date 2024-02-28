@@ -11,7 +11,11 @@ cask "stretchly" do
   desc "Break time reminder app"
   homepage "https://hovancik.net/stretchly/"
 
+  depends_on macos: ">= :catalina"
+
   app "Stretchly.app"
+
+  uninstall quit: "net.hovancik.stretchly"
 
   zap trash: [
     "~/Library/Application Support/Stretchly",

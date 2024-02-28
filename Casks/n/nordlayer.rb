@@ -1,6 +1,6 @@
 cask "nordlayer" do
-  version "3.1.0"
-  sha256 "b4544c8de0359c3f1ae0e25d0858d4abd61155ad85b1dffbbb3d1fdc6e7a221e"
+  version "3.2.1"
+  sha256 "d65e68a8b56b309d16ce2f98ea6a80240497c0547c9af5179cff0b88fba4fb69"
 
   url "https://downloads.nordlayer.com/mac/latest/NordLayer_v#{version}.zip"
   name "NordLayer"
@@ -17,8 +17,8 @@ cask "nordlayer" do
 
   app "NordLayer.app"
 
-  uninstall quit:      "com.nordvpn.macos.teams",
-            launchctl: "com.nordvpn.macos.teams"
+  uninstall launchctl: "com.nordvpn.macos.teams",
+            quit:      "com.nordvpn.macos.teams"
 
   zap trash: [
     "~/Library/Application Support/com.nordvpn.macos.teams",

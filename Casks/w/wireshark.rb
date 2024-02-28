@@ -2,17 +2,17 @@ cask "wireshark" do
   arch arm: "Arm", intel: "Intel"
   livecheck_arch = on_arch_conditional arm: "arm", intel: "x86-"
 
-  version "4.2.0"
+  version "4.2.3"
 
   on_arm do
-    sha256 "d2fba92c2f88271fad6929e8d8d06d50992fd82e00230c9f503c57a4bfe4f54f"
+    sha256 "b11d86f650f4f751fbff4d741b16cbe2d57a35d8b83e87dcbd159c6980eff7ff"
 
     depends_on macos: ">= :big_sur"
   end
   on_intel do
-    sha256 "9e10e57a24ea5c8f66fa6dab8d9b21751e8b370d9ef2a5f4be8b6c29dc4437b6"
+    sha256 "cea02d3d36c1cb8568abeb42a50b5169a26fd179a3726f4451e167c61243b846"
 
-    depends_on macos: ">= :high_sierra"
+    depends_on macos: ">= :mojave"
   end
 
   url "https://2.na.dl.wireshark.org/osx/Wireshark%20#{version}%20#{arch}%2064.dmg"
@@ -20,9 +20,14 @@ cask "wireshark" do
   desc "Network protocol analyzer"
   homepage "https://www.wireshark.org/"
 
+  # This appcast sometimes uses a newer pubDate for an older version, so we
+  # have to ignore the default `Sparkle` strategy sorting (which involves the
+  # pubDate) and simply work with the version numbers.
   livecheck do
     url "https://www.wireshark.org/update/0/Wireshark/0.0.0/macOS/#{livecheck_arch}64/en-US/stable.xml"
-    strategy :sparkle
+    strategy :sparkle do |items|
+      items.map(&:nice_version)
+    end
   end
 
   auto_updates true

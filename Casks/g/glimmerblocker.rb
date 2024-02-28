@@ -7,14 +7,16 @@ cask "glimmerblocker" do
   desc "HTTP based ad blocker"
   homepage "https://glimmerblocker.org/"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   pkg "GlimmerBlocker.pkg"
 
-  uninstall pkgutil:   "org.glimmerblocker.pkg",
-            launchctl: [
+  uninstall launchctl: [
               "org.glimmerblocker.installer",
               "org.glimmerblocker.proxy",
               "org.glimmerblocker.updater",
             ],
+            pkgutil:   "org.glimmerblocker.pkg",
             delete:    "/Library/PreferencePanes/GlimmerBlocker.prefPane"
 
   zap trash: [
@@ -23,8 +25,6 @@ cask "glimmerblocker" do
   ]
 
   caveats do
-    discontinued
-
     <<~EOS
       You must deactivate GlimmerBlocker from the installed preference
       pane before uninstalling. See https://glimmerblocker.org/wiki/Uninstall.

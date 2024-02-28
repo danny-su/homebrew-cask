@@ -1,5 +1,5 @@
 cask "abbyy-finereader-pdf" do
-  version "1402.18"
+  version "1402.19"
   sha256 :no_check
 
   url "https://downloads.abbyy.com/fr/fr_mac/current/ABBYY_FineReader_PDF.dmg?secure=5c11NlPrQmIZeGn6dK2PZA=="
@@ -9,7 +9,7 @@ cask "abbyy-finereader-pdf" do
 
   livecheck do
     url "https://www.abbyy.com/finereader-pdf-mac-downloads/"
-    regex(%r{(?:Part #:.*?\n<td>)(\d+(?:[./]\d+)+)}i)
+    regex(%r{>\s*Part\s+#:.*?<td>\s*v?(\d+(?:[./]\d+)+)\s*<}im)
     strategy :page_match do |page, regex|
       page.scan(regex).map { |match| match[0].tr("/", ".") }
     end

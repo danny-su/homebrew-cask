@@ -1,14 +1,24 @@
 {
   "ankerslicer": "ankermake",
+  "autodesk-fusion360": "autodesk-fusion",
   "betterdummy": "betterdisplay",
+  "clinq": "sipgate-clinq",
   "cloudapp": "zight",
+  "cron": "notion-calendar",
+  "emby-server": "embyserver",
   "epilogue-operator": "epilogue-playback",
   "figmadaemon": "figma-agent",
+  "fly-key": "flykey",
   "hepta": "heptabase",
+  "mat": "memoryanalyzer",
   "mouse-fix": "mac-mouse-fix",
   "mysteriumvpn": "mysteriumdark",
+  "obsbot-webcam": "obsbot-center",
   "opal": "opal-composer",
   "owasp-zap": "zap",
+  "pomodone": "roundpie",
   "remotion": "multiapp",
-  "streamlabs-obs": "streamlabs"
+  "streamlabs-obs": "streamlabs",
+  "tea": "ossapp",
+  "tibco-jaspersoft-studio": "jaspersoft-studio"
 }

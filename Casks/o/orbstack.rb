@@ -1,9 +1,9 @@
 cask "orbstack" do
   arch arm: "arm64", intel: "amd64"
 
-  version "1.1.0_16370"
-  sha256 arm:   "f6619eb2d2135e02f64310191462ae69f12b6da70cc2d6d4e656ca621749ba61",
-         intel: "bd6c5b10d01dfbc18afc997ed1dd3fe8c89e3bb75674094a55ed8f996ad771de"
+  version "1.4.3_16673"
+  sha256 arm:   "afcb82173d28733b3f693c9d8eac794d644734610ad8ba4ce7fe618827133759",
+         intel: "48a570d7108c0d19c849e86932d7967dfb16fb060b07d065c1e79c1da9852498"
 
   url "https://cdn-updates.orbstack.dev/#{arch}/OrbStack_v#{version}_#{arch}.dmg"
   name "OrbStack"
@@ -11,7 +11,7 @@ cask "orbstack" do
   homepage "https://orbstack.dev/"
 
   livecheck do
-    url "https://orbstack.dev/download/beta/latest/#{arch}"
+    url "https://orbstack.dev/download/stable/latest/#{arch}"
     regex(/OrbStack[._-]v?(\d+(?:[._-]\d+)+)[._-]#{arch}\.dmg/i)
     strategy :header_match
   end
@@ -39,12 +39,10 @@ cask "orbstack" do
         "~/Library/HTTPStorages/dev.kdrag0n.MacVirt",
         "~/Library/HTTPStorages/dev.kdrag0n.MacVirt.binarycookies",
         "~/Library/Preferences/dev.kdrag0n.MacVirt.plist",
-        "~/Library/WebKit/dev.kdrag0n.MacVirt",
         "~/Library/Saved Application State/dev.kdrag0n.MacVirt.savedState",
+        "~/Library/WebKit/dev.kdrag0n.MacVirt",
       ],
-      rmdir: [
-        "~/OrbStack",
-      ]
+      rmdir: "~/OrbStack"
 
   caveats <<~EOS
     Open the OrbStack app to finish setup.

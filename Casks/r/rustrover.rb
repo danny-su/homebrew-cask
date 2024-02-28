@@ -1,9 +1,9 @@
 cask "rustrover" do
   arch arm: "-aarch64"
 
-  version "2023.3,233.10527.212"
-  sha256 arm:   "d98eb787a95dcf35ab8948e7b98dca4e769ed3d08405ed69376c33e7e33f4085",
-         intel: "1573cb95ff2f8afcb5ac8c38ffdad68e9c49dbdaf3750bd19afe4081deafeb98"
+  version "2023.3,233.14015.153"
+  sha256 arm:   "6393fba977fe887db47311787652c424c6c1d81bdb64eaf4c2e7213453d27a7c",
+         intel: "5fd78441a717bbcb5c66636135a44cced26c1038682610300a201b18584bcec0"
 
   url "https://download.jetbrains.com/rustrover/RustRover-#{version.csv.second}#{arch}.dmg"
   name "RustRover"
@@ -23,15 +23,7 @@ cask "rustrover" do
   depends_on macos: ">= :catalina"
 
   app "RustRover #{version.before_comma} EAP.app", target: "RustRover.app"
-
-  uninstall_postflight do
-    ENV["PATH"].split(File::PATH_SEPARATOR).map { |path| File.join(path, "rover") }.each do |path|
-      if File.readable?(path) &&
-         File.readlines(path).grep(/# see com.intellij.idea.SocketLock for the server side of this interface/).any?
-        File.delete(path)
-      end
-    end
-  end
+  binary "#{appdir}/RustRover.app/Contents/MacOS/rustrover"
 
   zap trash: [
     "~/Library/Application Support/JetBrains/RustRover#{version.major_minor}",

@@ -1,6 +1,6 @@
 cask "opal-composer" do
-  version "1.2.1,7"
-  sha256 "6024497c407807cac3a1b849df9ad3d69b8dc7d6cad7518eeb1aa43985ae39df"
+  version "1.3.0,13"
+  sha256 "ac4b751784ae3941243ad970956842fe425bcb0789a3fc50939ac5925e1737de"
 
   url "https://updates.opal.camera/release/Opal_Composer_#{version.csv.first}_#{version.csv.second}.dmg",
       verified: "updates.opal.camera/release/"
@@ -9,7 +9,7 @@ cask "opal-composer" do
   homepage "https://opalcamera.com/opal-composer"
 
   livecheck do
-    url "https://public-opal-bucket.s3.us-east-2.amazonaws.com/release/appcast.xml"
+    url "https://updates.opal.camera/release/appcast.xml"
     strategy :sparkle
   end
 

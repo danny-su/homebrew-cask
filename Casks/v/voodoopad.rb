@@ -5,7 +5,7 @@ cask "voodoopad" do
   url "https://voodoopad.s3.amazonaws.com/VoodooPad-#{version}.zip",
       verified: "voodoopad.s3.amazonaws.com/"
   name "VoodooPad"
-  desc "Notes organizer"
+  desc "Notes organiser"
   homepage "https://www.voodoopad.com/"
 
   livecheck do
@@ -18,7 +18,7 @@ cask "voodoopad" do
   app "VoodooPad.app"
 
   zap trash: [
-    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.flyingmeat.voodoopad5.sfl2",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.flyingmeat.voodoopad5.sfl*",
     "~/Library/Application Support/VoodooPad",
     "~/Library/Caches/com.flyingmeat.VoodooPad5",
     "~/Library/Preferences/com.flyingmeat.VoodooPad5.plist",

@@ -1,6 +1,6 @@
 cask "chipmunk" do
-  version "3.10.3"
-  sha256 "136cd6cc31189015140f2b59b01bd8bd9a0197798caa767f2efcb0f08b9a395e"
+  version "3.10.6"
+  sha256 "f86368b779fbc4d565e34a6828595a5b5ebc09c29053ba623c95ec02fb5f8ef8"
 
   url "https://github.com/esrlabs/chipmunk/releases/download/#{version}/chipmunk@#{version}-darwin-portable.tgz"
   name "Chipmunk Log Analyzer & Viewer"

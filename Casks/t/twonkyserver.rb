@@ -14,12 +14,12 @@ cask "twonkyserver" do
 
   pkg "TwonkyServerInstaller-#{version}.pkg"
 
-  uninstall pkgutil:   "com.twonky.server.Twonky",
-            launchctl: [
-              "com.twonky.server.Twonky",
+  uninstall launchctl: [
               "com.twonky.server.tsuninstall",
+              "com.twonky.server.Twonky",
             ],
             signal:    ["TERM", "com.twonky.server.Twonky"],
+            pkgutil:   "com.twonky.server.Twonky",
             delete:    "/Applications/Twonky.app"
 
   zap trash: "~/Twonky Library.twonky"

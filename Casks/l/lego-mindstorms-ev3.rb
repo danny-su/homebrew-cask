@@ -6,6 +6,7 @@ cask "lego-mindstorms-ev3" do
   url "https://le-www-live-s.legocdn.com/downloads/LMS-EV3/LMS-EV3_Full-setup_#{version}_en-us_osx.dmg",
       verified: "le-www-live-s.legocdn.com/downloads/LMS-EV3/"
   name "Lego Mindstorms EV3 Home Edition"
+  desc "Programmable robotics construction set"
   homepage "https://www.lego.com/en-us/mindstorms"
 
   livecheck do
@@ -16,11 +17,11 @@ cask "lego-mindstorms-ev3" do
   pkg "LEGO MINDSTORMS EV3 Home Edition.pkg"
 
   uninstall pkgutil: [
+    "com.microsoft.silverlight.plugin",
+    "com.ni.pkg.lego.ev3.Eng",
     "com.ni.pkg.lego.ev3.Eng.#{version}",
     "com.ni.pkg.lego.x3.#{version}.core",
     "com.ni.pkg.lego.x3.#{version}.update",
-    "com.microsoft.silverlight.plugin",
-    "com.ni.pkg.lego.ev3.Eng",
     "com.ni.pkg.lego.x3.core",
     "com.ni.pkg.lego.x3.update",
     "com.ni.pkg.legodriver",
@@ -28,8 +29,8 @@ cask "lego-mindstorms-ev3" do
   ]
 
   zap pkgutil: [
-    "com.ni.pkg.legodriver",
     "com.microsoft.silverlight.plugin",
+    "com.ni.pkg.legodriver",
     "com.ximian.mono-*",
   ]
 end

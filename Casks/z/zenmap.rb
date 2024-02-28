@@ -16,17 +16,17 @@ cask "zenmap" do
 
   pkg "nmap-#{version}.mpkg"
 
-  uninstall delete:  "/Applications/Zenmap.app",
-            pkgutil: [
+  uninstall pkgutil: [
               "org.insecure.nmap",
               "org.insecure.nmap.ncat",
               "org.insecure.nmap.ndiff",
               "org.insecure.nmap.nping",
               "org.insecure.nmap.zenmap",
-            ]
+            ],
+            delete:  "/Applications/Zenmap.app"
 
   zap trash: [
-    "~/Library/Saved Application State/org.insecure.Zenmap.savedState",
     "~/.zenmap",
+    "~/Library/Saved Application State/org.insecure.Zenmap.savedState",
   ]
 end

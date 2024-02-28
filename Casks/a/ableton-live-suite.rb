@@ -1,6 +1,6 @@
 cask "ableton-live-suite" do
-  version "11.3.13"
-  sha256 "35529a2632d95e4c9ca3ae67c5b6904da4cd8b1149050a1a58153a31196126a6"
+  version "11.3.21"
+  sha256 "d4584282c6e0bbd27dfc5b2a1c4fe11508b2507532cb7acd4528c6ddc9a6b490"
 
   url "https://cdn-downloads.ableton.com/channels/#{version}/ableton_live_suite_#{version}_universal.dmg"
   name "Ableton Live Suite"
@@ -21,10 +21,10 @@ cask "ableton-live-suite" do
 
   zap trash: [
     "/Library/Logs/DiagnosticReports/Max_*.*_resource.diag",
+    "~/Library/Application Support/Ableton",
     "~/Library/Application Support/CrashReporter/Ableton *_*.plist",
     "~/Library/Application Support/CrashReporter/Live_*.plist",
     "~/Library/Application Support/CrashReporter/Max_*.plist",
-    "~/Library/Application Support/Ableton",
     "~/Library/Application Support/Cycling '74",
     "~/Library/Caches/Ableton",
     "~/Library/Preferences/Ableton",

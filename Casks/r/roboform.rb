@@ -1,6 +1,6 @@
 cask "roboform" do
-  version "9.5.4"
-  sha256 "754afa99ddcb4881758a0dc41daca164c06c5bb93a5ce892c88f90c378b9ff2d"
+  version "9.5.5"
+  sha256 "401ac8f2e06a39fc644c2cf86fb70aeed53f1dd5a46fca89235491b97c875de0"
 
   url "https://www.roboform.com/dist/roboform-mac-v#{version.major}.dmg"
   name "RoboForm"
@@ -19,15 +19,15 @@ cask "roboform" do
 
   zap trash: [
     "~/Library/Application Scripts/com.SiberSystems.RoboForm.safari-companion*",
-    "~/Library/Application Support/com.SiberSystems.RoboForm.RoboFormService",
     "~/Library/Application Support/com.SiberSystems.RoboForm",
+    "~/Library/Application Support/com.SiberSystems.RoboForm.RoboFormService",
     "~/Library/Application Support/RoboForm",
-    "~/Library/Caches/com.crashlytics.data/com.SiberSystems.RoboForm.RoboFormService",
     "~/Library/Caches/com.crashlytics.data/com.SiberSystems.RoboForm",
-    "~/Library/Caches/com.SiberSystems.RoboForm.RoboFormService",
+    "~/Library/Caches/com.crashlytics.data/com.SiberSystems.RoboForm.RoboFormService",
     "~/Library/Caches/com.SiberSystems.RoboForm",
-    "~/Library/Caches/io.fabric.sdk.mac.data/com.SiberSystems.RoboForm.RoboFormService",
+    "~/Library/Caches/com.SiberSystems.RoboForm.RoboFormService",
     "~/Library/Caches/io.fabric.sdk.mac.data/com.SiberSystems.RoboForm",
+    "~/Library/Caches/io.fabric.sdk.mac.data/com.SiberSystems.RoboForm.RoboFormService",
     "~/Library/Containers/com.SiberSystems.RoboForm.safari-companion*",
     "~/Library/Group Containers/*.com.SiberSystems.RoboForm",
     "~/Library/Saved Application State/com.SiberSystems.RoboForm.savedState",

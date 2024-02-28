@@ -1,10 +1,10 @@
 cask "chronosync" do
-  version "11.0.0"
+  version "11.0.1"
   sha256 :no_check
 
   url "https://downloads.econtechnologies.com/CS4_Download.dmg"
   name "ChronoSync"
-  desc "Synchronization and backup tool"
+  desc "Synchronisation and backup tool"
   homepage "https://www.econtechnologies.com/"
 
   livecheck do

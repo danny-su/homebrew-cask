@@ -1,6 +1,6 @@
 cask "authy" do
-  version "2.4.2"
-  sha256 "8d99ccb1ee8c1e3fd64b65ee2f7774516880c241abd1f565e65678bb01de95cd"
+  version "2.5.0"
+  sha256 "7116fa3638eedc66f947acbd75380e1e0f10e0d7e71369e3bb39ce99f8299455"
 
   url "https://pkg.authy.com/authy/stable/#{version}/darwin/x64/Authy%20Desktop-#{version}.dmg"
   name "Authy Desktop"
@@ -11,6 +11,8 @@ cask "authy" do
     url "https://electron.authy.com/download?channel=stable&arch=x64&platform=darwin&version=latest&product=authy"
     strategy :header_match
   end
+
+  deprecate! date: "2024-03-19", because: :discontinued
 
   auto_updates true
 

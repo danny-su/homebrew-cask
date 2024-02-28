@@ -19,8 +19,8 @@ cask "blockblock" do
     }
   end
   on_catalina :or_newer do
-    version "2.1.5"
-    sha256 "3ee9f1bceec828e91602d7f3d3e516c8aa9cde58e98214065da380b870e92141"
+    version "2.2.1"
+    sha256 "92383188711eb3086f4afcc719e1daed8ed88f5ed057eb198ee7ed3778be3225"
 
     url "https://github.com/objective-see/BlockBlock/releases/download/v#{version}/BlockBlock_#{version}.zip",
         verified: "github.com/objective-see/BlockBlock/"
@@ -45,7 +45,7 @@ cask "blockblock" do
   zap trash: [
     "~/Library/Caches/com.objective-see.blockblock.helper",
     "~/Library/HTTPStorages/com.objective-see.blockblock.helper",
-    "~/Library/Preferences/com.objectiveSee.BlockBlock.plist",
     "~/Library/Preferences/com.objective-see.blockblock.helper.plist",
+    "~/Library/Preferences/com.objectiveSee.BlockBlock.plist",
   ]
 end

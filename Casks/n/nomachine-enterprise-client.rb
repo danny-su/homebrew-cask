@@ -1,6 +1,6 @@
 cask "nomachine-enterprise-client" do
-  version "8.10.1_2"
-  sha256 "3840396c836ce596ae3ef329cc13c99e873c1fda2de6f05196fb148d32ee95b7"
+  version "8.11.3_5"
+  sha256 "792d3738feaf295536dfaa1b930c50b446fd52efebb55b450e719853a7888519"
 
   url "https://download.nomachine.com/download/#{version.major_minor}/MacOSX/nomachine-enterprise-client_#{version}.dmg"
   name "NoMachine Enterprise Client"
@@ -16,17 +16,16 @@ cask "nomachine-enterprise-client" do
 
   # A launchctl job ordinarily manages uninstall once the app bundle is removed
   # To ensure it ran, verify if /Library/Application Support/NoMachine/nxuninstall.sh no longer exists
-  uninstall delete:    "/Applications/NoMachine.app",
-            pkgutil:   [
-              "com.nomachine.nomachine.NoMachine*.pkg",
-              "com.nomachine.*",
-            ],
-
-            launchctl: [
+  uninstall launchctl: [
               "com.nomachine.launchconf",
               "com.nomachine.uninstall",
               "com.nomachine.uninstallAgent",
-            ]
+            ],
+            pkgutil:   [
+              "com.nomachine.*",
+              "com.nomachine.nomachine.NoMachine*.pkg",
+            ],
+            delete:    "/Applications/NoMachine.app"
 
   zap trash: [
         "/Library/Application Support/NoMachine",

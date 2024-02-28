@@ -1,23 +1,25 @@
 cask "topaz-gigapixel-ai" do
-  version "6.3.3"
-  sha256 "4e660fa1e709409097ddd821f22213a8012e72bc18caea6a5fe47c85a6a81ef0"
+  version "7.0.2"
+  sha256 "867bc0e183552c697e16e38f261c98d08d527aab2f8a75fc70ddeb4daa858f87"
 
-  url "https://downloads.topazlabs.com/deploy/TopazGigapixelAI/#{version}/TopazGigapixelAI-#{version}-osx-Full-Installer.dmg"
+  url "https://downloads.topazlabs.com/deploy/TopazGigapixelAI/#{version}/TopazGigapixelAI-#{version}.pkg"
   name "Topaz Gigapixel AI"
   desc "AI image upscaler"
   homepage "https://www.topazlabs.com/gigapixel-ai"
 
   livecheck do
-    url "https://community.topazlabs.com/c/releases/gigapixel-ai"
-    strategy :page_match do |page|
-      match = page[%r{href=.*?/gigapixel[._-]v?(\d+(?:-\d+)+)}i, 1]
-      next if match.blank?
-
-      match.tr("-", ".")
-    end
+    url "https://topazlabs.com/d/gigapixel/latest/mac/full"
+    strategy :header_match
   end
 
-  app "Topaz Gigapixel AI.app"
+  pkg "TopazGigapixelAI-#{version}.pkg"
 
-  # No zap stanza required
+  uninstall pkgutil: "com.topazlabs.TopazGigapixelAI"
+
+  zap trash: [
+    "~/Library/Preferences/com.topaz-labs-llc.Topaz Gigapixel AI.plist",
+    "~/Library/Preferences/com.topazlabs.Topaz Gigapixel AI.plist",
+    "~/Library/Preferences/com.topazlabs.TopazGigapixelAI.plist",
+    "~/Library/Saved Application State/com.topazlabs.TopazGigapixelAI.savedState",
+  ]
 end

@@ -5,8 +5,10 @@ cask "remote-desktop-manager-free" do
   url "https://cdn.devolutions.net/download/Mac/Devolutions.RemoteDesktopManager.Free.Mac.#{version}.dmg",
       verified: "devolutions.net/"
   name "Remote Desktop Manager Free"
-  desc "Centralizes all remote connections on a single platform"
+  desc "Centralises all remote connections on a single platform"
   homepage "https://mac.remotedesktopmanager.com/"
+
+  deprecate! date: "2023-12-17", because: :discontinued
 
   depends_on macos: ">= :sierra"
 
@@ -18,7 +20,6 @@ cask "remote-desktop-manager-free" do
   ]
 
   caveats do
-    discontinued
     <<~EOS
       TO install the free version run:
 

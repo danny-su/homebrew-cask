@@ -1,5 +1,5 @@
 cask "macx-video-converter-pro" do
-  version "6.8.1"
+  version "6.8.2"
   sha256 :no_check
 
   url "https://www.macxdvd.com/download/macx-video-converter-pro.dmg"
@@ -9,6 +9,7 @@ cask "macx-video-converter-pro" do
 
   livecheck do
     url "https://www.macxdvd.com/mac-video-converter-pro/upgrade/video-converter-pro.xml"
+    # `LastestVersion` is an upstream typo of `LatestVersion`
     regex(%r{LastestVersion</key>\s*<string>(\d+(?:\.\d+)+)<}i)
   end
 

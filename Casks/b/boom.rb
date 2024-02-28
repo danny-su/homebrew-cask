@@ -1,5 +1,5 @@
 cask "boom" do
-  version "1.7.11,101.7.11015"
+  version "1.7.12,101.7.12025"
   sha256 :no_check
 
   url "https://d13nae1tw8tdnq.cloudfront.net/Boom2mac/webstore/Boom2.dmg",
@@ -15,9 +15,9 @@ cask "boom" do
 
   app "Boom 2.app"
 
-  uninstall kext:      "com.globaldelight.driver.Boom2Device",
-            launchctl: "com.globaldelight.Boom2Daemon",
-            signal:    ["TERM", "com.globaldelight.Boom2"]
+  uninstall launchctl: "com.globaldelight.Boom2Daemon",
+            signal:    ["TERM", "com.globaldelight.Boom2"],
+            kext:      "com.globaldelight.driver.Boom2Device"
 
   zap trash: [
     "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.globaldelight.boom2.sfl*",

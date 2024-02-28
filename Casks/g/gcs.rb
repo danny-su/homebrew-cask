@@ -1,9 +1,9 @@
 cask "gcs" do
   arch arm: "apple", intel: "intel"
 
-  version "5.18.0"
-  sha256 arm:   "a30b9be95fcd3415d82533f5fb2a39aae8f7c725bb90acf32caf9a342a454ccb",
-         intel: "bbf2d83e93019b63c037ddf062abf6bd3a1b5a71d259e9cf791fc05642cfde0a"
+  version "5.20.4"
+  sha256 arm:   "fe55e82109fff2b250a04e7f8edc0e0ae4afc920f1cc3416f3986f631ef6313a",
+         intel: "ee8dafc3d21fb0b91b1092a41d595b9ef2c0a44971337e36d90b00e0e32112cd"
 
   url "https://github.com/richardwilkes/gcs/releases/download/v#{version}/gcs-#{version}-macos-#{arch}.dmg",
       verified: "github.com/richardwilkes/gcs/"
@@ -14,10 +14,10 @@ cask "gcs" do
   app "GCS.app"
 
   zap trash: [
+    "~/GCS",
     "~/Library/Logs/gcs.log",
     "~/Library/Preferences/com.trollworks.gcs.plist",
     "~/Library/Preferences/gcs.json",
     "~/Library/Saved Application State/com.trollworks.gcs.savedState",
-    "~/GCS",
   ]
 end

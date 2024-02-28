@@ -1,9 +1,9 @@
 cask "flutter" do
   arch arm: "_arm64"
 
-  version "3.16.2"
-  sha256 arm:   "5c58fac2bf236ced8ade193b5883a431a861663949e9d5d1a4bf1d93b1f2076f",
-         intel: "99e3e8f80d03be212bb991b03c37dc598dffbf190784166ce9d27cb12ac7d06b"
+  version "3.19.1"
+  sha256 arm:   "b304e2ad41867191df32f76d14ce6cdc6278f10f751aadebd200d20a1d78dbc5",
+         intel: "1a9361ac09a763827d15cda7925a7555994a1ef46225f1564532ab0a9fd704cd"
 
   url "https://storage.googleapis.com/flutter_infra_release/releases/stable/macos/flutter_macos#{arch}_#{version}-stable.zip",
       verified: "storage.googleapis.com/flutter_infra_release/releases/stable/macos/"
@@ -20,6 +20,14 @@ cask "flutter" do
 
   binary "flutter/bin/dart"
   binary "flutter/bin/flutter"
+
+  postflight do
+    FileUtils.ln_sf("#{staged_path}/flutter", "#{HOMEBREW_PREFIX}/share/flutter")
+  end
+
+  uninstall_postflight do
+    FileUtils.rm_f("#{HOMEBREW_PREFIX}/share/flutter")
+  end
 
   zap trash: "~/.flutter"
 end

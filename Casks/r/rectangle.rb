@@ -1,6 +1,6 @@
 cask "rectangle" do
-  version "0.74"
-  sha256 "1117f3830f11dfd74e73d17f76072008a6c4545342842e4ba831410f36d2f968"
+  version "0.76"
+  sha256 "a07ab998b3169688ba4dff35ae37265051b022082d31dc8b3ea6c3fe03b33475"
 
   url "https://github.com/rxhanson/Rectangle/releases/download/v#{version}/Rectangle#{version}.dmg",
       verified: "github.com/rxhanson/Rectangle/"
@@ -24,8 +24,8 @@ cask "rectangle" do
     "~/Library/Application Scripts/com.knollsoft.RectangleLauncher",
     "~/Library/Application Support/Rectangle",
     "~/Library/Caches/com.knollsoft.Rectangle",
-    "~/Library/HTTPStorages/com.knollsoft.Rectangle",
     "~/Library/Containers/com.knollsoft.RectangleLauncher",
+    "~/Library/HTTPStorages/com.knollsoft.Rectangle",
     "~/Library/Preferences/com.knollsoft.Rectangle.plist",
   ]
 end

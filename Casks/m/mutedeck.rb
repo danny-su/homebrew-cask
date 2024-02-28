@@ -10,16 +10,16 @@ cask "mutedeck" do
   homepage "https://mutedeck.com/"
 
   livecheck do
-    url "https://mutedeck.canny.io/changelog"
-    regex(/Most\srecent\supdate:\sv(\d+(?:\.\d+)+)/i)
+    url "https://mutedeck.canny.io/api/changelog/feed.rss"
+    regex(/<title>\s*v?(\d+(?:\.\d+)+)[ <"]/i)
   end
 
   depends_on macos: ">= :big_sur"
 
   installer manual: "MuteDeck-#{version}-Installer"
 
-  uninstall quit:      "com.mutedeck.mac",
-            launchctl: "application.com.mutedeck.mac",
+  uninstall launchctl: "application.com.mutedeck.mac",
+            quit:      "com.mutedeck.mac",
             delete:    "/Applications/MuteDeck"
 
   zap trash: "~/Library/Application Support/mutedeck"

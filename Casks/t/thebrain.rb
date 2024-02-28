@@ -1,6 +1,6 @@
 cask "thebrain" do
-  version "13.0.36.0"
-  sha256 "d7a0ddd2980b8648abd8308f78771f932f3f920bac639f89d125ca73850179ee"
+  version "13.0.42.0"
+  sha256 "fa865925af1546c76461a8b579e8adda80337f7f035303c688acd865b7d78a97"
 
   url "https://updater.thebrain.com/files/TheBrain#{version}.dmg"
   name "TheBrain"
@@ -15,4 +15,10 @@ cask "thebrain" do
   depends_on macos: ">= :mojave"
 
   app "TheBrain #{version.major}.app"
+
+  zap trash: [
+    "~/Library/Caches/com.thebrain.TheBrain",
+    "~/Library/HTTPStorages/com.thebrain.TheBrain",
+    "~/Library/Preferences/com.thebrain.TheBrain.plist",
+  ]
 end

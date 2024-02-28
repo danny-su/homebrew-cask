@@ -4,9 +4,11 @@ cask "android-sdk" do
 
   url "https://dl.google.com/android/repository/sdk-tools-darwin-#{version}.zip",
       verified: "dl.google.com/android/repository/"
-  name "android-sdk"
+  name "Android SDK"
   desc "Tools for the Android SDK"
   homepage "https://developer.android.com/studio/releases/sdk-tools"
+
+  deprecate! date: "2023-12-17", because: :discontinued
 
   binary "#{staged_path}/tools/android"
   binary "#{staged_path}/tools/emulator"
@@ -35,6 +37,5 @@ cask "android-sdk" do
 
   caveats do
     depends_on_java "8"
-    discontinued
   end
 end

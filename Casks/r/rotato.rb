@@ -1,6 +1,6 @@
 cask "rotato" do
-  version "142.378"
-  sha256 "d2c199615d362c46492730af70a677c02e698f593aadc16048066a6f075b2760"
+  version "145"
+  sha256 "bb81a64ec7a5114397b79c96acf9ce282d57c44d7c4f1aeb63b70707d6f8449d"
 
   url "https://rotato.app/api/releases/download/#{version}"
   name "Rotato"

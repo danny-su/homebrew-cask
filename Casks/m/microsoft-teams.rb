@@ -1,6 +1,6 @@
 cask "microsoft-teams" do
-  version "23285.3809.2525.961"
-  sha256 "52fcf3c8edb5152aa44bed3c952dcacbcd44589856f5bd57be5b0b39ea532de0"
+  version "24004.1304.2655.7488"
+  sha256 "5f4606f8c9cab90072dd0fe41460715b771d7e36bef175b137d8da42049cc8be"
 
   url "https://statics.teams.cdn.office.net/production-osx/#{version}/MicrosoftTeams.pkg",
       verified: "statics.teams.cdn.office.net/production-osx/"
@@ -39,18 +39,18 @@ cask "microsoft-teams" do
         },
       ]
 
-  uninstall pkgutil:   [
+  uninstall launchctl: "com.microsoft.teams.TeamsUpdaterDaemon",
+            quit:      "com.microsoft.autoupdate2",
+            pkgutil:   [
               "com.microsoft.MSTeamsAudioDevice",
               "com.microsoft.package.Microsoft_AutoUpdate.app",
               "com.microsoft.teams2",
             ],
-            launchctl: "com.microsoft.teams.TeamsUpdaterDaemon",
-            quit:      "com.microsoft.autoupdate2",
             delete:    [
               "/Applications/Microsoft Teams (work or school).app",
               "/Library/Application Support/Microsoft/TeamsUpdaterDaemon",
-              "/Library/Logs/Microsoft/Teams",
               "/Library/Logs/Microsoft/MSTeams",
+              "/Library/Logs/Microsoft/Teams",
               "/Library/Preferences/com.microsoft.teams.plist",
             ]
 
@@ -69,8 +69,8 @@ cask "microsoft-teams" do
         "~/Library/Group Containers/*.com.microsoft.teams",
         "~/Library/HTTPStorages/com.microsoft.teams",
         "~/Library/HTTPStorages/com.microsoft.teams.binarycookies",
-        "~/Library/Logs/Microsoft Teams",
         "~/Library/Logs/Microsoft Teams Helper (Renderer)",
+        "~/Library/Logs/Microsoft Teams",
         "~/Library/Preferences/com.microsoft.teams.plist",
         "~/Library/Saved Application State/com.microsoft.teams.savedState",
         "~/Library/Saved Application State/com.microsoft.teams2.savedState",

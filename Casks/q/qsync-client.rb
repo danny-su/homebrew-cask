@@ -1,10 +1,10 @@
 cask "qsync-client" do
-  version "5.0.10.0928"
-  sha256 "f0b0a24af056f1c9bf2ffaf7a157fd91d5a55896e2bb690e46dbda5349a44950"
+  version "5.1.0.1222"
+  sha256 "e51ad79df8c16ce85c8cb8ab78fd37b6f2f274193b66435bcf23b7eada02b5f8"
 
   url "https://download.qnap.com/Storage/Utility/QNAPQsyncClientMac-#{version}.dmg"
   name "Qnap Qsync"
-  desc "Automatic file synchronization"
+  desc "Automatic file synchronisation"
   homepage "https://www.qnap.com/en/utilities/essentials#utliity_3"
 
   livecheck do
@@ -14,11 +14,11 @@ cask "qsync-client" do
 
   installer manual: "Qsync Client.pkg"
 
-  uninstall pkgutil: "com.qnap.qsync",
-            quit:    [
+  uninstall quit:    [
               "com.qnap.qsync",
               "com.qnap.qsync.findersync",
-            ]
+            ],
+            pkgutil: "com.qnap.qsync"
 
   zap trash: [
     "~/Library/Application Scripts/com.qnap.qsync",

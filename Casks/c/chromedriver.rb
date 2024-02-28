@@ -1,12 +1,12 @@
 cask "chromedriver" do
   arch arm: "arm64", intel: "x64"
 
-  version "119.0.6045.105"
-  sha256 arm:   "53e3c1b1fa5cecf35961e74721d3e759703dc4aa519e89f9bf180a289afaf68c",
-         intel: "b11014f51240373f92a2fea86a865ab0ca1aa8cfa62194836da83ddb05ec5422"
+  version "122.0.6261.94"
+  sha256 arm:   "19cd0e5c6eddc7932fcb4680b27a95209b4f14af0e62616bf0e7f2f945da70ce",
+         intel: "8afdfbd01607f07a1b5317986ec578fc0e89c991b67de12e55b2422d565cdce8"
 
-  url "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/#{version}/mac-#{arch}/chromedriver-mac-#{arch}.zip",
-      verified: "edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/"
+  url "https://storage.googleapis.com/chrome-for-testing-public/#{version}/mac-#{arch}/chromedriver-mac-#{arch}.zip",
+      verified: "storage.googleapis.com/chrome-for-testing-public/"
   name "ChromeDriver"
   desc "Automated testing of webapps for Google Chrome"
   homepage "https://chromedriver.chromium.org/"
@@ -19,7 +19,7 @@ cask "chromedriver" do
     end
   end
 
-  conflicts_with cask: "homebrew/cask-versions/chromedriver-beta"
+  conflicts_with cask: "chromedriver-beta"
 
   binary "chromedriver-mac-#{arch}/chromedriver"
 

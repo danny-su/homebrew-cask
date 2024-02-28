@@ -21,16 +21,16 @@ cask "mds" do
 
   pkg "MDS.pkg"
 
-  uninstall pkgutil:   "com.twocanoes.pkg.MDS",
-            launchctl: "com.mds-micromdm"
+  uninstall launchctl: "com.mds-micromdm",
+            pkgutil:   "com.twocanoes.pkg.MDS"
 
   zap trash: [
-    "/usr/local/mds-micromdm",
-    "~/Library/Application Support/MDS",
-    "~/Library/Application Support/com.twocanoes.mds.sync",
-    "~/Library/Logs/com.twocanoes.mds.log",
-    "~/Library/Preferences/com.apple.imdsmsrecordstore.plist",
     "/Library/LaunchDaemons/com.twocanoes.mdshelpertool.plist",
     "/Library/PrivilegedHelperTools/com.twocanoes.mdshelpertool",
+    "/usr/local/mds-micromdm",
+    "~/Library/Application Support/com.twocanoes.mds.sync",
+    "~/Library/Application Support/MDS",
+    "~/Library/Logs/com.twocanoes.mds.log",
+    "~/Library/Preferences/com.apple.imdsmsrecordstore.plist",
   ]
 end

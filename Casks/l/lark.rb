@@ -2,12 +2,12 @@ cask "lark" do
   arch arm: "arm64", intel: "x64"
 
   on_arm do
-    version "7.4.10,fd593897"
-    sha256 "d57a7de1342406a971a020b6b428d7d3a6c400c094bd85056824f6916a6ea075"
+    version "7.11.5,f19b286a"
+    sha256 "91afc5d7fbacc75394da1c43e878bc1645a27ab8f5e5b19fb32e15fc23e9048e"
   end
   on_intel do
-    version "7.4.10,508659fe"
-    sha256 "d4138360249679644b5682409f98592625d06392cf117e409d272223e82a3a54"
+    version "7.11.5,fd6557ae"
+    sha256 "7ca086af98e191f3cf21725ef72d86fcca4356f032d97b81c55abb20a017616f"
   end
 
   url "https://sf16-va.larksuitecdn.com/obj/lark-artifact-storage/#{version.csv.second}/Lark-darwin_#{arch}-#{version.csv.first}-signed.dmg",
@@ -29,14 +29,9 @@ cask "lark" do
   app "LarkSuite.app"
 
   zap trash: [
-    # feishu
-    "~/Library/Caches/com.bytedance.lark.helper",
-    "~/Library/Preferences/com.bytedance.lark.helper.plist",
-    # lark
+    "~/Library/Caches/com.electron.lark",
     "~/Library/Caches/com.electron.lark.helper",
     "~/Library/Preferences/com.electron.lark.helper.plist",
-    # both
-    "~/Library/Caches/com.electron.lark",
     "~/Library/Saved Application State/com.electron.lark.savedState",
   ]
 end

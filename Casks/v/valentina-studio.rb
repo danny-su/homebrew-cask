@@ -1,6 +1,6 @@
 cask "valentina-studio" do
-  version "13.6"
-  sha256 "105871e3cf58dedd458c515318182507aa698be0f8a9b24ec521296cd32f7a81"
+  version "13.9"
+  sha256 "93df74f50232803b8a460bff4549dda075292010c71576c30132227aa49874a4"
 
   url "https://valentina-db.com/download/prev_releases/#{version}/mac_64/vstudio_x64_#{version.major}_mac.dmg"
   name "Valentina Studio"
@@ -19,8 +19,8 @@ cask "valentina-studio" do
   zap trash: [
     "~/Library/Logs/Valentina Studio",
     "~/Library/Preferences/com.paradigma-software-inc.Valentina Studio_ling.plist",
-    "~/Library/Preferences/com.paradigmasoft.vstudio.plist",
     "~/Library/Preferences/com.paradigmasoft.VStudio",
+    "~/Library/Preferences/com.paradigmasoft.vstudio.plist",
     "~/Library/Saved Application State/com.paradigmasoft.vstudio.savedState",
   ]
 end

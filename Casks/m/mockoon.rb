@@ -1,6 +1,6 @@
 cask "mockoon" do
-  version "6.0.1"
-  sha256 "82f86d65c47c90aec934f2cf8d542edf5ac92638e366a2e031425d3573dab141"
+  version "6.2.0"
+  sha256 "7b2ea429b61044b55488bf5cddec961f2d533d15ddbd97006bfc2a7b72ae458e"
 
   url "https://github.com/mockoon/mockoon/releases/download/v#{version}/mockoon.setup.#{version}.universal.dmg",
       verified: "github.com/mockoon/mockoon/"
@@ -14,6 +14,7 @@ cask "mockoon" do
   end
 
   auto_updates true
+  depends_on macos: ">= :high_sierra"
 
   app "Mockoon.app"
 

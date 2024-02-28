@@ -1,6 +1,6 @@
 cask "skype" do
-  version "8.109.0.209"
-  sha256 "76a07cb03d6968955134c11b814c854ec722163b801243a5f0fcb161c02bef72"
+  version "8.113.0.210"
+  sha256 "e88cc9b59a9ec62b8cde27c9380ede9f78efc71767ab38211e1c564ccdc034b1"
 
   url "https://endpoint920510.azureedge.net/s4l/s4l/download/mac/Skype-#{version}.dmg",
       verified: "endpoint920510.azureedge.net/s4l/s4l/download/mac/"
@@ -14,30 +14,31 @@ cask "skype" do
   end
 
   auto_updates true
+  depends_on macos: ">= :high_sierra"
 
   app "Skype.app"
 
   zap trash: [
     "~/Library/Address Book Plug-Ins/SkypeABCaller.bundle",
+    "~/Library/Address Book Plug-Ins/SkypeABChatter.bundle",
     "~/Library/Address Book Plug-Ins/SkypeABDialer.bundle",
     "~/Library/Address Book Plug-Ins/SkypeABSMS.bundle",
-    "~/Library/Address Book Plug-Ins/SkypeABChatter.bundle",
     "~/Library/Application Scripts/com.skype.skype.shareagent",
-    "~/Library/Application Support/Microsoft/Skype for Desktop",
-    "~/Library/Application Support/Skype",
-    "~/Library/Application Support/Skype Helper",
-    "~/Library/Application Support/T/SkypeRT",
-    "~/Library/Application Support/CrashReporter/Skype_*.plist",
     "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.skype.skype.sfl*",
+    "~/Library/Application Support/CrashReporter/Skype_*.plist",
+    "~/Library/Application Support/Microsoft/Skype for Desktop",
+    "~/Library/Application Support/Skype Helper",
+    "~/Library/Application Support/Skype",
+    "~/Library/Application Support/T/SkypeRT",
     "~/Library/Caches/com.plausiblelabs.crashreporter.data/com.skype.skype",
     "~/Library/Caches/com.skype.skype",
     "~/Library/Caches/com.skype.skype.ShipIt",
     "~/Library/Containers/com.skype.skype.shareagent",
     "~/Library/Cookies/com.skype.skype.binarycookies",
     "~/Library/Group Containers/*.com.skype.skype",
+    "~/Library/Preferences/ByHost/com.skype.skype.*.plist",
     "~/Library/Preferences/com.skype.skype.plist",
     "~/Library/Preferences/com.skype.skypewifi.plist",
-    "~/Library/Preferences/ByHost/com.skype.skype.*.plist",
     "~/Library/Saved Application State/com.skype.skype.savedState",
     "~/Library/WebKit/com.skype.skype",
   ]

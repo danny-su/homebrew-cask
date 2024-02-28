@@ -1,8 +1,11 @@
 cask "adrive" do
-  version "4.9.15"
-  sha256 "404e1ca75200730bc8b7f0724baa404ee39c0b9b3db2e9665a87b585845d12eb"
+  arch arm: "-arm64"
 
-  url "https://cdn.aliyundrive.net/downloads/apps/desktop/aDrive-#{version}.dmg",
+  version "4.12.0"
+  sha256 arm:   "5f8ba554b7603a733e1db63f6adaf457f5dbf951ba1419a57edb40a54abd9844",
+         intel: "c6265bce6b6e28568359e09e0d069795364e9f42e15fdc4a7d8b8e437991c917"
+
+  url "https://cdn.aliyundrive.net/downloads/apps/desktop/aDrive-#{version}#{arch}.dmg",
       verified: "cdn.aliyundrive.net/"
   name "Aliyundrive"
   name "阿里云盘"
@@ -10,8 +13,8 @@ cask "adrive" do
   homepage "https://www.aliyundrive.com/"
 
   livecheck do
-    url :url
-    strategy :extract_plist
+    url "https://www.aliyundrive.com/download"
+    regex(/aDrive[._-]v?(\d+(?:\.\d+)+)\.dmg/i)
   end
 
   auto_updates true

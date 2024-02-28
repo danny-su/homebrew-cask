@@ -1,5 +1,5 @@
 cask "ip-in-menu-bar" do
-  version "4.7"
+  version "4.7.1"
   sha256 :no_check
 
   url "https://www.monkeybreadsoftware.de/Software/IPinmenubar.dmg"
@@ -12,5 +12,13 @@ cask "ip-in-menu-bar" do
     regex(/IP\s+in\s+menubar\s+(\d+(?:\.\d+)+)/i)
   end
 
+  depends_on macos: ">= :mojave"
+
   app "IP in menu bar.app"
+
+  zap trash: [
+    "~/Library/Caches/de.monkeybreadsoftware.freeware.ipinmenubar",
+    "~/Library/HTTPStorages/de.monkeybreadsoftware.freeware.ipinmenubar",
+    "~/Library/Preferences/de.monkeybreadsoftware.freeware.ipinmenubar.plist",
+  ]
 end

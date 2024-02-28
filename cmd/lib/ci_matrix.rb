@@ -125,7 +125,7 @@ module CiMatrix
 
     cask_files_to_check = if cask_names.any?
       cask_names.map do |cask_name|
-        Cask::CaskLoader.load(cask_name).sourcefile_path
+        Cask::CaskLoader.load(cask_name).sourcefile_path.relative_path_from(tap.path)
       end
     else
       changed_files[:modified_cask_files]
@@ -138,14 +138,16 @@ module CiMatrix
       cask_token = path.basename(".rb")
 
       audit_args = ["--online"]
-      audit_args << "--new-cask" if changed_files[:added_files].include?(path) || new_cask
+      audit_args << "--new" if changed_files[:added_files].include?(path) || new_cask
 
       audit_args << "--signing"
 
       audit_exceptions = []
 
+      audit_exceptions << %w[homepage_https_availability] if labels.include?("ci-skip-homepage")
+
       if labels.include?("ci-skip-livecheck")
-        audit_exceptions << %w[hosting_with_livecheck https_availability
+        audit_exceptions << %w[hosting_with_livecheck livecheck_https_availability
                                livecheck_min_os livecheck_version]
       end
 
@@ -156,6 +158,8 @@ module CiMatrix
                                gitlab_repository gitlab_prerelease_version
                                bitbucket_repository]
       end
+
+      audit_exceptions << %w[token_conflicts token_valid token_bad_words] if labels.include?("ci-skip-token")
 
       audit_args << "--except" << audit_exceptions.join(",") if audit_exceptions.any?
 
@@ -174,7 +178,6 @@ module CiMatrix
           audit_args:   audit_args + arch_args,
           fetch_args:   arch_args,
           skip_install: labels.include?("ci-skip-install") || !native_runner_arch || skip_install,
-          skip_readall: !native_runner_arch,
           runner:       runner.fetch(:name),
         }
       end

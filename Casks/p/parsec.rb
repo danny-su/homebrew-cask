@@ -1,5 +1,5 @@
 cask "parsec" do
-  version "150.90.3"
+  version "150.92.1"
   sha256 :no_check
 
   url "https://builds.parsec.app/package/parsec-macos.pkg"
@@ -18,8 +18,8 @@ cask "parsec" do
     set_ownership "~/.parsec"
   end
 
-  uninstall pkgutil: "tv.parsec.www",
-            quit:    "tv.parsec.www"
+  uninstall quit:    "tv.parsec.www",
+            pkgutil: "tv.parsec.www"
 
   zap trash: "~/.parsec"
 end

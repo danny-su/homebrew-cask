@@ -1,6 +1,6 @@
 cask "herd" do
-  version "1.3.1"
-  sha256 "f817b0691b2a24acb1d5e43dcf1b3f655c83273caa6f54c3a0db339f6adab74f"
+  version "1.4.1"
+  sha256 "311c98aff679b56f209346d9b53eac9f52b0054a664b988c00efda7f3973a6f7"
 
   url "https://download.herdphp.com/app_versions/Herd_#{version}.dmg",
       verified: "download.herdphp.com/app_versions/"
@@ -13,12 +13,13 @@ cask "herd" do
     strategy :sparkle, &:short_version
   end
 
+  auto_updates true
   depends_on macos: ">= :monterey"
 
   app "Herd.app"
 
-  uninstall delete: "/etc/sudoers.d/herd",
-            quit:   "Herd.app"
+  uninstall quit:   "Herd.app",
+            delete: "/etc/sudoers.d/herd"
 
   zap trash: [
     "~/Herd",

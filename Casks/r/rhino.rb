@@ -1,20 +1,20 @@
 cask "rhino" do
-  version "7.34.23267.11002"
-  sha256 "afa3a731edd7a1a0ab887d79338af32e2b0bcb5ded7b9ff8ca38867d81b0413e"
+  version "8.4.24044.15002"
+  sha256 "63cadde2bf0f5a287f44f67a59e629e42bff1c0b39a36f67fd603c574a5708c2"
 
   url "https://files.mcneel.com/rhino/#{version.major}/mac/releases/rhino_#{version}.dmg",
-      verified: "mcneel.com/"
+      verified: "mcneel.com/rhino/"
   name "Rhinoceros"
   desc "3D model creator"
   homepage "https://www.rhino3d.com/"
 
   livecheck do
     url "https://files.mcneel.com/rhino/#{version.major}/mac/updates/commercialUpdates.xml"
-    strategy :sparkle, &:version
+    strategy :sparkle
   end
 
   auto_updates true
-  depends_on macos: ">= :mojave"
+  depends_on macos: ">= :monterey"
 
   app "Rhino #{version.major}.app"
 

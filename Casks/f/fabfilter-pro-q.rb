@@ -1,10 +1,10 @@
 cask "fabfilter-pro-q" do
-  version "3.23"
-  sha256 "35975571e0ee3e72a3c14d4c02d58999ead5c9ce1a5dc248f9874442b994bc67"
+  version "3.25"
+  sha256 "cc5c9144b8cb0af7aef2a0fe11f8e1a74fa99bdc58094a450cf96ee565bb12be"
 
-  url "https://download.fabfilter.com/ffproq#{version.no_dots}.dmg"
+  url "https://www.fabfilter.com/downloads/ffproq#{version.no_dots}.dmg"
   name "FabFilter Pro-Q"
-  desc "Equalizer plug-in"
+  desc "Equaliser plug-in"
   homepage "https://www.fabfilter.com/products/pro-q-3-equalizer-plug-in"
 
   livecheck do

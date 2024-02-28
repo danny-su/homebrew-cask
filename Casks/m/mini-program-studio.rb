@@ -1,14 +1,9 @@
 cask "mini-program-studio" do
   arch arm: "-arm64", intel: "-x64"
 
-  on_arm do
-    version "3.8.4"
-    sha256 "ec3b672e829995315cef8b2b513d6547199babb557de1df65715fe6588a8a8f1"
-  end
-  on_intel do
-    version "3.8.4"
-    sha256 "58849a207da8d2ab02cffbe0490e934958c696fa6671870db98835a1f48db3f5"
-  end
+  version "3.8.11"
+  sha256 arm:   "1f0b316d5e860c28c3831bc562c45f2b4dfa9e0db2c4fd11f012a4d69fe7e4e6",
+         intel: "bd4cc3e531acd258ab13ff473450fda4810eb72d37ac7bcf178a51b32d2cfece"
 
   url "https://alipay-miniapp-public.oss-cn-hangzhou.aliyuncs.com/mfupload/MiniProgramStudio-#{version}#{arch}.dmg",
       verified: "alipay-miniapp-public.oss-cn-hangzhou.aliyuncs.com/mfupload/"

@@ -2,15 +2,15 @@ cask "tencent-meeting" do
   arch arm: "arm64", intel: "x86_64"
 
   on_arm do
-    version "3.21.3.428,7d3648547b62485360089c2fc57d2c1b"
-    sha256 "00dcf8b32a8c74495613dc80399542c73e2cde8a5cef8ec93013c8c9b6cfaf5d"
+    version "3.24.3.401,7861cf367f7764fc531090effa381b3c"
+    sha256 "7ce846c33cf38f8a2894492cc71ea7b370aedeb5bb969fe52c4228d20a383110"
   end
   on_intel do
-    version "3.21.3.428,c458bb520cdfc5806f703269d88b8a9a"
-    sha256 "598dc11ae40aefa4fd02af58dbc495834a7e0da71e7577e3cce5767e4b368c35"
+    version "3.24.3.401,6098097df3d0ff1ec23752a331c8784d"
+    sha256 "9166e4f4a4198c029699279ae1d2679817077ef4b8dac0ab3ea33d77a9578a0b"
   end
 
-  url "https://updatecdn.meeting.qq.com/cos/#{version.csv.second}/TencentMeeting_0300000000_#{version.csv.first}.publish.#{arch}.dmg",
+  url "https://updatecdn.meeting.qq.com/cos/#{version.csv.second}/TencentMeeting_0300000000_#{version.csv.first}.publish.#{arch}.officialwebsite.dmg",
       verified: "updatecdn.meeting.qq.com/cos/"
   name "Tencent Meeting"
   name "腾讯会议"
@@ -18,13 +18,15 @@ cask "tencent-meeting" do
   homepage "https://meeting.tencent.com/"
 
   livecheck do
-    url "https://meeting.tencent.com/web-service/query-app-update-info/?from=2&app_publish_channel=TencentInside&sdk_id=0300000000&os=mac&arch=#{arch}&appver=#{version.csv.first}"
+    url %Q(https://meeting.tencent.com/web-service/query-download-info?q=[{"package-type":"app","channel":"0300000000","platform":"mac","arch":"#{arch}"}]&nonce=1234567890123456)
     regex(%r{/cos/(\h+)/TencentMeeting[._-].+?v?(\d+(?:\.\d+)+)})
     strategy :json do |json, regex|
-      match = json.dig("target", "url")&.match(regex)
-      next version if match.blank?
+      json["info-list"]&.map do |item|
+        match = item["url"]&.match(regex)
+        next if match.blank?
 
-      "#{match[2]},#{match[1]}"
+        "#{match[2]},#{match[1]}"
+      end
     end
   end
 
@@ -36,8 +38,8 @@ cask "tencent-meeting" do
   uninstall quit: "com.tencent.meeting"
 
   zap trash: [
-    "~/Library/Application Scripts/FN2V63AD2J.com.tencent.meeting",
     "~/Library/Application Scripts/com.tencent.meeting",
+    "~/Library/Application Scripts/FN2V63AD2J.com.tencent.meeting",
     "~/Library/Caches/com.tencent.meeting*",
     "~/Library/Containers/com.tencent.meeting*",
     "~/Library/Containers/com.tencent.wemeet.FileDelta",

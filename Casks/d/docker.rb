@@ -28,9 +28,9 @@ cask "docker" do
     depends_on macos: :big_sur
   end
   on_monterey :or_newer do
-    version "4.25.2,129061"
-    sha256 arm:   "37f4dd9daf8a397f7d0975068235b77ff164721e096c1c3cb0e829773bfb9216",
-           intel: "036f3a052c299d6cc5280bcaeb0018e5ad116cc1697464fffc3133d393f5d2e0"
+    version "4.28.0,139021"
+    sha256 arm:   "bbea580cbda59233c620a258e4a27369e04d5068735a087b8e13622d5e69fcd5",
+           intel: "2bd6e03121d608dad89261ca14f6e495fdcca97e36231b43da2d7a762047df9d"
 
     livecheck do
       url "https://desktop.docker.com/mac/main/#{arch}/appcast.xml"
@@ -44,7 +44,7 @@ cask "docker" do
   name "Docker Desktop"
   name "Docker Community Edition"
   name "Docker CE"
-  desc "App to build and share containerized applications and microservices"
+  desc "App to build and share containerised applications and microservices"
   homepage "https://www.docker.com/products/docker-desktop"
 
   auto_updates true
@@ -100,17 +100,17 @@ cask "docker" do
     end
   end
 
-  uninstall delete:    [
-              "/Library/PrivilegedHelperTools/com.docker.socket",
-              "/Library/PrivilegedHelperTools/com.docker.vmnetd",
-            ],
-            rmdir:     "~/.docker/bin",
-            launchctl: [
+  uninstall launchctl: [
               "com.docker.helper",
               "com.docker.socket",
               "com.docker.vmnetd",
             ],
-            quit:      "com.docker.docker"
+            quit:      "com.docker.docker",
+            delete:    [
+              "/Library/PrivilegedHelperTools/com.docker.socket",
+              "/Library/PrivilegedHelperTools/com.docker.vmnetd",
+            ],
+            rmdir:     "~/.docker/bin"
 
   zap trash: [
         "/usr/local/bin/docker-compose.backup",

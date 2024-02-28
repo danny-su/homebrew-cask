@@ -1,11 +1,12 @@
 cask "camunda-modeler" do
-  version "5.17.0"
-  sha256 "0deb8db9dedb00dc46ec3630ddfb1791972610f8c3c28a820be73127d16aec26"
+  version "5.20.0"
+  sha256 "9e331af1a1f644b01da878e37eac049048f5087e58f78186f444093d6a2ae49d"
 
-  url "https://camunda.org/release/camunda-modeler/#{version}/camunda-modeler-#{version}-mac.zip"
+  url "https://downloads.camunda.cloud/release/camunda-modeler/#{version}/camunda-modeler-#{version}-mac.zip",
+      verified: "downloads.camunda.cloud/release/camunda-modeler/"
   name "Camunda Modeler"
   desc "Workflow and Decision Automation Platform"
-  homepage "https://camunda.org/"
+  homepage "https://camunda.com/"
 
   livecheck do
     url "https://camunda.com/download/modeler/"

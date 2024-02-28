@@ -8,6 +8,8 @@ cask "atom" do
   desc "Text editor"
   homepage "https://atom.io/"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   auto_updates true
 
   app "Atom.app"
@@ -17,10 +19,10 @@ cask "atom" do
   zap trash: [
     "~/.atom",
     "~/Library/Application Support/Atom",
-    "~/Library/Application Support/ShipIt_stderr.log",
-    "~/Library/Application Support/ShipIt_stdout.log",
     "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.github.atom.sfl*",
     "~/Library/Application Support/com.github.atom.ShipIt",
+    "~/Library/Application Support/ShipIt_stderr.log",
+    "~/Library/Application Support/ShipIt_stdout.log",
     "~/Library/Caches/com.github.atom",
     "~/Library/Caches/com.github.atom.ShipIt",
     "~/Library/Logs/Atom",
@@ -30,8 +32,4 @@ cask "atom" do
     "~/Library/Saved Application State/com.github.atom.savedState",
     "~/Library/WebKit/com.github.atom",
   ]
-
-  caveats do
-    discontinued
-  end
 end

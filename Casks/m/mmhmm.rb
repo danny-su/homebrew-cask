@@ -1,5 +1,5 @@
 cask "mmhmm" do
-  version "1.1.6"
+  version "1.1.8"
   sha256 :no_check
 
   url "https://updates.mmhmm.app/mac/hybrid/beta/mmhmm.pkg"
@@ -17,8 +17,8 @@ cask "mmhmm" do
 
   pkg "mmhmm.pkg"
 
-  uninstall pkgutil: "app.mmhmm.hybrid",
-            quit:    "app.mmhmm.hybrid"
+  uninstall quit:    "app.mmhmm.hybrid",
+            pkgutil: "app.mmhmm.hybrid"
 
   zap trash: [
     "~/Library/Application Support/mmhmm",

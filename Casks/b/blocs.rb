@@ -1,5 +1,5 @@
 cask "blocs" do
-  version "5.1.5"
+  version "5.2.0"
   sha256 :no_check
 
   url "https://blocsapp.com/download/Blocs.zip"
@@ -19,8 +19,8 @@ cask "blocs" do
   app "Blocs.app"
 
   zap trash: [
-    "~/Library/Application Support/Blocs",
     "~/Library/Application Support/Blocs *",
+    "~/Library/Application Support/Blocs",
     "~/Library/Caches/com.cazoobi.Blocs-*",
     "~/Library/HTTPStorages/com.cazoobi.Blocs-*",
     "~/Library/HTTPStorages/com.cazoobi.Blocs-*.binarycookies",

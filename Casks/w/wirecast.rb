@@ -1,6 +1,6 @@
 cask "wirecast" do
-  version "16.0.3"
-  sha256 "c2a5f2bc38493379d4fe68be7ae658f7a0c535aca4366088c063e14e4d174b0b"
+  version "16.2"
+  sha256 "a289d7c1f2fba6cfdd606128ad06ab0604047d3d273d8be4a506434879d260e9"
 
   url "https://www.telestream.net/download-files/wirecast/#{version.major_minor.dots_to_hyphens}/Wirecast-#{version}.dmg"
   name "Wirecast"
@@ -26,8 +26,8 @@ cask "wirecast" do
     "~/Library/Caches/net.telestream.wirecast/",
     "~/Library/HTTPStorages/net.telestream.wirecast",
     "~/Library/Logs/Wirecast",
-    "~/Library/Preferences/Wirecast",
     "~/Library/Preferences/net.telestream.wirecast.plist",
+    "~/Library/Preferences/Wirecast",
     "~/Library/Saved Applicate State/net.telestream.wirecast.savedState",
   ]
 end

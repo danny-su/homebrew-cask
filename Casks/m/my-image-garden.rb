@@ -21,13 +21,13 @@ cask "my-image-garden" do
 
   pkg "My Image Garden V#{version.csv.first.no_dots}.pkg"
 
-  uninstall pkgutil: "jp.co.canon.MyImageGarden",
-            quit:    "jp.co.canon.MyImageGarden"
+  uninstall quit:    "jp.co.canon.MyImageGarden",
+            pkgutil: "jp.co.canon.MyImageGarden"
 
   zap trash: [
     "/Library/Caches/Canon",
-    "~/Library/Application Scripts/jp.co.canon.MyImageGarden",
     "~/Library/Application Scripts/jp.co.canon.ij.pesp.group",
+    "~/Library/Application Scripts/jp.co.canon.MyImageGarden",
     "~/Library/Containers/jp.co.canon.MyImageGarden",
     "~/Library/Group Containers/jp.co.canon.ij.pesp.group",
   ]

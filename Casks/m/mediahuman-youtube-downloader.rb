@@ -1,5 +1,5 @@
 cask "mediahuman-youtube-downloader" do
-  version "3.9.9.87"
+  version "3.9.9.88"
   sha256 :no_check
 
   url "https://www.mediahuman.net/files/YouTubeDownloader.dmg"
@@ -17,7 +17,7 @@ cask "mediahuman-youtube-downloader" do
   app "MediaHuman YouTube Downloader.app"
 
   zap trash: [
-    "~/Library/Saved Application State/com.mediahuman.YouTube Downloader.savedState",
     "~/Library/Preferences/com.mediahuman.YouTube Downloader.plist",
+    "~/Library/Saved Application State/com.mediahuman.YouTube Downloader.savedState",
   ]
 end

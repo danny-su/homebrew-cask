@@ -1,8 +1,8 @@
 cask "hapigo" do
-  version "2.11.1"
-  sha256 :no_check
+  version "2.12.0"
+  sha256 "e80bf8ab2b5c05194278b54488232ef830d18cfe15921e921dc91955753051a8"
 
-  url "https://dl.hapigo.com/HapiGo.dmg"
+  url "https://dl.hapigo.com/HapiGo_#{version}.dmg"
   name "HapiGo"
   desc "Application launcher and productivity software"
   homepage "https://www.hapigo.com/"
@@ -19,8 +19,8 @@ cask "hapigo" do
 
   zap trash: [
     "~/Library/Application Support/Hapigo",
-    "~/Library/Caches/Hapigo",
     "~/Library/Caches/com.xunyong.hapigo",
+    "~/Library/Caches/Hapigo",
     "~/Library/HTTPStorages/com.xunyong.hapigo",
     "~/Library/HTTPStorages/com.xunyong.hapigo.binarycookies",
     "~/Library/Preferences/com.xunyong.hapigo.plist",

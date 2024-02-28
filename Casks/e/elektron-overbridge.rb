@@ -1,6 +1,6 @@
 cask "elektron-overbridge" do
-  version "2.7.3,25cf858c-d32c-5bd8-b43b-ce01219081ba"
-  sha256 "dfc839d6cc6226353d36dca0b140f19cfb7cf89f3d186b08381bee1f1c5b6835"
+  version "2.7.13,31ec56e9-963b-5a69-ba50-7d422453d874"
+  sha256 "5a540060632941a2d527c7f0974716601a4777b0b7d43f5dabd4ec92b5e3be0f"
 
   url "https://s3-eu-west-1.amazonaws.com/se-elektron-devops/release/#{version.csv.second}/Elektron_Overbridge_#{version.csv.first}.dmg",
       verified: "s3-eu-west-1.amazonaws.com/se-elektron-devops/"
@@ -20,12 +20,12 @@ cask "elektron-overbridge" do
 
   pkg "Elektron Overbridge Installer #{version.csv.first}.pkg"
 
-  uninstall quit:      "se.elektron.OverbridgeEngine",
-            pkgutil:   "se.elektron.overbridge.*",
-            launchctl: [
-              "se.elektron.overbridge.engine",
+  uninstall launchctl: [
               "asp.se.elektron.overbridge.coreaudio2",
+              "se.elektron.overbridge.engine",
             ],
+            quit:      "se.elektron.OverbridgeEngine",
+            pkgutil:   "se.elektron.overbridge.*",
             delete:    "/Applications/Elektron"
 
   zap trash: [

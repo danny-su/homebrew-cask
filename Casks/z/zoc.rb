@@ -1,6 +1,6 @@
 cask "zoc" do
-  version "8.07.2"
-  sha256 "c28704402e1529600369d89c4864a6056cafdfa26d7a974117ac3f44bf3ed790"
+  version "8.07.6"
+  sha256 "ad61367a518f7bc1df48bc1a276e3e7ae030d57b2de8d7e103b4590e62b96dc7"
 
   url "https://www.emtec.com/downloads/zoc/zoc#{version.no_dots}.dmg"
   name "ZOC"
@@ -18,8 +18,8 @@ cask "zoc" do
     "~/Library/Application Support/ZOC#{version.major} Files",
     "~/Library/Logs/EmTec_ZOC_Assert.log",
     "~/Library/Logs/ZOC",
-    "~/Library/Preferences/com.emtec.zoc7.plist",
     "~/Library/Preferences/com.emtec.zoc#{version.major}.plist",
+    "~/Library/Preferences/com.emtec.zoc7.plist",
     "~/Library/Saved Application State/com.emtec.zoc#{version.major}.savedState",
   ]
 end

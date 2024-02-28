@@ -7,16 +7,14 @@ cask "videostream" do
   desc "Stream media from your computer to Chromecast"
   homepage "https://getvideostream.com/"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   pkg "Videostream.pkg"
 
   uninstall launchctl: [
               "com.videostream.launcher",
               "com.videostream.updater.#{version}",
             ],
-            pkgutil:   "com.videostream",
-            signal:    ["TERM", "com.videostream"]
-
-  caveats do
-    discontinued
-  end
+            signal:    ["TERM", "com.videostream"],
+            pkgutil:   "com.videostream"
 end

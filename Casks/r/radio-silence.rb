@@ -1,6 +1,6 @@
 cask "radio-silence" do
   version "3.2"
-  sha256 "dbbab3dacee6fc95a65a9d1af1163c40703a2310d098f997a6ca3f36778d4485"
+  sha256 "565bbe80b5d66349bfb2a14cbfc33c3aed40ac65976f737e87da5e360ed60cdd"
 
   url "https://radiosilenceapp.com/downloads/Radio_Silence_#{version}.pkg"
   name "Radio Silence"
@@ -22,14 +22,14 @@ cask "radio-silence" do
               args:         ["-b", "com.radiosilenceapp.nke.filter"],
               must_succeed: false,
             },
-            quit:         "com.radiosilenceapp.client",
-            kext:         "com.radiosilenceapp.nke.filter",
-            pkgutil:      "com.radiosilenceapp.*",
             launchctl:    [
-              "com.radiosilenceapp.trial",
               "com.radiosilenceapp.agent",
               "com.radiosilenceapp.nke",
-            ]
+              "com.radiosilenceapp.trial",
+            ],
+            quit:         "com.radiosilenceapp.client",
+            kext:         "com.radiosilenceapp.nke.filter",
+            pkgutil:      "com.radiosilenceapp.*"
 
   zap trash: "~/Library/Application Support/Radio Silence"
 end

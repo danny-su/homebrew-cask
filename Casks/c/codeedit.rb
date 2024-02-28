@@ -1,6 +1,6 @@
 cask "codeedit" do
-  version "0.0.3-alpha.36,5650b45"
-  sha256 "5faeabb324bcf3fc822244e8f309098ede05b8f38c27f6de8dc10da11c43a6c1"
+  version "0.0.3-alpha.37,2ba130d"
+  sha256 "7131c5f3fd4b44e02e33d3b6034186c379e4cccf85cdc50aed46dff1585a633d"
 
   url "https://github.com/CodeEditApp/CodeEdit/releases/download/#{version.csv.first}/CodeEdit-#{version.csv.second}.dmg",
       verified: "github.com/CodeEditApp/CodeEdit/"
@@ -28,7 +28,7 @@ cask "codeedit" do
   zap trash: [
     "~/Library/Application Scripts/*.CodeEdit.OpenWithCodeEdit",
     "~/Library/Application Support/CodeEdit",
-    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/*.codeedit.sfl2",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/*.codeedit.sfl*",
     "~/Library/Caches/*.CodeEdit",
     "~/Library/Containers/*.CodeEdit.OpenWithCodeEdit",
     "~/Library/HTTPStorages/*.CodeEdit",

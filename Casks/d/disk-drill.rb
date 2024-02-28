@@ -1,5 +1,5 @@
 cask "disk-drill" do
-  version "5.3.1313"
+  version "5.4.1426"
   sha256 :no_check
 
   url "https://dl.cleverfiles.com/diskdrill.dmg"
@@ -23,7 +23,7 @@ cask "disk-drill" do
   }
 
   zap trash: [
-    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.cleverfiles.diskdrill.sfl2",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.cleverfiles.diskdrill.sfl*",
     "~/Library/Application Support/DiskDrill",
     "~/Library/Caches/com.cleverfiles.Disk_Drill",
     "~/Library/Containers/com.cleverfiles.DiskDrill.Media/Data/cfbackd.chief",
@@ -31,7 +31,7 @@ cask "disk-drill" do
     "~/Library/Logs/DiskDrill.log",
     "~/Library/Preferences/com.cleverfiles.activator.xml",
     "~/Library/Preferences/com.cleverfiles.Disk_Drill.plist",
-    "~/Library/Preferences/com.cleverfiles.DiskDrill.plist",
     "~/Library/Preferences/com.cleverfiles.DiskDrill-setapp.plist",
+    "~/Library/Preferences/com.cleverfiles.DiskDrill.plist",
   ]
 end

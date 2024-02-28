@@ -1,15 +1,18 @@
 cask "4k-video-downloaderplus" do
-  version "1.3.0"
-  sha256 "f36c9a0ba9c3280c81deae99a0caa1ab588fa52f6a2cf652b561c9d4599eb787"
+  arch arm: "arm64", intel: "x64"
 
-  url "https://dl.4kdownload.com/app/4kvideodownloaderplus_#{version}.dmg"
+  version "1.4.4"
+  sha256 arm:   "a86dea0f915f160399f70c00c99c802fc4628c879ec60476eb93f6b88db79baf",
+         intel: "e3619d3307bf1efcab8c3df35f85115f764a233ccf0af4605280d51507ed6c7c"
+
+  url "https://dl.4kdownload.com/app/4kvideodownloaderplus_#{version}_#{arch}.dmg"
   name "4K Video Downloader Plus"
   desc "Free video downloader"
   homepage "https://www.4kdownload.com/products/videodownloader"
 
   livecheck do
     url "https://www.4kdownload.com/downloads"
-    regex(%r{href=.*?/4kvideodownloaderplus[._-]v?(\d+(?:\.\d+)+)\.dmg}i)
+    regex(%r{href=.*?/4kvideodownloaderplus[._-]v?(\d+(?:\.\d+)+)[._-]#{arch}\.dmg}i)
   end
 
   depends_on macos: ">= :high_sierra"

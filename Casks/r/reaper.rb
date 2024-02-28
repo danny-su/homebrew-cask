@@ -1,13 +1,13 @@
 cask "reaper" do
-  version "7.06"
+  version "7.11"
 
   on_mojave :or_older do
-    sha256 "ece4276187c5c12b1f7b2e65d7ea164e9be5d02810903ec9adc985935ded86e3"
+    sha256 "04b01b62c36f93826f29f35a9e7953c74171a1f6a7f9359738b3eea2b9c2bb1d"
 
     url "https://dlcf.reaper.fm/#{version.major}.x/reaper#{version.major_minor.no_dots}_x86_64.dmg"
   end
   on_catalina :or_newer do
-    sha256 "e00362e4a84d6c9bc308eda23d7fe86b219ffd978831f921a7415046b058a30a"
+    sha256 "f0659faebfa4285dc48ba15e77d39e8b8eb5bde4575db4c80afc8d24d2c16d83"
 
     url "https://dlcf.reaper.fm/#{version.major}.x/reaper#{version.major_minor.no_dots}_universal.dmg"
   end
@@ -26,9 +26,9 @@ cask "reaper" do
   zap trash: [
     "~/Library/Application Support/REAPER",
     "~/Library/Preferences/com.cockos.reaper.plist",
+    "~/Library/Saved Application State/com.cockos.ReaMote.savedState",
     "~/Library/Saved Application State/com.cockos.reaper.savedState",
     "~/Library/Saved Application State/com.cockos.reaperhosti386.savedState",
     "~/Library/Saved Application State/com.cockos.reaperhostx8664.savedState",
-    "~/Library/Saved Application State/com.cockos.ReaMote.savedState",
   ]
 end

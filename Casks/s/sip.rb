@@ -16,8 +16,8 @@ cask "sip" do
     end
   end
   on_mojave :or_newer do
-    version "3.3"
-    sha256 "f7e364e98df146ffaa3d30004b01be0f6c8469fb4a282be7c1b107bdfb0b2378"
+    version "3.4"
+    sha256 "fac10cb9438d2f706fee8b5e64178a9afe92cab286c4185acfab5f6325fd5555"
 
     livecheck do
       url "https://sipapp.io/updates/"
@@ -28,7 +28,7 @@ cask "sip" do
   url "https://sipapp.fra1.digitaloceanspaces.com/updates/v#{version.major}/sip-#{version}.dmg",
       verified: "sipapp.fra1.digitaloceanspaces.com/updates/"
   name "Sip"
-  desc "Collect, organize & share colors"
+  desc "Collect, organise & share colours"
   homepage "https://sipapp.io/"
 
   auto_updates true
@@ -40,9 +40,9 @@ cask "sip" do
 
   zap trash: [
     "~/.sip_v*",
-    "~/Library/Application Support/Sip",
-    "~/Library/Application Support/io.sipapp.Sip-paddle",
     "~/Library/Application Support/CrashReporter/Sip_*.plist",
+    "~/Library/Application Support/io.sipapp.Sip-paddle",
+    "~/Library/Application Support/Sip",
     "~/Library/Caches/io.sipapp.Sip-paddle",
     "~/Library/Cookies/io.sipapp.Sip-paddle.binarycookies",
     "~/Library/Preferences/io.sipapp.Sip-paddle.plist",

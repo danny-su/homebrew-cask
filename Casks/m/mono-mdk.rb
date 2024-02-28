@@ -1,6 +1,6 @@
 cask "mono-mdk" do
-  version "6.12.0.199"
-  sha256 "65d755bdc7d0b017ddaa211544f0d89a7836c5e3549c63fe5c2fb8f69c649489"
+  version "6.12.0.206"
+  sha256 "80b0dbfa59ba9ed76dbf1393998e6a2ed2d1ccc8f5850c7a46fbe31a2aea88d8"
 
   url "https://download.mono-project.com/archive/#{version.major_minor_patch}/macos-10-universal/MonoFramework-MDK-#{version}.macos10.xamarin.universal.pkg"
   name "Mono"
@@ -17,14 +17,14 @@ cask "mono-mdk" do
 
   pkg "MonoFramework-MDK-#{version}.macos10.xamarin.universal.pkg"
 
-  uninstall delete:  [
+  uninstall pkgutil: "com.xamarin.mono-*",
+            delete:  [
               "/Library/Frameworks/Mono.framework/Versions/#{version.major_minor_patch}",
               "/private/etc/paths.d/mono-commands",
             ],
-            pkgutil: "com.xamarin.mono-*",
             rmdir:   [
-              "/Library/Frameworks/Mono.framework/Versions",
               "/Library/Frameworks/Mono.framework",
+              "/Library/Frameworks/Mono.framework/Versions",
             ]
 
   zap trash: [

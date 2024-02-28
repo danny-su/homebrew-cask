@@ -1,9 +1,9 @@
 cask "google-cloud-sdk" do
   arch arm: "arm", intel: "x86_64"
 
-  version "455.0.0"
-  sha256 arm:   "c92972969d6f07e312226fbc133546b5e679a7882a8e2063c1fcc67773eadb1f",
-         intel: "561db89e1eb9c84329fa267c7b60ea2eb31752bd90c399d316eb372903fb9fd9"
+  version "466.0.0"
+  sha256 arm:   "f6915cc7d9d38c36b89096650f963bfa83f4eea49e3f105857f56b5c2e1967ad",
+         intel: "4dda465ba477edc58b610d1cc5c54d9646e9a02650240a3aff707f06d6640b91"
 
   url "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-#{version}-darwin-#{arch}.tar.gz"
   name "Google Cloud SDK"
@@ -16,7 +16,7 @@ cask "google-cloud-sdk" do
   end
 
   auto_updates true
-  depends_on formula: "python@3.10"
+  depends_on formula: "python@3.11"
 
   google_cloud_sdk_root = "#{HOMEBREW_PREFIX}/share/google-cloud-sdk"
 
@@ -58,8 +58,8 @@ cask "google-cloud-sdk" do
   uninstall delete: staged_path.dirname/"latest"
 
   zap trash: [
-    google_cloud_sdk_root,
     "#{google_cloud_sdk_root}.staging",
+    google_cloud_sdk_root,
   ]
 
   caveats <<~EOS

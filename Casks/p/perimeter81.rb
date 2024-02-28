@@ -1,7 +1,7 @@
 cask "perimeter81" do
   # NOTE: "81" is not a version number, but an intrinsic part of the product name
-  version "10.3.0.601"
-  sha256 "de6f9b63a31e1b5e8843ff6bf4505cf72bc5c363ff6d0dc6a8a73fd3b916853e"
+  version "10.4.2.1198"
+  sha256 "fc8f897197c0157067a4e3368a5c6a90a24bf113736afecd3a9be4ceb90b7f11"
 
   url "https://static.perimeter81.com/agents/mac/Perimeter81_#{version}.pkg"
   name "Perimeter 81"
@@ -15,15 +15,15 @@ cask "perimeter81" do
 
   pkg "Perimeter81_#{version}.pkg"
 
-  uninstall pkgutil:   "com.safervpn.osx.smb",
-            signal:    ["TERM", "com.safervpn.osx.smb"],
-            launchctl: [
+  uninstall launchctl: [
               "com.perimeter81.osx.HelperTool",
               "com.perimeter81.Perimeter81",
               "com.perimeter81d",
               "com.perimeter81d.app",
               "system/com.perimeter81d",
             ],
+            signal:    ["TERM", "com.safervpn.osx.smb"],
+            pkgutil:   "com.safervpn.osx.smb",
             delete:    [
               "/Library/PrivilegedHelperTools/com.perimeter81.osx.HelperTool",
               "/Library/PrivilegedHelperTools/com.perimeter81d.app/Contents/MacOS/com.perimeter81d",

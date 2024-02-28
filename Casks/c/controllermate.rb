@@ -18,24 +18,26 @@ cask "controllermate" do
   desc "Create virtual mouse, tablet, and joystick devices"
   homepage "https://www.orderedbytes.com/controllermate/"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   pkg "#temp#/ControllerMate.sparkle_interactive.pkg"
 
   uninstall launchctl: [
-              "com.orderedbytes.ControllerMateHelper",
               "com.orderedbytes.ControllerMate.KextHelper",
-            ],
-            kext:      [
-              "com.orderedbytes.driver.CMUSBDevices",
-              "com.orderedbytes.driver.ControllerMateFamily",
+              "com.orderedbytes.ControllerMateHelper",
             ],
             signal:    [
               ["TERM", "com.orderedbytes.ControllerMate#{version.major}"],
               ["TERM", "com.orderedbytes.ControllerMateHelper"],
             ],
+            kext:      [
+              "com.orderedbytes.driver.CMUSBDevices",
+              "com.orderedbytes.driver.ControllerMateFamily",
+            ],
             delete:    [
+              "/Applications/ControllerMate.app",
               "/Library/Extensions/ControllerMate.kext,/Library/Application Support/ControllerMate/",
               "/Library/LaunchAgents/com.orderedbytes.ControllerMateHelper.plist",
-              "/Applications/ControllerMate.app",
               "/private/var/db/receipts/com.orderedbytes.controllermate.*",
             ]
 
@@ -47,7 +49,6 @@ cask "controllermate" do
   ]
 
   caveats do
-    discontinued
     reboot
   end
 end

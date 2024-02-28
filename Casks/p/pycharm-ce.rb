@@ -1,9 +1,9 @@
 cask "pycharm-ce" do
   arch arm: "-aarch64"
 
-  version "2023.2.5,232.10227.11"
-  sha256 arm:   "597f2f614a04938db3f1b348a3c1c1ab70c6cae12d2026f4b763e3aa298a21c5",
-         intel: "f07980cba10f72ef93ef123ac6af78171822ae485a2f3618f5000d610d9b68ce"
+  version "2023.3.4,233.14475.56"
+  sha256 arm:   "885ed6dcb7b99147e345ce2d088e2636e8317a5e71ff67e9bc9d0f770266646e",
+         intel: "492268d99fec38fa81bd02772ed57b243403ecad1f5f28b3a1150502cf8b4a6c"
 
   url "https://download.jetbrains.com/python/pycharm-community-#{version.csv.first}#{arch}.dmg"
   name "Jetbrains PyCharm Community Edition"
@@ -24,15 +24,7 @@ cask "pycharm-ce" do
   depends_on macos: ">= :high_sierra"
 
   app "PyCharm CE.app"
-
-  uninstall_postflight do
-    ENV["PATH"].split(File::PATH_SEPARATOR).map { |path| File.join(path, "charm") }.each do |path|
-      if File.readable?(path) &&
-         File.readlines(path).grep(/# see com.intellij.idea.SocketLock for the server side of this interface/).any?
-        File.delete(path)
-      end
-    end
-  end
+  binary "#{appdir}/PyCharm CE.app/Contents/MacOS/pycharm", target: "pycharm-ce"
 
   zap trash: [
     "~/Library/Application Support/JetBrains/PyCharmCE#{version.major_minor}",

@@ -10,8 +10,8 @@ cask "mmhmm-studio" do
     depends_on macos: ">= :big_sur"
   end
   on_ventura :or_newer do
-    version "2.6.1,1698814000"
-    sha256 "8faa3aff843170d94b10e7cead4e5404bcdf36e20fcf287baa80d24aafcb14a2"
+    version "2.6.3,1703105000"
+    sha256 "b009b9ca5a936500e0d0c6954e8d59d8929ee1c3d0522c044a8bb9b830e517f5"
 
     # This appcast sometimes uses a newer pubDate for an older version, so we
     # have to ignore the default `Sparkle` strategy sorting (which involves the
@@ -35,13 +35,13 @@ cask "mmhmm-studio" do
 
   app "mmhmm Studio.app"
 
-  uninstall pkgutil:   "app.mmhmm.app",
+  uninstall launchctl: "app.mmhmm.Camera.Assistant",
             quit:      "app.mmhmm.app",
+            pkgutil:   "app.mmhmm.app",
             delete:    [
               "/Library/Audio/Plug-Ins/HAL/mmhmmAudio.driver",
               "/Library/CoreMediaIO/Plug-Ins/DAL/mmhmmCamera.plugin",
-            ],
-            launchctl: "app.mmhmm.Camera.Assistant"
+            ]
 
   zap trash: [
     "~/Library/Preferences/app.mmhmm.app.plist",

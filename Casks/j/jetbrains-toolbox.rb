@@ -1,9 +1,9 @@
 cask "jetbrains-toolbox" do
   arch arm: "-arm64"
 
-  version "2.1.1,2.1.1.18388"
-  sha256 arm:   "0b4d049eaba4526cf1e79b40ad913ea0f63ac210f75a140e3a3528ccef6c9d34",
-         intel: "317a052133ff6e1f6f94de4458df245387d966a0301227846ef66de9eed86973"
+  version "2.2.2,2.2.2.20062"
+  sha256 arm:   "bf8683378c845c959a5ba948cec67d0c4c45b2b04ace3fff01444f0aa2c6ae82",
+         intel: "8f990816de6dbd7c62e8cfee09ce4f809a178ad1ecba8199fecafdf7e19054fd"
 
   url "https://download.jetbrains.com/toolbox/jetbrains-toolbox-#{version.csv.second}#{arch}.dmg"
   name "JetBrains Toolbox"
@@ -24,8 +24,8 @@ cask "jetbrains-toolbox" do
 
   app "JetBrains Toolbox.app"
 
-  uninstall signal:    ["TERM", "com.jetbrains.toolbox"],
-            launchctl: "com.jetbrains.toolbox"
+  uninstall launchctl: "com.jetbrains.toolbox",
+            signal:    ["TERM", "com.jetbrains.toolbox"]
 
   zap trash: [
         "~/Library/Application Support/JetBrains/Toolbox",

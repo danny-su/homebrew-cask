@@ -1,6 +1,6 @@
 cask "steelseries-gg" do
-  version "52.0.0"
-  sha256 "e80678126fde3c2d12142101b2b61c15463336f062e5e0fda94e5e9a32b2d88b"
+  version "57.0.0"
+  sha256 "0a810f7f1da0a37e5f8f688c177c20c257128ffb4ef550274c9bcaac92b53c67"
 
   url "https://engine.steelseriescdn.com/SteelSeriesGG#{version}.pkg",
       verified: "engine.steelseriescdn.com/"
@@ -25,11 +25,7 @@ cask "steelseries-gg" do
               "com.steelseries.gg.uninstaller",
               "com.steelseries.SteelSeries-GG",
             ],
-            kext:      [
-              "com.steelseries.ssenext.driver",
-              "com.highpoint-tech.kext.HighPointIOP",
-              "com.highpoint-tech.kext.HighPointRR",
-            ],
+            kext:      "com.steelseries.ssenext.driver",
             script:    {
               executable: "/Applications/SteelSeries GG/SteelSeries GG Uninstaller.app/Contents/Resources/Uninstall.sh",
               sudo:       true,

@@ -1,6 +1,6 @@
 cask "datadog-agent" do
-  version "7.49.1-1"
-  sha256 "dc6ab55cf827c5fbe6c839b362d450c706c8db3939a3619c29d4d85e808ddf1b"
+  version "7.51.0-1"
+  sha256 "9699ac8781f03532766c3a25d88b5e68d43c454cced046d8f6f01670ef68fbf7"
 
   url "https://s3.amazonaws.com/dd-agent/datadog-agent-#{version}.dmg",
       verified: "s3.amazonaws.com/dd-agent/"
@@ -15,8 +15,8 @@ cask "datadog-agent" do
 
   installer manual: "datadog-agent-#{version}.pkg"
 
-  uninstall quit:      "com.datadoghq.agent",
-            launchctl: "com.datadoghq.agent",
+  uninstall launchctl: "com.datadoghq.agent",
+            quit:      "com.datadoghq.agent",
             pkgutil:   "com.datadoghq.agent",
             delete:    [
               "/Applications/Datadog Agent.app",
@@ -24,9 +24,9 @@ cask "datadog-agent" do
             ]
 
   zap trash: [
+    "/opt/datadog-agent",
     "~/.datadog-agent",
     "~/Library/LaunchAgents/com.datadoghq.agent.plist",
-    "/opt/datadog-agent",
   ]
 
   caveats <<~EOS

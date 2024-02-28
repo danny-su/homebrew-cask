@@ -1,9 +1,9 @@
 cask "tropy" do
   arch arm: "-arm64"
 
-  version "1.15.2"
-  sha256 arm:   "73587dcbdb4bd62a7c3ae52bbbf701ca3a341d630f8bfcaa631f2fca76c71678",
-         intel: "14bc1b69c4dd0068db5471ac1b4a0b0ccf242db3551c4e72b22e3053e7cfa645"
+  version "1.16.1"
+  sha256 arm:   "5f8718d78e1baf74ae379a2c90bc93a95baf2e4490f666ae23052f2528c095f5",
+         intel: "5799380b2ea9da6182b2c616ca68b3e32dafa711bf451340da60af72beb05171"
 
   url "https://github.com/tropy/tropy/releases/download/v#{version}/tropy-#{version}#{arch}.dmg",
       verified: "github.com/tropy/tropy/"
@@ -20,8 +20,8 @@ cask "tropy" do
 
   zap trash: [
     "~/Library/Application Support/Tropy",
-    "~/Library/Caches/org.tropy.tropy.ShipIt",
     "~/Library/Caches/org.tropy.tropy",
+    "~/Library/Caches/org.tropy.tropy.ShipIt",
     "~/Library/Caches/Tropy",
     "~/Library/Logs/Tropy",
     "~/Library/Preferences/org.tropy.tropy.plist",

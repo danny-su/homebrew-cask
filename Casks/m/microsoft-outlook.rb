@@ -48,8 +48,8 @@ cask "microsoft-outlook" do
     end
   end
   on_monterey :or_newer do
-    version "16.79.23111718"
-    sha256 "003ff8e3f0f47906d868217460fbd93db6843266158d69659638450696c156ae"
+    version "16.82.24021116"
+    sha256 "2eee29f7f2ce309017ac42cecee20a0b699e984d175decad62e663352a7f12b3"
 
     livecheck do
       url "https://go.microsoft.com/fwlink/p/?linkid=525137"
@@ -78,12 +78,12 @@ cask "microsoft-outlook" do
         },
       ]
 
-  uninstall pkgutil:   [
+  uninstall launchctl: "com.microsoft.office.licensingV2.helper",
+            quit:      "com.microsoft.autoupdate2",
+            pkgutil:   [
               "com.microsoft.package.Microsoft_Outlook.app",
               "com.microsoft.pkg.licensing",
-            ],
-            launchctl: "com.microsoft.office.licensingV2.helper",
-            quit:      "com.microsoft.autoupdate2"
+            ]
 
   zap trash: [
     "~/Library/Application Scripts/com.microsoft.Outlook",

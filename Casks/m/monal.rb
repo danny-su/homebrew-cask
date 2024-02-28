@@ -1,6 +1,6 @@
 cask "monal" do
-  version "872"
-  sha256 "c227a571ce2dac4191980f2a7ce2022d3f7d9949b5d2acba6f6328a01faf56a8"
+  version "889"
+  sha256 "eea102eb0bdb943c36e4757e7cc248f5444e484d8220c916c368227cc7f74fbc"
 
   url "https://downloads.monal-im.org/monal-im/stable/macOS/Monal-#{version}.zip"
   name "Monal"

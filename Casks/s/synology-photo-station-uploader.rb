@@ -18,22 +18,22 @@ cask "synology-photo-station-uploader" do
 
   pkg "SynologyPhotoStationUploader-#{version.after_comma}-Mac-Installer.pkg"
 
-  uninstall pkgutil:   [
-              "com.synology.photostationuploader.installer",
-              "inc.synology.photostationuploader",
-            ],
-            quit:      "com.synology.PhotoStationUploader",
-            launchctl: [
+  uninstall launchctl: [
               "com.synology.PhotoUploaderFinderSync",
               "com.synology.PhotoUploaderShellApp",
               "com.synology.PhotoUploaderUninstaller",
               "com.synology.SynoSIMBL_RefreshFinder",
+            ],
+            quit:      "com.synology.PhotoStationUploader",
+            pkgutil:   [
+              "com.synology.photostationuploader.installer",
+              "inc.synology.photostationuploader",
             ]
 
   zap trash: [
-        "~/Library/Application Support/Synology/Photo Station Uploader",
         "~/Library/Application Scripts/com.synology.PhotoUploaderShellApp.PhotoUploaderFinderSync",
         "~/Library/Application Scripts/group.com.synology.PhotoUploader",
+        "~/Library/Application Support/Synology/Photo Station Uploader",
         "~/Library/Containers/com.synology.PhotoUploaderShellApp.PhotoUploaderFinderSync",
         "~/Library/Group Containers/group.com.synology.PhotoUploader",
         "~/Library/Saved Application State/com.synology.PhotoStationUploader.savedState",

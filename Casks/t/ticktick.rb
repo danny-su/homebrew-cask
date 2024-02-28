@@ -1,6 +1,6 @@
 cask "ticktick" do
-  version "5.0.10,302"
-  sha256 "9673ca74efa8e90ff9dfaea72e00f16f96d9a40ca3cdbda7b08ae4d23a35bda5"
+  version "5.0.60,314"
+  sha256 "2b5c45ebf6c47e3b1daaa9901eb497f13798ce1caf8c1aee62f644a2fa911775"
 
   url "https://ticktick-download-mac.s3.amazonaws.com/download/mac/TickTick_#{version.csv.first}_#{version.csv.second}.dmg",
       verified: "ticktick-download-mac.s3.amazonaws.com/"
@@ -29,8 +29,8 @@ cask "ticktick" do
     "~/Library/Application Scripts/com.TickTick.task.mac.TickTick-Today-Widget",
     "~/Library/Application Scripts/com.TickTick.task.mac.TickTick-WidgetConfiguration-Extension",
     "~/Library/Application Support/com.TickTick.task.mac",
-    "~/Library/Caches/TickTick",
     "~/Library/Caches/com.TickTick.task.mac",
+    "~/Library/Caches/TickTick",
     "~/Library/Containers/com.TickTick.task.mac.MainWidget",
     "~/Library/Containers/com.TickTick.task.mac.TickTick-Safari-Extension",
     "~/Library/Containers/com.TickTick.task.mac.TickTick-Today-Widget",

@@ -8,12 +8,20 @@ cask "caffeine" do
   desc "Utility that prevents the system from going to sleep"
   homepage "https://intelliscapesolutions.com/apps/caffeine"
 
+  conflicts_with cask: "domzilla-caffeine"
+
   app "Caffeine.app"
+
+  uninstall quit: "com.intelliscapesolutions.caffeine"
 
   zap trash: [
     "~/Library/Application Support/com.intelliscapesolutions.caffeine",
-    "~/Library/Preferences/com.intelliscapesolutions.caffeine.plist",
     "~/Library/Caches/com.intelliscapesolutions.caffeine",
     "~/Library/HTTPStorages/com.intelliscapesolutions.caffeine.binarycookies",
+    "~/Library/Preferences/com.intelliscapesolutions.caffeine.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

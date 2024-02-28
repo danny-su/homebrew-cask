@@ -4,7 +4,11 @@ cask "electronic-wechat" do
 
   url "https://github.com/geeeeeeeeek/electronic-wechat/releases/download/V#{version}/mac-osx.tar.gz"
   name "Electronic WeChat"
+  desc "WeChat Client"
   homepage "https://github.com/geeeeeeeeek/electronic-wechat"
+
+  # https://github.com/geeeeeeeeek/electronic-wechat/issues/693
+  disable! date: "2024-01-01", because: :discontinued
 
   app "Electronic WeChat-darwin-x64/Electronic WeChat.app"
 
@@ -12,12 +16,8 @@ cask "electronic-wechat" do
     "~/Library/Application Support/electronic-wechat",
     "~/Library/Application Support/electronic-wechat/Local Storage/https_web.wechat.com_0.localstorage",
     "~/Library/Application Support/electronic-wechat/Local Storage/https_web.wechat.com_0.localstorage-journal",
-    "~/Library/Saved Application State/com.electron.electronic-wechat.savedState",
-    "~/Library/Preferences/com.electron.electronic-wechat.plist",
     "~/Library/Preferences/com.electron.electronic-wechat.helper.plist",
+    "~/Library/Preferences/com.electron.electronic-wechat.plist",
+    "~/Library/Saved Application State/com.electron.electronic-wechat.savedState",
   ]
-
-  caveats do
-    discontinued
-  end
 end

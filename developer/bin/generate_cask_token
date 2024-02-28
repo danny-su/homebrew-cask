@@ -1,6 +1,8 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
+# rubocop:disable Style/TopLevelMethodDefinition
+
 #
 # generate_cask_token
 #
@@ -130,15 +132,15 @@ class AppName
   end
 
   def self.remove_trailing_pat
-    @@remove_trailing_pat ||= /(?<=.)(?:#{REMOVE_TRAILING_PATS.join('|')})\Z/i # rubocop:disable Style/ClassVars
+    @@remove_trailing_pat ||= /(?<=.)(?:#{REMOVE_TRAILING_PATS.join("|")})\Z/i # rubocop:disable Style/ClassVars
   end
 
   def self.preserve_trailing_pat
-    @@preserve_trailing_pat ||= /(?:#{PRESERVE_TRAILING_PATS.join('|')})\Z/i # rubocop:disable Style/ClassVars
+    @@preserve_trailing_pat ||= /(?:#{PRESERVE_TRAILING_PATS.join("|")})\Z/i # rubocop:disable Style/ClassVars
   end
 
   def self.after_interior_version_pat
-    @@after_interior_version_pat ||= /(?:#{AFTER_INTERIOR_VERSION_PATS.join('|')})/i # rubocop:disable Style/ClassVars
+    @@after_interior_version_pat ||= /(?:#{AFTER_INTERIOR_VERSION_PATS.join("|")})/i # rubocop:disable Style/ClassVars
   end
 
   def english_from_app_bundle
@@ -433,3 +435,5 @@ if ARGV.length != 1
 end
 
 report
+
+# rubocop:enable Style/TopLevelMethodDefinition

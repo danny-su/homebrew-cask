@@ -1,6 +1,6 @@
 cask "tenable-nessus-agent" do
-  version "10.4.4,21344"
-  sha256 "2bb601d1166562f80b31735bb5d992420efe7a6f6d2a8626f291a96fe0364fb9"
+  version "10.5.1,21846"
+  sha256 "c222df2c03ba203d139a3408792b922d530f5e5ae6f1f137c4d98e7f15e85f93"
 
   url "https://www.tenable.com/downloads/api/v1/public/pages/nessus-agents/downloads/#{version.csv.second}/download?i_agree_to_tenable_license_agreement=true"
   name "Tenable Nessus Agent"
@@ -22,14 +22,14 @@ cask "tenable-nessus-agent" do
 
   pkg "Install Nessus Agent.pkg"
 
-  uninstall pkgutil:   "com.tenablesecurity.NessusAgent.Preferences",
+  uninstall launchctl: "com.tenablesecurity.nessusagent",
+            pkgutil:   "com.tenablesecurity.NessusAgent.Preferences",
             delete:    [
-              "/Library/NessusAgent",
               "/Library/LaunchDaemons/com.tenablesecurity.nessusagent.plist",
+              "/Library/NessusAgent",
               "/Library/PreferencePanes/Nessus Agent Preferences.prefPane",
               "/private/etc/tenable_tag",
-            ],
-            launchctl: "com.tenablesecurity.nessusagent"
+            ]
 
   # No zap stanza required
 

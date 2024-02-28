@@ -1,5 +1,5 @@
 cask "idrive" do
-  version "3.5.10.62"
+  version "3.5.10.69"
   sha256 :no_check
 
   url "https://www.idrive.com/downloads/IDrive.dmg"
@@ -15,17 +15,17 @@ cask "idrive" do
   pkg "IDrive.pkg"
 
   uninstall launchctl: [
+              "IDriveDaemon",
               "IDSyncDaemon",
               "IDWifiManager",
-              "IDriveDaemon",
             ],
-            pkgutil:   "com.profsoftnet.idrive.*",
             quit:      [
               "com.prosfotnet.IDWifiManager",
               "com.prosoftnet.IDrive",
               "com.prosoftnet.IDriveDaemon",
               "com.prosoftnet.IDriveMonitor",
-            ]
+            ],
+            pkgutil:   "com.profsoftnet.idrive.*"
 
   zap trash: [
     "/Library/Application Support/IDriveforMac",

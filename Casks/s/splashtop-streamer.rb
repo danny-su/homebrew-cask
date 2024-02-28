@@ -1,6 +1,6 @@
 cask "splashtop-streamer" do
-  version "3.6.2.0"
-  sha256 "daeb45ee0fa83ee90c79694bd2a34336317d5112816daf437cbe207ebd193770"
+  version "3.6.4.0"
+  sha256 "6db27ed7e8a2a54e534030b6ff6c7f1d285d18a0294c16592896c93d4ebe6d13"
 
   url "https://d17kmd0va0f0mp.cloudfront.net/mac/Splashtop_Streamer_Mac_INSTALLER_v#{version}.dmg",
       verified: "d17kmd0va0f0mp.cloudfront.net/"
@@ -17,14 +17,14 @@ cask "splashtop-streamer" do
 
   pkg "Splashtop Streamer.pkg"
 
-  uninstall quit:      "com.splashtop.Splashtop-Streamer",
-            launchctl: [
+  uninstall launchctl: [
               "com.splashtop.streamer",
               "com.splashtop.streamer-daemon",
               "com.splashtop.streamer-for-root",
               "com.splashtop.streamer-for-user",
               "com.splashtop.streamer-srioframebuffer",
             ],
+            quit:      "com.splashtop.Splashtop-Streamer",
             pkgutil:   "com.splashtop.Splashtop-Streamer"
 
   zap trash: [

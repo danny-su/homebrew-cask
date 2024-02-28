@@ -1,9 +1,9 @@
 cask "rancher" do
   arch arm: "aarch64", intel: "x86_64"
 
-  version "1.11.1"
-  sha256 arm:   "bc2af47a3bc1870cf7cfb7aa0d6b344893256bfdf2ee4b3eaf086af01aeb912a",
-         intel: "e4e5a0769c333a31ee14681e861205cfcff1baee32529d6a3181a032a40163ef"
+  version "1.12.3"
+  sha256 arm:   "13811b045beac4dba1d0312c873701c59b0ab7ce6745c3ef888acc9c975572a5",
+         intel: "389e76dfa24a3ae1dc5c40e79a3ee14088569cfb4f51c0c4b2caca95136c58af"
 
   url "https://github.com/rancher-sandbox/rancher-desktop/releases/download/v#{version}/Rancher.Desktop-#{version}.#{arch}.dmg",
       verified: "github.com/rancher-sandbox/rancher-desktop/"
@@ -21,13 +21,13 @@ cask "rancher" do
 
   app "Rancher Desktop.app"
 
-  uninstall delete: [
+  uninstall quit:   "io.rancherdesktop.app",
+            delete: [
               "/opt/rancher-desktop",
               "/private/etc/sudoers.d/zzzzz-rancher-desktop-lima", # zzzzz is not a typo
               "/private/var/run/docker.sock",
               "/private/var/run/rancher-desktop-*",
-            ],
-            quit:   "io.rancherdesktop.app"
+            ]
 
   zap trash: [
     "~/.kuberlr",

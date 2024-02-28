@@ -7,6 +7,8 @@ cask "bingpaper" do
   desc "Use the Bing daily photo as your wallpaper"
   homepage "https://github.com/pengsrc/BingPaper"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   depends_on macos: ">= :catalina"
 
   app "BingPaper.app"
@@ -14,15 +16,11 @@ cask "bingpaper" do
   uninstall launchctl: "io.pjw.mac.BingPaperLoginItem",
             quit:      "io.pjw.mac.BingPaper"
 
-  zap rmdir: "~/Pictures/BingPaper",
-      trash: [
+  zap trash: [
         "~/Library/Application Scripts/io.pjw.mac.BingPaper",
         "~/Library/Application Scripts/io.pjw.mac.BingPaperLoginItem",
         "~/Library/Containers/io.pjw.mac.BingPaper",
         "~/Library/Containers/io.pjw.mac.BingPaperLoginItem",
-      ]
-
-  caveats do
-    discontinued
-  end
+      ],
+      rmdir: "~/Pictures/BingPaper"
 end

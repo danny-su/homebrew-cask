@@ -1,5 +1,5 @@
 cask "google-chrome" do
-  version "119.0.6045.199"
+  version "122.0.6261.94"
   sha256 :no_check
 
   url "https://dl.google.com/chrome/mac/universal/stable/GGRO/googlechrome.dmg"
@@ -10,7 +10,7 @@ cask "google-chrome" do
   livecheck do
     url :url
     strategy :extract_plist do |versions|
-      versions.values.map(&:short_version).compact.first
+      versions.values.filter_map(&:short_version).first
     end
   end
 
@@ -19,19 +19,23 @@ cask "google-chrome" do
 
   app "Google Chrome.app"
 
-  zap trash:     [
+  zap launchctl: [
+        "com.google.keystone.agent",
+        "com.google.keystone.daemon",
+      ],
+      trash:     [
         "/Library/Caches/com.google.SoftwareUpdate.*",
         "/Library/Google/Google Chrome Brand.plist",
         "/Library/Google/GoogleSoftwareUpdate",
-        "~/Library/Application Support/Google/Chrome",
         "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.google.chrome.app.*.sfl*",
         "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.google.chrome.sfl*",
-        "~/Library/Caches/Google/Chrome",
+        "~/Library/Application Support/Google/Chrome",
         "~/Library/Caches/com.google.Chrome",
         "~/Library/Caches/com.google.Chrome.helper.*",
         "~/Library/Caches/com.google.Keystone",
         "~/Library/Caches/com.google.Keystone.Agent",
         "~/Library/Caches/com.google.SoftwareUpdate",
+        "~/Library/Caches/Google/Chrome",
         "~/Library/Google/Google Chrome Brand.plist",
         "~/Library/Google/GoogleSoftwareUpdate",
         "~/Library/LaunchAgents/com.google.keystone.agent.plist",
@@ -48,9 +52,5 @@ cask "google-chrome" do
         "~/Library/Application Support/Google",
         "~/Library/Caches/Google",
         "~/Library/Google",
-      ],
-      launchctl: [
-        "com.google.keystone.agent",
-        "com.google.keystone.daemon",
       ]
 end

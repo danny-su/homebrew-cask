@@ -1,6 +1,6 @@
 cask "mailmaster" do
-  version "4.17.20.1334"
-  sha256 "08cc454b73e0c6da4f9af4fdd66a3e17458be72239323a143cddf3f2ea1df961"
+  version "4.17.24.1344"
+  sha256 "850778e5b906a572a4c14078ff439a753dda6baf6fe1d925d0c2272047efa85e"
 
   url "http://fm.dl.126.net/mailmaster/updatemac/mailmaster-#{version}.dmg",
       verified: "fm.dl.126.net/mailmaster/"
@@ -26,7 +26,7 @@ cask "mailmaster" do
   zap trash: [
     "~/Library/Application Scripts/com.netease.macmail",
     "~/Library/Application Scripts/com.netease.macmail-launcher",
-    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.netease.macmail-launcher.sfl2",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.netease.macmail-launcher.sfl*",
     "~/Library/Containers/com.netease.macmail",
     "~/Library/Containers/com.netease.macmail-launcher",
     "~/Library/Preferences/com.netease.macmail.plist",

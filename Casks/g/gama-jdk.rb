@@ -1,9 +1,9 @@
 cask "gama-jdk" do
   arch arm: "_M1"
 
-  version "1.9.2"
-  sha256 arm:   "c9b1307df181137e58a39966b5d332bc8e145a823ba189f93e489cf75a214234",
-         intel: "1d428e832dbe1778b9b90209052418a941a0549f7653b7e3977ac5980738a1fc"
+  version "1.9.3"
+  sha256 arm:   "f26215c0069e9e633db327a6ca70d478316ef5ca564409fc262d94ce27380f13",
+         intel: "0c4daee9770693367a5d075e92c91dc036ead25029408c318361d55bf96bdf93"
 
   url "https://github.com/gama-platform/gama/releases/download/#{version}/GAMA_#{version}_MacOS#{arch}_with_JDK.dmg",
       verified: "github.com/gama-platform/gama/"

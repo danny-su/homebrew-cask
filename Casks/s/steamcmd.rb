@@ -1,5 +1,5 @@
 cask "steamcmd" do
-  version "1701290101"
+  version "1705108307"
   sha256 :no_check
 
   url "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_osx.tar.gz",
@@ -35,9 +35,9 @@ cask "steamcmd" do
 
   uninstall launchctl: "com.valvesoftware.steamclean"
 
-  zap rmdir: [
-        "~/Library/Application Support/Steam/logs",
+  zap trash: "~/Library/Application Support/Steam/logs/stderr.txt",
+      rmdir: [
         "~/Library/Application Support/Steam",
-      ],
-      trash: "~/Library/Application Support/Steam/logs/stderr.txt"
+        "~/Library/Application Support/Steam/logs",
+      ]
 end

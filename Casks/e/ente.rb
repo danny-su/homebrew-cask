@@ -1,8 +1,8 @@
 cask "ente" do
-  version "1.6.54"
-  sha256 "59e1c81e0336e981744345b199c73696f04fae6ce01a0b5783750de51838337d"
+  version "1.6.63"
+  sha256 "3598e03ab794e023f50711458d22438a26c23bc1211f2c867406fc1d0b08ee71"
 
-  url "https://github.com/ente-io/photos-desktop/releases/download/v#{version}/ente-#{version}.dmg",
+  url "https://github.com/ente-io/photos-desktop/releases/download/v#{version}/ente-#{version}-universal.dmg",
       verified: "github.com/ente-io/photos-desktop/"
   name "Ente"
   desc "Desktop client for Ente"
@@ -18,8 +18,8 @@ cask "ente" do
   zap trash: [
     "~/Library/Application Support/ente",
     "~/Library/Logs/ente",
-    "~/Library/Preferences/io.ente.bhari-frame.plist",
     "~/Library/Preferences/io.ente.bhari-frame.helper.plist",
+    "~/Library/Preferences/io.ente.bhari-frame.plist",
     "~/Library/Saved Application State/io.ente.bhari-frame.savedState",
   ]
 end

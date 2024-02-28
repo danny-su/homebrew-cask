@@ -1,8 +1,8 @@
 cask "eudic" do
-  version "4.5.4,1120"
-  sha256 "1f528f11a37f1f352b77f20286815e62a2f4a7ab2deebbd49e77aa3fed801dee"
+  version "4.5.4"
+  sha256 :no_check
 
-  url "https://static.frdic.com/pkg/eudicmac.dmg?v=#{version.csv.second}",
+  url "https://static.frdic.com/pkg/eudicmac.dmg",
       verified:   "static.frdic.com/",
       user_agent: :fake
   name "Eudic"
@@ -12,7 +12,7 @@ cask "eudic" do
 
   livecheck do
     url "https://www.eudic.net/update/eudic_mac.xml"
-    strategy :sparkle
+    strategy :sparkle, &:short_version
   end
 
   depends_on macos: ">= :high_sierra"
@@ -33,8 +33,8 @@ cask "eudic" do
     "~/Library/Eudb_en",
     "~/Library/HTTPStorages/com.eusoft.eudic",
     "~/Library/HTTPStorages/com.eusoft.eudic.binarycookies",
-    "~/Library/Preferences/com.eusoft.eudic.plist",
     "~/Library/Preferences/com.eusoft.eudic.LightPeek.plist",
+    "~/Library/Preferences/com.eusoft.eudic.plist",
     "~/Library/Preferences/group.com.eusoft.eudic.plist",
     "~/Library/WebKit/com.eusoft.eudic",
     "~/Library/WebKit/com.eusoft.eudic.LightPeek",

@@ -1,6 +1,6 @@
 cask "tuple" do
-  version "0.111.1,2023-11-21,b102a0d1e"
-  sha256 "b7cbf58e92937f1500bef16634fa8baebf0a2ff94e6e12fe07aea06144bd337a"
+  version "0.113.0,2024-02-26,03331063d"
+  sha256 "a8c042a3da1d9db5b2fdaa1302779f08accfe91d76e78262aff9431a575eea69"
 
   url "https://d32ifkf9k9ezcg.cloudfront.net/production/sparkle/tuple-#{version.tr(",", "-")}.zip",
       verified: "d32ifkf9k9ezcg.cloudfront.net/"
@@ -23,8 +23,8 @@ cask "tuple" do
 
   app "Tuple.app"
 
-  uninstall quit:      "app.tuple.app",
-            launchctl: "app.tuple.app-LaunchAtLoginHelper"
+  uninstall launchctl: "app.tuple.app-LaunchAtLoginHelper",
+            quit:      "app.tuple.app"
 
   zap trash: [
     "~/Library/Application Scripts/app.tuple.app-LaunchAtLoginHelper",

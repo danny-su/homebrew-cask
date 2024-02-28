@@ -1,9 +1,9 @@
 cask "cinc-workstation" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "23.7.1042"
-  sha256 arm:   "5c2276b6ee88a2cbfe937fe4d79496f5e7e557fa1bada079c6c3faa84a854594",
-         intel: "4c85d68eca2ce661a4b18d6eaac1e593ce948a27f0db702e251efa2917ed8ca8"
+  version "24.2.1058"
+  sha256 arm:   "8be0c1b792302947adcbcf843a2710a331e0a52732455a7012fb99f10aee7569",
+         intel: "088dc9534e97cc191bd1eebca9185dbcb1d2b181ea39fdbbc18a2232ba080c46"
 
   url "http://downloads.cinc.sh/files/stable/cinc-workstation/#{version}/mac_os_x/11/cinc-workstation-#{version}-1.#{arch}.dmg"
   name "Cinc Workstation"
@@ -19,12 +19,12 @@ cask "cinc-workstation" do
 
   pkg "cinc-workstation-#{version}-1.#{arch}.pkg"
 
-  uninstall pkgutil:   "com.cinc-project.pkg.cinc-workstation",
-            launchctl: "io.chef.chef-workstation.app",
+  uninstall launchctl: "io.chef.chef-workstation.app",
             script:    {
               executable: "/opt/cinc-workstation/bin/uninstall_chef_workstation",
               sudo:       true,
-            }
+            },
+            pkgutil:   "com.cinc-project.pkg.cinc-workstation"
 
   zap trash: "~/.cinc-workstation/"
 end

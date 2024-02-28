@@ -16,8 +16,8 @@ cask "commandpost" do
     end
   end
   on_big_sur :or_newer do
-    version "1.4.22"
-    sha256 "9115107751cda2cf605a513da378fb0dcc40d57fe7dfbd76f664420946f9f773"
+    version "1.4.26"
+    sha256 "a12f8fd6dc3be8510b9603bcaba98aa7139f3c72229d96f5f7ef7a70c8b2ff30"
   end
 
   url "https://github.com/CommandPost/CommandPost/releases/download/#{version}/CommandPost_#{version}.dmg",
@@ -32,8 +32,8 @@ cask "commandpost" do
   app "CommandPost.app"
   binary "#{appdir}/CommandPost.app/Contents/Frameworks/hs/cmdpost"
 
-  uninstall login_item: "CommandPost",
-            quit:       "org.latenitefilms.CommandPost"
+  uninstall quit:       "org.latenitefilms.CommandPost",
+            login_item: "CommandPost"
 
   zap trash: [
     "~/Library/Application Support/CommandPost",

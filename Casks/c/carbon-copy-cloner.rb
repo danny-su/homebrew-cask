@@ -1,6 +1,6 @@
 cask "carbon-copy-cloner" do
-  version "6.1.8.7612"
-  sha256 "7f59870e3a890088e2906653ab3d332abb8b8292a1f91cd7ec1c94356df9e535"
+  version "6.1.10.7650"
+  sha256 "ea7ffe6def8dc85a83a21c5aa255afcb68868db742541d0a2316bfe676e1fc05"
 
   url "https://bombich.scdn1.secure.raxcdn.com/software/files/ccc-#{version}.zip",
       verified: "bombich.scdn1.secure.raxcdn.com/software/files/"
@@ -18,18 +18,18 @@ cask "carbon-copy-cloner" do
 
   app "Carbon Copy Cloner.app"
 
-  uninstall login_item: "CCC User Agent",
-            quit:       [
+  uninstall quit:       [
               "com.bombich.ccc",
               "com.bombich.cccuseragent",
-            ]
+            ],
+            login_item: "CCC User Agent"
 
   zap trash: [
+    "/Library/LaunchDaemons/com.bombich.ccchelper.plist",
     "~/Library/Application Support/com.bombich.ccc",
     "~/Library/Caches/com.bombich.ccc",
     "~/Library/Preferences/com.bombich.ccc.plist",
     "~/Library/Preferences/com.bombich.cccuseragent.plist",
     "~/Library/Saved Application State/com.bombich.ccc.savedState",
-    "/Library/LaunchDaemons/com.bombich.ccchelper.plist",
   ]
 end

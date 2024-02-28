@@ -21,9 +21,9 @@ cask "clickup" do
   app "ClickUp.app"
 
   zap trash: [
-    "~/Library/Application Support/ClickUp",
     "~/Library/Application Support/ClickUp Desktop",
-    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.clickup.desktop-app.sfl2",
+    "~/Library/Application Support/ClickUp",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.clickup.desktop-app.sfl*",
     "~/Library/Caches/com.clickup.desktop-app",
     "~/Library/Caches/com.clickup.desktop-app.ShipIt",
     "~/Library/Logs/ClickUp",

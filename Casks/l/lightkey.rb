@@ -23,8 +23,8 @@ cask "lightkey" do
     depends_on macos: ">= :big_sur"
   end
   on_ventura :or_newer do
-    version "4.6"
-    sha256 "fccd39bd1cde1ff01a04194643bd8d17fc593e4c6b82a058e22e41471fed41a9"
+    version "4.7"
+    sha256 "805f6806c60e19cf88bf7922ad6bd9b392342b1a0987207abba63ed5bb9d0659"
 
     # Upstream also publishes legacy versions (with a lower minor version) in
     # the appcast, so the first `item` after sorting by `pubDate`/`version` may
@@ -49,12 +49,12 @@ cask "lightkey" do
 
   pkg "LightkeyInstaller.pkg"
 
-  uninstall delete:  "/Applications/Lightkey.app",
-            pkgutil: [
+  uninstall pkgutil: [
               "de.monospc.lightkey.pkg.App",
               "de.monospc.lightkey.pkg.documentation",
               "de.monospc.lightkey.pkg.OLA",
-            ]
+            ],
+            delete:  "/Applications/Lightkey.app"
 
   zap trash: [
     "~/Library/Application Support/Lightkey",

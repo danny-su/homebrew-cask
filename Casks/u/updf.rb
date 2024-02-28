@@ -1,5 +1,5 @@
 cask "updf" do
-  version "1.7.8"
+  version "1.7.12"
   sha256 :no_check
 
   url "https://download.updf.com/updf/basic/mac/apple/updf-mac-full.dmg"
@@ -20,10 +20,10 @@ cask "updf" do
   zap trash: [
     "~/Library/Application Support/com.superace.updf.installer",
     "~/Library/Application Support/com.superace.updf.mac",
-    "~/Library/Caches/UPDF",
-    "~/Library/Caches/UPDF Installer",
     "~/Library/Caches/com.superace.updf.installer",
     "~/Library/Caches/com.superace.updf.mac",
+    "~/Library/Caches/UPDF Installer",
+    "~/Library/Caches/UPDF",
     "~/Library/HTTPStorages/com.superace.updf.installer",
     "~/Library/HTTPStorages/com.superace.updf.mac",
     "~/Library/HTTPStorages/com.superace.updf.mac.binarycookies",

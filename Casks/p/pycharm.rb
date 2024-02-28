@@ -1,9 +1,9 @@
 cask "pycharm" do
   arch arm: "-aarch64"
 
-  version "2023.2.5,232.10227.11"
-  sha256 arm:   "ee1e255047a5cf452c6f4e7b981f27edcf8bd7efa3be51e7d75d2defe63c5105",
-         intel: "a8fbd5fda39cf94ccf86918fe170bcd74595e0d59491b79c329033d0e517ae2d"
+  version "2023.3.4,233.14475.56"
+  sha256 arm:   "58dbf1628f59950d40be4ed73199ce92ef36be6735823d9566135ddea16c1718",
+         intel: "59512bbe61a9332f02e78d34b85ab2563b5dac2fa9882519ed27cfcbccef5dc2"
 
   url "https://download.jetbrains.com/python/pycharm-professional-#{version.csv.first}#{arch}.dmg"
   name "PyCharm"
@@ -24,15 +24,7 @@ cask "pycharm" do
   depends_on macos: ">= :high_sierra"
 
   app "PyCharm.app"
-
-  uninstall_postflight do
-    ENV["PATH"].split(File::PATH_SEPARATOR).map { |path| File.join(path, "charm") }.each do |path|
-      if File.readable?(path) &&
-         File.readlines(path).grep(/# see com.intellij.idea.SocketLock for the server side of this interface/).any?
-        File.delete(path)
-      end
-    end
-  end
+  binary "#{appdir}/PyCharm.app/Contents/MacOS/pycharm"
 
   zap trash: [
     "~/Library/Application Support/JetBrains/PyCharm#{version.major_minor}",

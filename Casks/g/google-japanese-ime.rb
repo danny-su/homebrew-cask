@@ -1,5 +1,5 @@
 cask "google-japanese-ime" do
-  version "2.28.5050"
+  version "2.29.5330"
   sha256 :no_check
 
   url "https://dl.google.com/japanese-ime/latest/GoogleJapaneseInput.dmg",
@@ -21,18 +21,18 @@ cask "google-japanese-ime" do
   # See: https://github.com/Homebrew/homebrew-cask/pull/92704#issuecomment-727163169
   # launchctl: com.google.keystone.daemon, com.google.keystone.system.agent, com.google.keystone.system.xpcservice
   # pkgutil: com.google.pkg.Keystone
-  uninstall pkgutil:   "com.google.pkg.GoogleJapaneseInput",
-            launchctl: [
+  uninstall launchctl: [
               "com.google.inputmethod.Japanese.Converter",
               "com.google.inputmethod.Japanese.Renderer",
-            ]
+            ],
+            pkgutil:   "com.google.pkg.GoogleJapaneseInput"
 
-  zap pkgutil:   "com.google.pkg.Keystone",
-      launchctl: [
+  zap launchctl: [
         "com.google.keystone.agent",
         "com.google.keystone.daemon",
         "com.google.keystone.xpcservice",
       ],
+      pkgutil:   "com.google.pkg.Keystone",
       trash:     [
         "~/Library/Application Support/Google/JapaneseInput",
         "~/Library/Logs/GoogleJapaneseInput",

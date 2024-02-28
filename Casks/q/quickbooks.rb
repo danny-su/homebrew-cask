@@ -1,5 +1,5 @@
 cask "quickbooks" do
-  version "22.0.5.724,2023"
+  version "22.0.5.734,2023"
   sha256 :no_check # required as upstream package is updated in-place
 
   url "https://http-download.intuit.com/http.intuit/Downloads/#{version.csv.second}/Latest/QuickBooksMac#{version.csv.second}.dmg"
@@ -22,8 +22,8 @@ cask "quickbooks" do
   app "QuickBooks #{version.csv.second}.app"
 
   zap trash: [
-    "~/Library/Application Support/QuickBooks #{version.csv.second}",
     "~/Library/Application Support/com.intuit.QuickBooks#{version.csv.second}",
+    "~/Library/Application Support/QuickBooks #{version.csv.second}",
     "~/Library/Caches/com.intuit.QuickBooks#{version.csv.second}",
     "~/Library/HTTPStorages/com.intuit.QuickBooks#{version.csv.second}*",
     "~/Library/Logs/QuickBooks",

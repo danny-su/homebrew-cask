@@ -1,7 +1,7 @@
 cask "redisinsight" do
   arch arm: "arm64", intel: "x64"
 
-  version "2.38.0"
+  version "2.42.0"
   sha256 :no_check
 
   url "https://download.redisinsight.redis.com/latest/RedisInsight-mac-#{arch}.dmg"
@@ -16,6 +16,8 @@ cask "redisinsight" do
     url "https://github.com/RedisInsight/RedisInsight"
     strategy :github_latest
   end
+
+  auto_updates true
 
   app "RedisInsight.app"
 

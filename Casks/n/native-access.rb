@@ -1,7 +1,7 @@
 cask "native-access" do
   arch arm: "M1", intel: "Intel"
 
-  version "3.6.2"
+  version "3.8.1"
   sha256 :no_check
 
   url "https://native-instruments.com/fileadmin/downloads/Native-Access_2_Mac_#{arch}.dmg"
@@ -19,8 +19,8 @@ cask "native-access" do
 
   app "Native Access.app"
 
-  uninstall quit:      "com.native-instruments.Native Access",
-            launchctl: "com.native-instruments.NativeAccess.Helper2",
+  uninstall launchctl: "com.native-instruments.NativeAccess.Helper2",
+            quit:      "com.native-instruments.Native Access",
             delete:    [
               "/Library/Application Support/Native Instruments",
               "/Library/Preferences/com.native-instruments.NTKDaemon.plist",
@@ -29,8 +29,8 @@ cask "native-access" do
 
   zap trash: [
     "~/Library/Application Support/CrashReporter/Native Access_*.plist",
-    "~/Library/Application Support/Native Instruments",
     "~/Library/Application Support/Native Access",
+    "~/Library/Application Support/Native Instruments",
     "~/Library/Caches/Native Instruments/Native Access*",
     "~/Library/Preferences/com.native-instruments.*.plist",
     "~/Library/Saved Application State/com.native-instruments.nativeaccess2.savedState",

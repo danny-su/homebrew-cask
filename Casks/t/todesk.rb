@@ -1,6 +1,6 @@
 cask "todesk" do
-  version "4.6.2.0"
-  sha256 "ac5e3ecb4694f0a39fdef5319f55f88ae1c50afa760ed8f077b79425ff017c78"
+  version "4.7.2.0"
+  sha256 "5dca90ea9898adec8b525ec5688613b2c2fa3cd0487f5fbcc3812bb2731e0678"
 
   url "https://dl.todesk.com/macos/ToDesk_#{version}.pkg"
   name "ToDesk"
@@ -16,15 +16,15 @@ cask "todesk" do
 
   pkg "ToDesk_#{version}.pkg"
 
-  uninstall delete:    "/Applications/ToDesk.app",
-            launchctl: [
+  uninstall launchctl: [
+              "com.youqu.todesk.client.startup",
               "com.youqu.todesk.desktop",
               "com.youqu.todesk.service",
               "com.youqu.todesk.startup",
-              "com.youqu.todesk.client.startup",
             ],
+            quit:      "com.youqu.todesk.mac",
             pkgutil:   "com.youqu.todesk.mac",
-            quit:      "com.youqu.todesk.mac"
+            delete:    "/Applications/ToDesk.app"
 
   zap trash: [
     "~/Library/Application Scripts/com.youqu.todesk.mac.LaunchHelper",

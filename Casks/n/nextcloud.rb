@@ -1,35 +1,37 @@
 cask "nextcloud" do
-  on_el_capitan :or_older do
-    version "2.6.5.20200710-legacy"
-    sha256 "4c67e50361dd5596fb884002d1ed907fe109d607fba2cabe07e505addd164519"
+  on_big_sur :or_older do
+    version "3.8.1"
+    sha256 "448647db0068ff9a2b669ff2f9d715a36b4e5e1af82e9849e57d9f7078d1bd2e"
 
-    url "https://github.com/nextcloud/desktop/releases/download/v#{version.major_minor_patch}/Nextcloud-#{version}.pkg",
-        verified: "github.com/nextcloud/desktop/"
+    livecheck do
+      skip "Legacy version"
+    end
+
+    depends_on macos: ">= :mojave"
   end
-  on_sierra :or_newer do
-    version "3.10.1"
-    sha256 "3d67640b8769e771e5f4f6f922cb40346545088eba3684e12a5eac3d42d16925"
+  on_monterey :or_newer do
+    version "3.12.0"
+    sha256 "30673c8e7f33dfc8124a2ef723060f395ddd363487cc3786ef3eafa6c8d8d4d9"
 
-    url "https://github.com/nextcloud-releases/desktop/releases/download/v#{version}/Nextcloud-#{version}.pkg",
-        verified: "github.com/nextcloud-releases/desktop/"
-  end
+    livecheck do
+      url :url
+      regex(/^Nextcloud[._-]v?(\d+(?:\.\d+)+)\.pkg$/i)
+      strategy :github_latest do |json, regex|
+        json["assets"]&.map do |asset|
+          match = asset["name"]&.match(regex)
+          next if match.blank?
 
-  name "Nextcloud"
-  desc "Desktop sync client for Nextcloud software products"
-  homepage "https://nextcloud.com/"
-
-  livecheck do
-    url :url
-    regex(/^Nextcloud[._-]v?(\d+(?:\.\d+)+)\.pkg$/i)
-    strategy :github_latest do |json, regex|
-      json["assets"]&.map do |asset|
-        match = asset["name"]&.match(regex)
-        next if match.blank?
-
-        match[1]
+          match[1]
+        end
       end
     end
   end
+
+  url "https://github.com/nextcloud-releases/desktop/releases/download/v#{version}/Nextcloud-#{version}.pkg",
+      verified: "github.com/nextcloud-releases/desktop/"
+  name "Nextcloud"
+  desc "Desktop sync client for Nextcloud software products"
+  homepage "https://nextcloud.com/"
 
   auto_updates true
 

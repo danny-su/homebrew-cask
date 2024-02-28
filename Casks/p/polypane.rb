@@ -1,9 +1,9 @@
 cask "polypane" do
   arch arm: "-arm64"
 
-  version "16.0.0"
-  sha256 arm:   "4630a70ecb13669641b332ac26d07e1eb5177da8aea03c15ee164420d227a46e",
-         intel: "f744b6732d0ff0b6c96849cb6b5d6834c99ab1822fc8816d09409a8ea3cc810a"
+  version "18.0.0"
+  sha256 arm:   "0be0605716954ec155a90e45f5f9516d6a27decce179e14d00e17326df0f6123",
+         intel: "4be1bdf3fce95f7ad9a282f849f6802dd1adf113dc92ab180b14d82dc5745bd7"
 
   url "https://github.com/firstversionist/polypane/releases/download/v#{version}/Polypane-#{version}#{arch}.dmg",
       verified: "github.com/firstversionist/polypane/"
@@ -15,8 +15,8 @@ cask "polypane" do
 
   zap trash: [
     "~/Library/Application Support/Polypane",
-    "~/Library/Caches/com.firstversionist.polypane.ShipIt",
     "~/Library/Caches/com.firstversionist.polypane",
+    "~/Library/Caches/com.firstversionist.polypane.ShipIt",
     "~/Library/Logs/Polypane",
     "~/Library/Preferences/com.firstversionist.polypane.plist",
     "~/Library/Saved Application State/com.firstversionist.polypane.savedState",

@@ -1,9 +1,9 @@
 cask "piclist" do
   arch arm: "arm64", intel: "x64"
 
-  version "2.6.7"
-  sha256 arm:   "5f8c832314196d26e0dfd48211fc83368c910c60665b3484434f8f9064c7a9a1",
-         intel: "9da2246cdf57c84cfd9693162b19f250ded41db737ebabc2e156f5fad43cbd95"
+  version "2.7.4"
+  sha256 arm:   "f8f27bb540ba9b447aa7cd7a24109968b610efb591242d7c0ceadb6cc2a1270e",
+         intel: "1b33c6ad5a20f8a6a5a0ec457f5ed62bbc81d121ca6f172a866d75f6eeb60448"
 
   url "https://release.piclist.cn/latest/PicList-#{version}-#{arch}.dmg"
   name "PicList"
@@ -14,6 +14,8 @@ cask "piclist" do
     url "https://release.piclist.cn/latest/latest-mac.yml"
     strategy :electron_builder
   end
+
+  depends_on macos: ">= :high_sierra"
 
   app "PicList.app"
 

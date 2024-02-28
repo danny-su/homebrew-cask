@@ -1,6 +1,6 @@
 cask "camo-studio" do
-  version "2.1.1,10933"
-  sha256 "45a179fba21db473e1184c904bcd49d8741bef9041a8319fcae253356117ce6d"
+  version "2.1.3,11491"
+  sha256 "e93d63c1287e42458499782a1ff37c6b3026ba08374e0347be82e1b4926930cd"
 
   url "https://reincubate.com/res/labs/camo/CamoStudioMac-#{version.csv.first}-#{version.csv.second}-Release.app.zip"
   name "Camo Studio"
@@ -29,8 +29,8 @@ cask "camo-studio" do
   zap trash: [
         "~/Library/Application Support/CrashReporter/Camo Studio",
         "~/Library/Application Support/Reincubate/Camo",
-        "~/Library/Caches/SentryCrash/Camo Studio",
         "~/Library/Caches/com.reincubate.macos.cam",
+        "~/Library/Caches/SentryCrash/Camo Studio",
         "~/Library/HTTPStorages/com.reincubate.macos.cam",
         "~/Library/Preferences/com.reincubate.macos.cam.plist",
         "~/Library/WebKit/com.reincubate.macos.cam",

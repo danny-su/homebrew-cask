@@ -40,8 +40,8 @@ cask "calibre" do
     end
   end
   on_ventura :or_newer do
-    version "7.1.0"
-    sha256 "fbf3f950d62e2b704d0921d0b3cc56a2e02cb834025f041c6a5c88020ef2c56e"
+    version "7.5.1"
+    sha256 "848e432268d9edf2f0bcf79a10a1bba7eb3f638446e4576ed2610155ae3bf6a8"
 
     livecheck do
       url "https://calibre-ebook.com/dist/osx"
@@ -54,7 +54,7 @@ cask "calibre" do
   desc "E-books management software"
   homepage "https://calibre-ebook.com/"
 
-  conflicts_with cask: "homebrew/cask-versions/calibre4"
+  conflicts_with cask: "calibre4"
   depends_on macos: ">= :catalina"
 
   app "calibre.app"

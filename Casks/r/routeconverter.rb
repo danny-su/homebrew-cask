@@ -1,5 +1,5 @@
 cask "routeconverter" do
-  version "2.34.359"
+  version "3.0.379"
   sha256 :no_check
 
   url "https://static.routeconverter.com/download/RouteConverterMac.app.zip"
@@ -10,7 +10,7 @@ cask "routeconverter" do
   livecheck do
     url :url
     strategy :extract_plist do |versions|
-      versions.values.map(&:short_version).compact.first
+      versions.values.filter_map(&:short_version).first
     end
   end
 

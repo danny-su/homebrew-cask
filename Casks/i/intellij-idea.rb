@@ -1,9 +1,9 @@
 cask "intellij-idea" do
   arch arm: "-aarch64"
 
-  version "2023.2.5,232.10227.8"
-  sha256 arm:   "a86a687f42b04904db5229616568655890fa8f175da76f6eaaa70ee3875f6b06",
-         intel: "810e8988be32c7c82b7bf0517aa34f029fc86111bb5e9353f5b4494ee2d1815b"
+  version "2023.3.4,233.14475.28"
+  sha256 arm:   "d41bc161616dd05bff9aa4b6f3ee704a7ec2c8f35c09c0c79b0778b36a4bab6b",
+         intel: "b8d9d618786f552cdb8a34efbe36c3fa8c9fb94eb37c8552580c5210ba36b52c"
 
   url "https://download.jetbrains.com/idea/ideaIU-#{version.csv.first}#{arch}.dmg"
   name "IntelliJ IDEA Ultimate"
@@ -23,15 +23,7 @@ cask "intellij-idea" do
   depends_on macos: ">= :high_sierra"
 
   app "IntelliJ IDEA.app"
-
-  uninstall_postflight do
-    ENV["PATH"].split(File::PATH_SEPARATOR).map { |path| File.join(path, "idea") }.each do |path|
-      if File.readable?(path) &&
-         File.readlines(path).grep(/# see com.intellij.idea.SocketLock for the server side of this interface/).any?
-        File.delete(path)
-      end
-    end
-  end
+  binary "#{appdir}/IntelliJ IDEA.app/Contents/MacOS/idea"
 
   zap trash: [
     "~/Library/Application Support/JetBrains/IntelliJIdea#{version.major_minor}",

@@ -1,6 +1,6 @@
 cask "texifier" do
-  version "1.9.23,789,4070e82"
-  sha256 "829e491addc0ec2feaa35324fe48176e11828f29e05d316379056421eb5a0de6"
+  version "1.9.26,799,573d472"
+  sha256 "918e2f880e8d16385c21822495ed4520db89ddc505d281fe03bee1b4c67f24c9"
 
   url "https://download.texifier.com/apps/osx/updates/Texifier_#{version.csv.first.dots_to_underscores}__#{version.csv.second}__#{version.csv.third}.dmg"
   name "Texifier"
@@ -23,7 +23,7 @@ cask "texifier" do
   zap trash: [
     "~/Library/Application Support/CloudDocs/session/containers/iCloud.com.vallettaventures.texpadm",
     "~/Library/Application Support/CloudDocs/session/containers/iCloud.com.vallettaventures.texpadm.plist",
-    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.vallettaventures.texpad.sfl2",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.vallettaventures.texpad.sfl*",
     "~/Library/Application Support/Texpad",
     "~/Library/Caches/com.vallettaventures.Texpad",
     "~/Library/Cookies/com.vallettaventures.Texpad.binarycookies",

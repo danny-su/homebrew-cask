@@ -7,6 +7,8 @@ cask "protonmail-import-export" do
   desc "Import emails to your secure ProtonMail inbox or make offline backups"
   homepage "https://proton.me/support/export-emails-import-export-app"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   auto_updates true
 
   app "ProtonMail Import-Export app.app"
@@ -15,12 +17,8 @@ cask "protonmail-import-export" do
 
   zap trash: [
     "~/Library/Application Support/protonmail/importExport",
-    "~/Library/Caches/protonmail/importExport",
     "~/Library/Caches/ProtonMail Import-Export app",
+    "~/Library/Caches/protonmail/importExport",
     "~/Library/Preferences/com.protonmail.import-export.ProtonMail Import-Export app.plist",
   ]
-
-  caveats do
-    discontinued
-  end
 end

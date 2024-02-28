@@ -1,10 +1,10 @@
 cask "codeexpander" do
-  version "4.3.1"
-  sha256 "d2288cf347f7c23f40e6f6ac92c3f077c1700d335c71509b52f935fdc0c0fb45"
+  version "4.3.6"
+  sha256 "ed010ce433d31b9a04f82f86474f2ddcda87092e2c9d2060be2bc2e091683167"
 
   url "https://github.com/oncework/codeexpander/releases/download/#{version.major_minor}.x/CodeExpander-#{version}.dmg"
   name "CodeExpander"
-  desc "Cloud synchronization development tool"
+  desc "Cloud synchronisation development tool"
   homepage "https://github.com/oncework/codeexpander"
 
   livecheck do

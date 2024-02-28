@@ -1,10 +1,10 @@
 cask "ammonite" do
-  version "1.25"
-  sha256 "3cbb56695ad66be04f7220ce2feeeaccdab40e6fb44e303c52097799f90e8e89"
+  version "1.26"
+  sha256 "73c24ebae2ef384410540168e5cf568608468572094fd09261df5a00c759072e"
 
   url "https://www.soma-zone.com/download/files/Ammonite-#{version}.tar.xz"
   name "Ammonite"
-  desc "Tag visualizer and search utility"
+  desc "Tag visualiser and search utility"
   homepage "https://www.soma-zone.com/Ammonite/"
 
   livecheck do
